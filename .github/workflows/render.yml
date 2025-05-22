@@ -1,0 +1,48 @@
+name: Render Quarto files, validate and upload preview site
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+# cancel stale runs when the PR is updated
+concurrency:
+  group: "pr-${{ github.event.pull_request.number }}"
+  cancel-in-progress: true
+
+
+jobs:
+  build-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+
+    # Download the repository
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Install Quarto
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        tinytex: true
+
+    # Render Quarto files
+    - name: Render Quarto files
+      run: |
+        quarto render --output-dir _build
+
+    # Run Quarto sanity check
+    - name: Link & HTML sanity check
+      run: quarto check
+
+    # Store the result as artifact
+    - name: Store the result as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: preview-site
+        path: _build
