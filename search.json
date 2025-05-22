@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
+    "section": "",
+    "text": "DATES: 30 June 2025 – 18 July 2025\nLOCATION: CUNEF Universidad (PIR 0.5)\nTIME: 09 h – 14 h, Monday → Friday\nCREDITS: 9 ECTS"
+  },
+  {
+    "objectID": "index.html#objectives",
+    "href": "index.html#objectives",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
+    "section": "Objectives",
+    "text": "Objectives\n\nObtain a global vision of Artificial Intelligence as a widely used technology and discover the challenges and opportunities of its applications. Understand the new way of obtaining, managing and analysing data to generate knowledge and incorporate it into the development of novel intelligent systems.\nReflect, analyse and open the mind to the change in society that we are experiencing to understand its impact on today’s society and find new professions, challenges and opportunities.\nLearn to program simple algorithms in Python, to illustrate the foundation of the implementation of intelligent systems using machine learning techniques.\nLearn the fundamentals of Generative Artificial Intelligence and the different tools available and their applications in different areas of business.\nLearn applications of intelligent systems such as Natural Language Processing and other cutting edge technologies."
+  },
+  {
+    "objectID": "index.html#methodology",
+    "href": "index.html#methodology",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
+    "section": "Methodology",
+    "text": "Methodology\nThe summer course on artificial intelligence will employ a comprehensive methodology, combining lectures, debates, and hands-on programming sessions. Students will gain theoretical knowledge through expert-led lectures, engage in critical discussions during debates, and apply their learning in practical programming classes. This approach ensures a well-rounded understanding of AI concepts and their real-world applications."
+  },
+  {
+    "objectID": "index.html#sources",
+    "href": "index.html#sources",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
+    "section": "Sources",
+    "text": "Sources\nAccess to the course materials in the following GitHub repository."
+  },
+  {
+    "objectID": "sessions/day2/jparisu_fundamental.html#some-slide",
+    "href": "sessions/day2/jparisu_fundamental.html#some-slide",
+    "title": "Fundamental algorithms I",
+    "section": "1.1 Some slide",
+    "text": "1.1 Some slide"
+  },
+  {
+    "objectID": "sessions/day2/jparisu_fundamental.html#some-other-slide",
+    "href": "sessions/day2/jparisu_fundamental.html#some-other-slide",
+    "title": "Fundamental algorithms I",
+    "section": "2.1 Some other slide",
+    "text": "2.1 Some other slide"
+  },
+  {
+    "objectID": "sessions/day2/day2.html",
+    "href": "sessions/day2/day2.html",
+    "title": "Fundamental algorithms I: design strategies",
+    "section": "",
+    "text": "July 1st, 2025"
+  },
+  {
+    "objectID": "sessions/day2/day2.html#day-2",
+    "href": "sessions/day2/day2.html#day-2",
+    "title": "Fundamental algorithms I: design strategies",
+    "section": "",
+    "text": "July 1st, 2025"
+  },
+  {
+    "objectID": "sessions/day2/day2.html#facilitator",
+    "href": "sessions/day2/day2.html#facilitator",
+    "title": "Fundamental algorithms I: design strategies",
+    "section": "Facilitator",
+    "text": "Facilitator\nJavier París Uhryn (CUNEF Universidad)"
+  },
+  {
+    "objectID": "sessions/day2/day2.html#session",
+    "href": "sessions/day2/day2.html#session",
+    "title": "Fundamental algorithms I: design strategies",
+    "section": "Session",
+    "text": "Session\nS2: 10:30 - 12:00\n\nDiscussion Topics\nIntroduction to programming from scratch:\n\nUnderstanding information processing and automatization.\nExploring logic, computer basics, boolean math and coding.\nLearning programming basics and algorithms.\n\n\n\nSlides\nAvailable here"
+  },
+  {
+    "objectID": "sessions/day2/day2.html#laboratory",
+    "href": "sessions/day2/day2.html#laboratory",
+    "title": "Fundamental algorithms I: design strategies",
+    "section": "Laboratory",
+    "text": "Laboratory\n\nDiscussion Topics\nPython introduction:\n\nGoogle Colab environment.\nPython basics.\nPractical applications.\n\n\n\nResources"
+  }
+]
