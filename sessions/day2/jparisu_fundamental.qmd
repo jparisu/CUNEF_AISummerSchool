@@ -1,6 +1,6 @@
 ---
 title: "Fundamental algorithms I"
-subtitle: "design strategies"
+subtitle: "Design strategies"
 author: "Javier Paris"
 
 metadata-files:
