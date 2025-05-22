@@ -15,7 +15,7 @@ concurrency:
 
 
 jobs:
-  build-render:
+  render-preview:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
