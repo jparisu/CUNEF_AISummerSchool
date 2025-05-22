@@ -1,0 +1,18 @@
+---
+title: "Fundamental algorithms I"
+subtitle: "design strategies"
+author: "Javier Paris"
+
+metadata-files:
+    - "../../templates/style/slides_metadata.yml"
+format: revealjs
+---
+
+# Automatization
+
+## Some slide
+
+
+# Logic
+
+## Some other slide

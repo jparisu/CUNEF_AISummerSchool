@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: _build
+  title: "Artificial Intelligence Summer School - CUNEF Universidad"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+    # TODO add custom CSS
+    # css: styles.css
+
+
+website:
+  title: "xAI PhD Material"
+  favicon: templates/images/cunef.png
+  navbar:
+    left:
+      - text: "Home"
+        href: index.html
+      - text: "Day 2"
+        href: sessions/day2/day2.html
+
+  page-footer:
+    left: |
+      ![](templates/images/cunef.png){width=50%}

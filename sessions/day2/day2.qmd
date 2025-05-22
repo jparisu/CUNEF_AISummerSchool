@@ -1,0 +1,45 @@
+---
+title: "Fundamental algorithms I: design strategies"
+format: html
+---
+
+## Day 2
+
+July 1st, 2025
+
+## Facilitator
+
+Javier París Uhryn (CUNEF Universidad)
+
+
+## Session
+
+S2: 10:30 - 12:00
+
+### Discussion Topics
+
+Introduction to programming from scratch:
+
+- Understanding **information processing** and automatization.
+- Exploring **logic**, computer basics, boolean math and **coding**.
+- Learning programming basics and **algorithms**.
+
+
+### Slides
+
+Available [here](jparisu_fundamental.html)
+
+---
+
+## Laboratory
+
+### Discussion Topics
+
+Python introduction:
+
+- Google Colab environment.
+- Python basics.
+- Practical applications.
+
+
+### Resources
