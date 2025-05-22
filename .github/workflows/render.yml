@@ -1,0 +1,37 @@
+name: Render Quarto files and upload
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Download the repository
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Install Quarto
+    - name: Setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        tinytex: true
+
+    # Render Quarto files
+    - name: Render Quarto files
+      run: |
+        quarto render --output-dir ${{ github.workspace }}/_build
+
+    # Store the result as artifact
+    - name: Store the result as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: QuartoRenderResults
+        path: ${{ github.workspace }}/_build
