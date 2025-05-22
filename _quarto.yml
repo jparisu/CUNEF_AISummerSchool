@@ -24,4 +24,4 @@ website:
 
   page-footer:
     left: |
-      ![](templates/images/cunef.png){width=50%}
+      ![](/templates/images/cunef.png){width=50%}
