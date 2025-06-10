@@ -1,33 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
-    "section": "",
-    "text": "DATES: 30 June 2025 – 18 July 2025\nLOCATION: CUNEF Universidad (PIR 0.5)\nTIME: 09 h – 14 h, Monday → Friday\nCREDITS: 9 ECTS"
-  },
-  {
-    "objectID": "index.html#objectives",
-    "href": "index.html#objectives",
-    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
-    "section": "Objectives",
-    "text": "Objectives\n\nObtain a global vision of Artificial Intelligence as a widely used technology and discover the challenges and opportunities of its applications. Understand the new way of obtaining, managing and analysing data to generate knowledge and incorporate it into the development of novel intelligent systems.\nReflect, analyse and open the mind to the change in society that we are experiencing to understand its impact on today’s society and find new professions, challenges and opportunities.\nLearn to program simple algorithms in Python, to illustrate the foundation of the implementation of intelligent systems using machine learning techniques.\nLearn the fundamentals of Generative Artificial Intelligence and the different tools available and their applications in different areas of business.\nLearn applications of intelligent systems such as Natural Language Processing and other cutting edge technologies."
-  },
-  {
-    "objectID": "index.html#methodology",
-    "href": "index.html#methodology",
-    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
-    "section": "Methodology",
-    "text": "Methodology\nThe summer course on artificial intelligence will employ a comprehensive methodology, combining lectures, debates, and hands-on programming sessions. Students will gain theoretical knowledge through expert-led lectures, engage in critical discussions during debates, and apply their learning in practical programming classes. This approach ensures a well-rounded understanding of AI concepts and their real-world applications."
-  },
-  {
-    "objectID": "index.html#sources",
-    "href": "index.html#sources",
-    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
-    "section": "Sources",
-    "text": "Sources\nAccess to the course materials in the following GitHub repository."
-  },
-  {
     "objectID": "sessions/day2/python_basics.html",
     "href": "sessions/day2/python_basics.html",
     "title": "Fundamental algorithms I",
@@ -354,14 +326,14 @@
     "href": "sessions/day2/day2.html",
     "title": "Fundamental algorithms I: design strategies",
     "section": "",
-    "text": "Fundamental algorithms I Python Introduction SnakeGame"
+    "text": "Fundamental algorithms I\nPython Introduction\nSnakeGame\nMentimeter link"
   },
   {
     "objectID": "sessions/day2/day2.html#material",
     "href": "sessions/day2/day2.html#material",
     "title": "Fundamental algorithms I: design strategies",
     "section": "",
-    "text": "Fundamental algorithms I Python Introduction SnakeGame"
+    "text": "Fundamental algorithms I\nPython Introduction\nSnakeGame\nMentimeter link"
   },
   {
     "objectID": "sessions/day2/day2.html#day-2",
@@ -375,7 +347,7 @@
     "href": "sessions/day2/day2.html#facilitator",
     "title": "Fundamental algorithms I: design strategies",
     "section": "Facilitator",
-    "text": "Facilitator\nJavier París Uhryn (CUNEF Universidad)"
+    "text": "Facilitator\nJavier París Uhryn (CUNEF Universidad) - jparisu"
   },
   {
     "objectID": "sessions/day2/day2.html#session",
@@ -385,10 +357,38 @@
     "text": "Session\nS2: 10:30 - 12:00\n\nDiscussion Topics\nIntroduction to programming from scratch:\n\nUnderstanding information processing and computers.\nExploring logic, computer basics, boolean math and coding.\nLearning programming basics and algorithms."
   },
   {
-    "objectID": "sessions/day2/snake.html",
-    "href": "sessions/day2/snake.html",
-    "title": "SNAKE GAME",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
     "section": "",
-    "text": "SnakeGame\n\n\nThe Snake Game is a classic video game genre that has been popular since the 1970s. The player controls a snake that moves around the screen, eating food and growing longer while avoiding collisions with itself.\nTry it out here.\n\n# GAME CODE\nfrom typing import Tuple\nimport random\nimport time\nimport copy\nfrom collections import deque\nfrom IPython.display import clear_output\nimport ipywidgets as widgets\n\n\nclass SnakeMap:\n    def __init__(self, n, head, body, fruit):\n        self.n = n\n        self.head = head\n        self.body = body\n        self.fruit = fruit\n\n    def move_snake(self, direction: str, rng) -&gt; Tuple[int, \"SnakeMap\"]:\n        d = direction.upper()\n\n        new_head = self.head.copy()\n        new_body = self.body.copy()\n        new_fruit = self.fruit.copy()\n        result = 0\n\n        # Move head (wrap-around)\n        if d == \"U\":\n            new_head[0] = (self.head[0] - 1) % self.n\n        elif d == \"D\":\n            new_head[0] = (self.head[0] + 1) % self.n\n        elif d == \"R\":\n            new_head[1] = (self.head[1] + 1) % self.n\n        elif d == \"L\":\n            new_head[1] = (self.head[1] - 1) % self.n\n        else:\n            raise Exception(f\"{direction!r} is not valid (use U, D, L or R)\")\n\n        # Fruit?\n        fruit_eaten = new_head == self.fruit\n        if fruit_eaten:\n            new_fruit = self.create_fruit(rng)\n            result = 1\n\n        # Update body\n        new_body.insert(0, self.head)\n        if not fruit_eaten:\n            new_body.pop()\n\n        # Collision\n        if new_head in new_body:\n            result = -1\n\n        return result, SnakeMap(\n            self.n,\n            new_head,\n            new_body,\n            new_fruit\n        )\n\n    def _arrow_towards(self, src: list[int], dst: list[int]) -&gt; str:\n        r, c = src\n        if (r - 1) % self.n == dst[0]:\n            return \"^\"\n        if (r + 1) % self.n == dst[0]:\n            return \"v\"\n        if (c - 1) % self.n == dst[1]:\n            return \"&lt;\"\n        if (c + 1) % self.n == dst[1]:\n            return \"&gt;\"\n        return \"·\"\n\n    def _render(self) -&gt; str:\n        grid = [[\" \"] * self.n for _ in range(self.n)]\n\n        # Head\n        grid[self.head[0]][self.head[1]] = \"O\"\n\n        # Body (arrows) – each segment points to the segment closer to head\n        for idx, seg in enumerate(self.body):\n            prev = self.head if idx == 0 else self.body[idx - 1]\n            r, c = seg\n            grid[r][c] = self._arrow_towards(seg, prev)\n\n        # Fruit\n        fr, fc = self.fruit\n        grid[fr][fc] = \"X\"\n\n        # Assemble ASCII\n        border = \"+\" + \"-\" * (2 * self.n) + \"+\"\n        rows = [border]\n        for row in grid:\n            rows.append(\"|\" + \"\".join(f\"{ch} \" for ch in row) + \"|\")\n        rows.append(border)\n\n        return \"\\n\".join(rows)\n\n    def __str__(self):\n        return self._render()\n\n    def create_fruit(self, rng):\n        free = [\n            (r, c)\n            for r in range(self.n)\n            for c in range(self.n)\n            if [r, c] != self.head and [r, c] not in self.body\n        ]\n        if not free:\n            raise Exception(\"Board is full! You win!\")\n        return list(rng.choice(free))\n\n\n\nclass SnakeGame:\n    def __init__(self, initial_map = None, seed = 42):\n        self.initial_map = initial_map or SnakeMap(n=4, head=[0, 2], body=[[0, 1], [0, 0]], fruit=[3,3])\n        self.seed = seed\n\n    def str_score(self, score: int, step: int):\n        \"\"\"Print the current score and step count.\"\"\"\n        return f\"Steps: {step}  Score: {score}\"\n\n    def str_separator(self, n=50):\n        \"\"\"Print a separator line.\"\"\"\n        return \"=\" * n\n\n    # ------------------------------------------------------------------ #\n    # Real-time loop (animated)                                          #\n    # ------------------------------------------------------------------ #\n    def game_loop(self, policy, max_steps: int = 50, delay: float = 0.5, history_size: int = 1):\n        history = deque(maxlen=history_size)\n        map = copy.deepcopy(self.initial_map)\n        rng = random.Random(self.seed)\n        score = 0\n        step = 0\n\n        try:\n            while step &lt; max_steps:\n                move = policy(map)\n                result, map = map.move_snake(move, rng)\n\n                if result == 1:\n                    score += 1\n\n                elif result == -1:\n                    print(self.str_separator())\n                    print(\"Game over! Snake collided with itself.\")\n                    break\n\n                step += 1\n\n                clear_output(wait=True)\n                print(\"\\n\\n\".join(history))\n                print(self.str_separator())\n\n                render = map._render()\n                print(move)\n                print(render)\n                print(self.str_score(score, step))\n\n                history.append(render)\n\n                time.sleep(delay)\n\n            print(self.str_separator())\n            print(\"Maximum steps achieved!\")\n\n        except Exception as exc:\n            print(self.str_separator())\n            print(exc)\n            raise exc\n\n        finally:\n            print(self.str_score(score, step))\n\n\n\n    # ------------------------------------------------------------------ #\n    # Interactive slider loop                                            #\n    # ------------------------------------------------------------------ #\n    def interact_loop(self, policy, max_steps: int = 50):\n        # ---------- simulation part (unchanged) ----------\n        map_ = copy.deepcopy(self.initial_map)   # `map` is a Python builtin\n        rng = random.Random(self.seed)\n        score = 0\n        step = 0\n        movements = \"\"\n\n        def frame_to_store(movements, map_, score, step, info=\"\"):\n            return (\n                movements + \"\\n\" +\n                map_._render() + \"\\n\" +\n                self.str_score(score, step) + \"\\n\" +\n                info\n            )\n\n        frames = [frame_to_store(movements, map_, score, step)]\n\n        while step &lt; max_steps:\n            try:\n                move = policy(map_)\n\n                for l in move:\n                    result, map_ = map_.move_snake(l, rng)\n                    movements += l\n                    step += 1\n\n                    if result == 1:\n                        score += 1\n                    elif result == -1:\n                        frames.append(frame_to_store(\n                            movements, map_, score, step,\n                            \"Game over! Snake collided with itself.\"))\n                        break\n\n                frames.append(frame_to_store(movements, map_, score, step))\n                movements += \" \"\n\n            except Exception as exc:\n                frames.append(frame_to_store(\n                    movements, map_, score, step, f\"{exc}\"))\n                break\n\n        # ---------- widgets part (changed) ----------\n        slider = widgets.IntSlider(\n            value=0, min=0, max=len(frames)-1, step=1,\n            description=\"step\", readout=True, layout=widgets.Layout(width=\"50%\")\n        )\n\n        play = widgets.Play(\n            value=0, min=0, max=len(frames)-1, step=1,\n            interval=500,              # milliseconds between frames\n            description=\"Play\",        # button text\n            disabled=False\n        )\n\n        # keep the two widgets in sync\n        widgets.jslink((play, 'value'), (slider, 'value'))\n\n        # what happens when the index changes\n        out = widgets.Output()\n\n        def _show(change):\n            with out:\n                out.clear_output(wait=True)\n                print(frames[change['new']])\n\n        slider.observe(_show, names='value')      # respond to slider (and play)\n\n        # display everything nicely\n        controls = widgets.HBox([play, slider])\n        display(widgets.VBox([controls, out]))\n\n\nCREATE YOUR OWN SNAKE STRATEGY\nYour task is to create a Python function that plays the Snake Game for you. Try to eat as many fruits as possible while avoiding eating yourself.\nIn the function my_snake you can implement your own snake strategy. Receving a map state, you must decide between 4 possible actions: - UP - DOWN - LEFT - RIGHT\n\ndef my_snake(map):\n    # IMPLEMENT YOUR CODE HERE\n    return \"UR\"  # Example: always move up\n\ngame = SnakeGame()\ngame.interact_loop(my_snake, max_steps=20)"
+    "text": "DATES: 30 June 2025 – 18 July 2025\nLOCATION: CUNEF Universidad (PIR 0.5)\nTIME: 09 h – 14 h, Monday → Friday\nCREDITS: 9 ECTS"
+  },
+  {
+    "objectID": "index.html#objectives",
+    "href": "index.html#objectives",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
+    "section": "Objectives",
+    "text": "Objectives\n\nObtain a global vision of Artificial Intelligence as a widely used technology and discover the challenges and opportunities of its applications. Understand the new way of obtaining, managing and analysing data to generate knowledge and incorporate it into the development of novel intelligent systems.\nReflect, analyse and open the mind to the change in society that we are experiencing to understand its impact on today’s society and find new professions, challenges and opportunities.\nLearn to program simple algorithms in Python, to illustrate the foundation of the implementation of intelligent systems using machine learning techniques.\nLearn the fundamentals of Generative Artificial Intelligence and the different tools available and their applications in different areas of business.\nLearn applications of intelligent systems such as Natural Language Processing and other cutting edge technologies."
+  },
+  {
+    "objectID": "index.html#methodology",
+    "href": "index.html#methodology",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
+    "section": "Methodology",
+    "text": "Methodology\nThe summer course on artificial intelligence will employ a comprehensive methodology, combining lectures, debates, and hands-on programming sessions. Students will gain theoretical knowledge through expert-led lectures, engage in critical discussions during debates, and apply their learning in practical programming classes. This approach ensures a well-rounded understanding of AI concepts and their real-world applications."
+  },
+  {
+    "objectID": "index.html#sources",
+    "href": "index.html#sources",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad",
+    "section": "Sources",
+    "text": "Sources\nAccess to the course materials in the following GitHub repository."
+  },
+  {
+    "objectID": "sessions/day2/jparisu_fundamental.html#humanity-inventions",
+    "href": "sessions/day2/jparisu_fundamental.html#humanity-inventions",
+    "title": "Fundamental algorithms I",
+    "section": "Humanity inventions",
+    "text": "Humanity inventions\nEnter in menti.com code 3342 9138. Mentimeter link"
   }
 ]

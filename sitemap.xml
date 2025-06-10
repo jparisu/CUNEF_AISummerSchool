@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/index.html</loc>
-    <lastmod>2025-06-10T19:15:11.822Z</lastmod>
-  </url>
-  <url>
     <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/day2/python_basics.html</loc>
-    <lastmod>2025-06-10T19:15:11.824Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/day2/jparisu_fundamental.html</loc>
-    <lastmod>2025-06-10T19:15:11.823Z</lastmod>
+    <lastmod>2025-06-10T20:29:32.232Z</lastmod>
   </url>
   <url>
     <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/day2/day2.html</loc>
-    <lastmod>2025-06-10T19:15:11.823Z</lastmod>
+    <lastmod>2025-06-10T20:29:32.219Z</lastmod>
   </url>
   <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/day2/snake.html</loc>
-    <lastmod>2025-06-10T19:15:11.824Z</lastmod>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/index.html</loc>
+    <lastmod>2025-06-10T20:29:32.218Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/day2/jparisu_fundamental.html</loc>
+    <lastmod>2025-06-10T20:29:32.232Z</lastmod>
   </url>
 </urlset>
