@@ -28,32 +28,347 @@
     "text": "Sources\nAccess to the course materials in the following GitHub repository."
   },
   {
-    "objectID": "sessions/day2/jparisu_fundamental.html#some-slide",
-    "href": "sessions/day2/jparisu_fundamental.html#some-slide",
+    "objectID": "sessions/day2/python_basics.html",
+    "href": "sessions/day2/python_basics.html",
     "title": "Fundamental algorithms I",
-    "section": "1.1 Some slide",
-    "text": "1.1 Some slide"
+    "section": "",
+    "text": "Python is an interpreted high-level language. It is a multiparadigm language since it supports object-oriented programming, imperative programming, and, to a lesser extent, functional programming. It is a dynamically typed and cross-platform language.\n\nNot compiled: Interpreted\nHigh level: Easy and abstract\nDynamically typed: Variables are not bound to a type (names)\nAI: numpy, pandas, scikit-learn, tensorflow, etc.\n\nhttps://python.org/\n\n\n\n\n\n\n\n\n\n\n\nPython is the most popular programming language: .\n\n\n\n\n\nEasy to learn\nCompact and understandable code\nWidely used (has broad support)\nMany libraries\n\n\n\n\n\n\nVery high level\nSlow (compared to C)\nNot strongly typed\n\n\n\n\n\n\n\nPython is used in many fields, such as:\n\nData Analysis: Pandas, Numpy, etc.\nArtificial Intelligence: Machine Learning, Deep Learning, etc.\nWeb Development: Django, Flask, etc.\nAutomation: Scripts, bots, etc.\nIndustry: Automation, IoT, etc.\nGames: Pygame, Panda3D, etc.\netc."
   },
   {
-    "objectID": "sessions/day2/jparisu_fundamental.html#some-other-slide",
-    "href": "sessions/day2/jparisu_fundamental.html#some-other-slide",
+    "objectID": "sessions/day2/python_basics.html#what-is-python",
+    "href": "sessions/day2/python_basics.html#what-is-python",
     "title": "Fundamental algorithms I",
-    "section": "2.1 Some other slide",
-    "text": "2.1 Some other slide"
+    "section": "",
+    "text": "Python is an interpreted high-level language. It is a multiparadigm language since it supports object-oriented programming, imperative programming, and, to a lesser extent, functional programming. It is a dynamically typed and cross-platform language.\n\nNot compiled: Interpreted\nHigh level: Easy and abstract\nDynamically typed: Variables are not bound to a type (names)\nAI: numpy, pandas, scikit-learn, tensorflow, etc.\n\nhttps://python.org/"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#motivation",
+    "href": "sessions/day2/python_basics.html#motivation",
+    "title": "Fundamental algorithms I",
+    "section": "",
+    "text": "Python is the most popular programming language: .\n\n\n\n\n\nEasy to learn\nCompact and understandable code\nWidely used (has broad support)\nMany libraries\n\n\n\n\n\n\nVery high level\nSlow (compared to C)\nNot strongly typed"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#uses",
+    "href": "sessions/day2/python_basics.html#uses",
+    "title": "Fundamental algorithms I",
+    "section": "",
+    "text": "Python is used in many fields, such as:\n\nData Analysis: Pandas, Numpy, etc.\nArtificial Intelligence: Machine Learning, Deep Learning, etc.\nWeb Development: Django, Flask, etc.\nAutomation: Scripts, bots, etc.\nIndustry: Automation, IoT, etc.\nGames: Pygame, Panda3D, etc.\netc."
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#installation",
+    "href": "sessions/day2/python_basics.html#installation",
+    "title": "Fundamental algorithms I",
+    "section": "Installation",
+    "text": "Installation\nThere are various ways to work with Python, depending on the environment you want to use, its purpose, and the operating system.\n\nLocal: Installation on your own computer\n\nAnaconda: Python distribution that includes libraries and a development environment.\npip: Python package installer.\n\nOnline: Online platforms like Google Colab, Jupyter Notebook, etc."
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#interpreter",
+    "href": "sessions/day2/python_basics.html#interpreter",
+    "title": "Fundamental algorithms I",
+    "section": "Interpreter",
+    "text": "Interpreter\nPython is an interpreted language, meaning that the code is executed line by line. Python can be used as an interactive interpreter where one line of code is executed at a time.\n\nprint(\"Hello World!\")\n\nHello World!\n\n\nThis is usually done from a command terminal:\npython"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#python-file",
+    "href": "sessions/day2/python_basics.html#python-file",
+    "title": "Fundamental algorithms I",
+    "section": "Python File",
+    "text": "Python File\nThe most common use of Python is to write a script in a file with the .py extension. These files are executed via the Python interpreter, which reads and executes the code line by line.\n\n# File: hello.py\ns = \"Hello World!\"\nprint(s)\n\nHello World!\n\n\nTo execute the file, use the terminal:\npython hello.py"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#jupyter-notebook",
+    "href": "sessions/day2/python_basics.html#jupyter-notebook",
+    "title": "Fundamental algorithms I",
+    "section": "Jupyter Notebook",
+    "text": "Jupyter Notebook\n\n\nJupyter Notebook is a document format that allows combining text and graphics with Python code. This is the most widely used tool in the fields of data science and machine learning.\n\nInteractive: Runs cell by cell\nVisual: Displays graphics and text\nExportable: To HTML, PDF, etc."
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#google-colab",
+    "href": "sessions/day2/python_basics.html#google-colab",
+    "title": "Fundamental algorithms I",
+    "section": "Google Colab",
+    "text": "Google Colab\n\n\nGoogle Colab is a free platform from Google that allows running Jupyter notebooks in the cloud. It offers many advantages:\n\nNotebook: Works natively with Jupyter notebooks\nOnline: No installation or updates required\nCloud: Independent of the device (no hardware or compatibility issues)\nDependencies: Includes many pre-installed libraries with consistent versions for all users\n\n\n\n\n\n\n\nImportant\n\n\n\nThis is the recommended platform for the course."
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#variables",
+    "href": "sessions/day2/python_basics.html#variables",
+    "title": "Fundamental algorithms I",
+    "section": "Variables",
+    "text": "Variables\nVariables in Python are dynamically typed, meaning you don’t specify the variable type when declaring it.\n\nx = 5       # int\ny = \"Hello\" # str\nprint(x, y)\n\n5 Hello"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#assignment",
+    "href": "sessions/day2/python_basics.html#assignment",
+    "title": "Fundamental algorithms I",
+    "section": "Assignment",
+    "text": "Assignment\nValues are assigned to variables using the = operator.\n\nx = 5  # x is 5\ny = x  # y is 5\nx = 3  # x is 3\na, b = x, 2 # a is 3, b is 2\nprint(x, y, a, b)\n\n3 5 3 2"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#comments",
+    "href": "sessions/day2/python_basics.html#comments",
+    "title": "Fundamental algorithms I",
+    "section": "Comments",
+    "text": "Comments\nAnything written after a # or within \"\"\" is a comment and will not be executed.\n\nx = 5\n# This is a comment\n# x = 3\n\"\"\" x = 2 \"\"\"\nprint(x)\n\n5"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#data-types",
+    "href": "sessions/day2/python_basics.html#data-types",
+    "title": "Fundamental algorithms I",
+    "section": "Data Types",
+    "text": "Data Types\nPython has several basic data types:\n\nNumeric: int, float\nText: str\nBooleans: bool\nSequences: list, tuple\nSets: set\nDictionaries: dict\n\n\nx = 5       # int\ny = 5.0     # float\nz = \"Hello\" # str\nprint(type(x), type(y), type(z))\n\n&lt;class 'int'&gt; &lt;class 'float'&gt; &lt;class 'str'&gt;"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#casting",
+    "href": "sessions/day2/python_basics.html#casting",
+    "title": "Fundamental algorithms I",
+    "section": "Casting",
+    "text": "Casting\nYou can change the type of a variable using casting.\n\nx = 5       # int\ny = str(x)  # str\nprint(y, type(y))\n\n5 &lt;class 'str'&gt;"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#arithmetic-operators",
+    "href": "sessions/day2/python_basics.html#arithmetic-operators",
+    "title": "Fundamental algorithms I",
+    "section": "Arithmetic Operators",
+    "text": "Arithmetic Operators\n\nx = 5   # int\ny = 2   # int\nprint(x + y)  # Add\nprint(x - y)  # Subtract\nprint(x * y)  # Multiply\nprint(x / y)  # Divide\nprint(x % y)  # Modulus\nprint(x ** y) # Exponentiation\nprint(x // y) # Floor division\n\n7\n3\n10\n2.5\n1\n25\n2"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#logical-operators",
+    "href": "sessions/day2/python_basics.html#logical-operators",
+    "title": "Fundamental algorithms I",
+    "section": "Logical Operators",
+    "text": "Logical Operators\n\nx = True   # bool\ny = False  # bool\nprint(not x)   # Not\nprint(x and y) # And\nprint(x or y)  # Or\n\nFalse\nFalse\nTrue\n\n\n0, empty strings, empty lists, etc., are considered False in Python.\n\nx = 0   # int -&gt; False\ny = \"\"  # str -&gt; False\nprint(bool(x), bool(y))\n\nFalse False"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#comparison-operators",
+    "href": "sessions/day2/python_basics.html#comparison-operators",
+    "title": "Fundamental algorithms I",
+    "section": "Comparison Operators",
+    "text": "Comparison Operators\n\nx = 5  # int\ny = 2  # int\nprint(x == y) # Equal\nprint(x != y) # Not equal\nprint(x &gt; y)  # Greater than\nprint(x &gt;= y) # Greater than or equal\nprint(x &lt; y)  # Less than\nprint(x is y) # Same object\n\nFalse\nTrue\nTrue\nTrue\nFalse\nFalse"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#lists",
+    "href": "sessions/day2/python_basics.html#lists",
+    "title": "Fundamental algorithms I",
+    "section": "Lists",
+    "text": "Lists\nLists are an ordered and mutable collection of elements.\n\nl = [1, 2, 3, 4, 5]  # list\nprint(l)\n\n[1, 2, 3, 4, 5]"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#lists---accessing-elements",
+    "href": "sessions/day2/python_basics.html#lists---accessing-elements",
+    "title": "Fundamental algorithms I",
+    "section": "Lists - Accessing Elements",
+    "text": "Lists - Accessing Elements\nTo access an element in a list, use the [] operator.\n\nl = [1, 2, 3, 4, 5]\nprint(l[0])   # First element\nprint(l[-1])  # Last element\nprint(l[1:3]) # Slice [2,3]\n\n1\n5\n[2, 3]"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#lists---modification",
+    "href": "sessions/day2/python_basics.html#lists---modification",
+    "title": "Fundamental algorithms I",
+    "section": "Lists - Modification",
+    "text": "Lists - Modification\nElements in a list can be modified by accessing them with []. Lists can also be extended using append and concatenated with +.\n\nl = [1, 2]  # list\nprint(l)\nl[0] = 0    # l = [0,2]\nprint(l)\nl.append(3) # l = [0,2,3]\nprint(l)\nl = l + l   # l = [0,2,3,0,2,3]\nprint(l)\n\n[1, 2]\n[0, 2]\n[0, 2, 3]\n[0, 2, 3, 0, 2, 3]"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#tuples",
+    "href": "sessions/day2/python_basics.html#tuples",
+    "title": "Fundamental algorithms I",
+    "section": "Tuples",
+    "text": "Tuples\nTuples are an ordered and immutable collection of elements. They are accessed like lists but cannot be modified.\n\nt = (1, 2, 3, 4, 5)\nprint(t)\nprint(t[1:3])\n\n(1, 2, 3, 4, 5)\n(2, 3)"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#sets",
+    "href": "sessions/day2/python_basics.html#sets",
+    "title": "Fundamental algorithms I",
+    "section": "Sets",
+    "text": "Sets\nSets are an unordered and mutable collection of unique elements. You cannot access elements directly except through iteration, but elements can be added or removed.\n\ns = {1, 2, 3, 4, 5}\nprint(s)\ns.add(6)\nprint(s)\ns.add(6)\nprint(s)\ns.remove(1)\nprint(s)\n\n{1, 2, 3, 4, 5}\n{1, 2, 3, 4, 5, 6}\n{1, 2, 3, 4, 5, 6}\n{2, 3, 4, 5, 6}"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#dictionaries",
+    "href": "sessions/day2/python_basics.html#dictionaries",
+    "title": "Fundamental algorithms I",
+    "section": "Dictionaries",
+    "text": "Dictionaries\nDictionaries are an unordered collection of key-value pairs.\n\nd = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(d)\nprint(d[\"a\"])\nd[\"a\"] = 0\nprint(d)\n\n{'a': 1, 'b': 2, 'c': 3}\n1\n{'a': 0, 'b': 2, 'c': 3}"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#strings",
+    "href": "sessions/day2/python_basics.html#strings",
+    "title": "Fundamental algorithms I",
+    "section": "Strings",
+    "text": "Strings\nStrings are tuples of characters with specific methods.\n\ns = \"Hello World!\"\nprint(s)\nprint(s[0])\nprint(s[1:5])\n\nHello World!\nH\nello"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#string---methods",
+    "href": "sessions/day2/python_basics.html#string---methods",
+    "title": "Fundamental algorithms I",
+    "section": "String - Methods",
+    "text": "String - Methods\n\ns = \"Hello World!\"\nprint(s.upper())\nprint(s.lower())\nprint(s.replace(\"H\", \"J\"))\nprint(s.split(\" \"))\nprint(s.find(\"W\"))\n\nHELLO WORLD!\nhello world!\nJello World!\n['Hello', 'World!']\n6"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#blocks",
+    "href": "sessions/day2/python_basics.html#blocks",
+    "title": "Fundamental algorithms I",
+    "section": "Blocks",
+    "text": "Blocks\nCode blocks in Python are defined by indentation (spaces or tabs at the beginning of a line). Therefore, it is very important to maintain the correct indentation.\n\nif True:\n    print(\"Block 1\")\n    if False:\n        print(\"Block 2\")\nprint(\"Block 3\")\n\nBlock 1\nBlock 3"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#conditionals",
+    "href": "sessions/day2/python_basics.html#conditionals",
+    "title": "Fundamental algorithms I",
+    "section": "Conditionals",
+    "text": "Conditionals\nConditionals in Python are written using if, elif, and else.\n\nx = 5\nif x &gt; 5:\n    print(\"Greater than 5\")\nelif x &lt; 5:\n    print(\"Less than 5\")\nelse:\n    print(\"Equal to 5\")\n\nEqual to 5"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#while-loop",
+    "href": "sessions/day2/python_basics.html#while-loop",
+    "title": "Fundamental algorithms I",
+    "section": "While Loop",
+    "text": "While Loop\nThe while loop runs as long as the condition is true.\n\nx = 0\nwhile x &lt; 5:\n    print(x)\n    x += 1\n\n0\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#for-loop",
+    "href": "sessions/day2/python_basics.html#for-loop",
+    "title": "Fundamental algorithms I",
+    "section": "For Loop",
+    "text": "For Loop\nThe for loop is used to iterate over a sequence.\n\nl = [1, 2, 3, 4, 5]\nfor x in l:\n    print(x)\n\n1\n2\n3\n4\n5"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#for-loop---range",
+    "href": "sessions/day2/python_basics.html#for-loop---range",
+    "title": "Fundamental algorithms I",
+    "section": "For Loop - Range",
+    "text": "For Loop - Range\nThe range function generates a sequence of numbers.\n\nfor x in range(5):\n    print(x)\n\n0\n1\n2\n3\n4"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#loop-operators",
+    "href": "sessions/day2/python_basics.html#loop-operators",
+    "title": "Fundamental algorithms I",
+    "section": "Loop Operators",
+    "text": "Loop Operators\nThe break operator is used to exit a loop. The continue operator is used to skip to the next iteration.\n\nfor x in range(5):\n    if x % 2:\n        continue\n    if x == 4:\n        break\n    print(x)\n\n0\n2"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#libraries",
+    "href": "sessions/day2/python_basics.html#libraries",
+    "title": "Fundamental algorithms I",
+    "section": "Libraries",
+    "text": "Libraries\nPython has a large number of libraries that can be imported and used. To import, use the keyword import. Libraries can also be renamed with as.\n\nimport numpy        # To use numpy, use numpy.function()\nimport numpy as np  # To use numpy, use np.function()"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#functions-1",
+    "href": "sessions/day2/python_basics.html#functions-1",
+    "title": "Fundamental algorithms I",
+    "section": "Functions",
+    "text": "Functions\nFunctions in Python are defined using the def keyword. They are used to encapsulate and reuse code.\n\ndef my_function():\n    print(\"Hello from a function\")\n\nmy_function()\nmy_function()\n\nHello from a function\nHello from a function"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#functions---arguments",
+    "href": "sessions/day2/python_basics.html#functions---arguments",
+    "title": "Fundamental algorithms I",
+    "section": "Functions - Arguments",
+    "text": "Functions - Arguments\nFunctions can take arguments, which are passed when calling the function. Arguments can be used by position or by name. Default arguments can also be defined, which are used if not explicitly specified when calling the function.\n\ndef my_function(name, age=25):\n    print(f\"Hello {name}, you are {age} years old\")\n\nmy_function(\"Alice\")\nmy_function(age=30, name=\"Bob\")\n\nHello Alice, you are 25 years old\nHello Bob, you are 30 years old"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#functions---return",
+    "href": "sessions/day2/python_basics.html#functions---return",
+    "title": "Fundamental algorithms I",
+    "section": "Functions - Return",
+    "text": "Functions - Return\nFunctions can return a value using the return keyword.\n\ndef my_function(x):\n    return x * 2\n\nprint(my_function(3))\nprint(my_function(5))\n\n6\n10"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#built-in-functions",
+    "href": "sessions/day2/python_basics.html#built-in-functions",
+    "title": "Fundamental algorithms I",
+    "section": "Built-in Functions",
+    "text": "Built-in Functions\nThese are some frequently used built-in functions in Python:\n\nprint: Prints to the screen\nrange: Returns an iterable sequence of numbers\nlen: Returns the length of an iterable or container\ninput: Reads from the keyboard\nsum: Returns the sum of elements in an iterable\nmin: Returns the minimum of elements in an iterable\nmax: Returns the maximum of elements in an iterable\nany: Returns True if any element in an iterable is True\nall: Returns True if all elements in an iterable are True\nsorted: Returns a sorted list of elements in an iterable"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#classes-1",
+    "href": "sessions/day2/python_basics.html#classes-1",
+    "title": "Fundamental algorithms I",
+    "section": "Classes",
+    "text": "Classes\nTo create more complex data structures, you can use classes. The class keyword is used to define a class.\n\nclass MyClass:\n    x = 5\n\nc = MyClass()\nprint(c.x)\n\n5"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#classes---methods",
+    "href": "sessions/day2/python_basics.html#classes---methods",
+    "title": "Fundamental algorithms I",
+    "section": "Classes - Methods",
+    "text": "Classes - Methods\nClasses can have methods, which are functions that belong to the class. The first argument of a method is the object calling it, conventionally called self.\n\nclass MyClass:\n    def my_method(self):\n        print(\"Hello from a method\")\n\nc = MyClass()\nc.my_method()\n\nHello from a method"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#classes---built-in-methods",
+    "href": "sessions/day2/python_basics.html#classes---built-in-methods",
+    "title": "Fundamental algorithms I",
+    "section": "Classes - Built-in Methods",
+    "text": "Classes - Built-in Methods\nThere are several special methods that can be defined in a class:\n\n__init__: Class constructor\n__str__: String representation of the class\n__len__: Length of the class\n__getitem__: Access elements using []\netc."
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#list-comprehension",
+    "href": "sessions/day2/python_basics.html#list-comprehension",
+    "title": "Fundamental algorithms I",
+    "section": "List Comprehension",
+    "text": "List Comprehension\nList comprehension is a quick and compact way to create lists.\n\nl1 = [x for x in range(5)]\nprint(l1)\n\nl2 = [x for x in range(5) if x % 2]\nprint(l2)\n\n[0, 1, 2, 3, 4]\n[1, 3]"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#lambda",
+    "href": "sessions/day2/python_basics.html#lambda",
+    "title": "Fundamental algorithms I",
+    "section": "Lambda",
+    "text": "Lambda\nLambda is a way to define anonymous functions in a single line.\n\nf = lambda x: x * 2\nprint(f(3))\n\n# Sort by the second element\nl = [(1, 2), (3, 1), (5, 3)]\nl.sort(key=lambda x: x[1])\n\n6"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#enumerate",
+    "href": "sessions/day2/python_basics.html#enumerate",
+    "title": "Fundamental algorithms I",
+    "section": "Enumerate",
+    "text": "Enumerate\nenumerate is a function that returns an iterable with indices and values.\n\nl = [\"a\", \"b\", \"c\"]\nfor i, x in enumerate(l):\n    print(i, x)\n\n0 a\n1 b\n2 c"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#working-with-dictionaries",
+    "href": "sessions/day2/python_basics.html#working-with-dictionaries",
+    "title": "Fundamental algorithms I",
+    "section": "Working with Dictionaries",
+    "text": "Working with Dictionaries\nDictionaries can be iterated by key, value, or both.\n\nd = {\"a\": 1, \"b\": 2, \"c\": 3}\nfor k in d.keys():\n    print(k)\n\nfor v in d.values():\n    print(v)\n\nfor k, v in d.items():\n    print(k, v)\n\na\nb\nc\n1\n2\n3\na 1\nb 2\nc 3"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#iterating-over-multiple-values",
+    "href": "sessions/day2/python_basics.html#iterating-over-multiple-values",
+    "title": "Fundamental algorithms I",
+    "section": "Iterating Over Multiple Values",
+    "text": "Iterating Over Multiple Values\nYou can create loops that iterate over more than one iterable at a time when the iterable is a collection. The zip function creates an iterable that groups elements from the iterables it is passed.\n\nl1 = [1, 2, 3]\nl2 = [\"a\", \"b\", \"c\"]\nfor x, y in zip(l1, l2):\n    print(x, y)\n\n1 a\n2 b\n3 c"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#inheritance",
+    "href": "sessions/day2/python_basics.html#inheritance",
+    "title": "Fundamental algorithms I",
+    "section": "Inheritance",
+    "text": "Inheritance\nInheritance is an object-oriented programming feature that allows creating a new class from an existing one.\n\nclass Parent:\n    def __init__(self, x):\n        self.x = x\n\nclass Child(Parent):\n    def __init__(self, x, y):\n        super().__init__(x)\n        self.y = y\n\nc = Child(1, 2)\nprint(c.x, c.y)\n\n1 2"
+  },
+  {
+    "objectID": "sessions/day2/python_basics.html#much-more",
+    "href": "sessions/day2/python_basics.html#much-more",
+    "title": "Fundamental algorithms I",
+    "section": "Much More",
+    "text": "Much More\nThe Python language is very extensive and has many more features and functionalities. This topic provides a basic overview of the main ideas and the most commonly used elements of the language.\nWe encourage students to explore more about the language and delve deeper into areas that interest them the most."
   },
   {
     "objectID": "sessions/day2/day2.html",
     "href": "sessions/day2/day2.html",
     "title": "Fundamental algorithms I: design strategies",
     "section": "",
-    "text": "July 1st, 2025"
+    "text": "Fundamental algorithms I Python Introduction SnakeGame"
+  },
+  {
+    "objectID": "sessions/day2/day2.html#material",
+    "href": "sessions/day2/day2.html#material",
+    "title": "Fundamental algorithms I: design strategies",
+    "section": "",
+    "text": "Fundamental algorithms I Python Introduction SnakeGame"
   },
   {
     "objectID": "sessions/day2/day2.html#day-2",
     "href": "sessions/day2/day2.html#day-2",
     "title": "Fundamental algorithms I: design strategies",
-    "section": "",
-    "text": "July 1st, 2025"
+    "section": "Day 2",
+    "text": "Day 2\nJuly 1st, 2025"
   },
   {
     "objectID": "sessions/day2/day2.html#facilitator",
@@ -67,13 +382,13 @@
     "href": "sessions/day2/day2.html#session",
     "title": "Fundamental algorithms I: design strategies",
     "section": "Session",
-    "text": "Session\nS2: 10:30 - 12:00\n\nDiscussion Topics\nIntroduction to programming from scratch:\n\nUnderstanding information processing and automatization.\nExploring logic, computer basics, boolean math and coding.\nLearning programming basics and algorithms.\n\n\n\nSlides\nAvailable here"
+    "text": "Session\nS2: 10:30 - 12:00\n\nDiscussion Topics\nIntroduction to programming from scratch:\n\nUnderstanding information processing and computers.\nExploring logic, computer basics, boolean math and coding.\nLearning programming basics and algorithms."
   },
   {
-    "objectID": "sessions/day2/day2.html#laboratory",
-    "href": "sessions/day2/day2.html#laboratory",
-    "title": "Fundamental algorithms I: design strategies",
-    "section": "Laboratory",
-    "text": "Laboratory\n\nDiscussion Topics\nPython introduction:\n\nGoogle Colab environment.\nPython basics.\nPractical applications.\n\n\n\nResources"
+    "objectID": "sessions/day2/snake.html",
+    "href": "sessions/day2/snake.html",
+    "title": "SNAKE GAME",
+    "section": "",
+    "text": "SnakeGame\n\n\nThe Snake Game is a classic video game genre that has been popular since the 1970s. The player controls a snake that moves around the screen, eating food and growing longer while avoiding collisions with itself.\nTry it out here.\n\n# GAME CODE\nfrom typing import Tuple\nimport random\nimport time\nimport copy\nfrom collections import deque\nfrom IPython.display import clear_output\nimport ipywidgets as widgets\n\n\nclass SnakeMap:\n    def __init__(self, n, head, body, fruit):\n        self.n = n\n        self.head = head\n        self.body = body\n        self.fruit = fruit\n\n    def move_snake(self, direction: str, rng) -&gt; Tuple[int, \"SnakeMap\"]:\n        d = direction.upper()\n\n        new_head = self.head.copy()\n        new_body = self.body.copy()\n        new_fruit = self.fruit.copy()\n        result = 0\n\n        # Move head (wrap-around)\n        if d == \"U\":\n            new_head[0] = (self.head[0] - 1) % self.n\n        elif d == \"D\":\n            new_head[0] = (self.head[0] + 1) % self.n\n        elif d == \"R\":\n            new_head[1] = (self.head[1] + 1) % self.n\n        elif d == \"L\":\n            new_head[1] = (self.head[1] - 1) % self.n\n        else:\n            raise Exception(f\"{direction!r} is not valid (use U, D, L or R)\")\n\n        # Fruit?\n        fruit_eaten = new_head == self.fruit\n        if fruit_eaten:\n            new_fruit = self.create_fruit(rng)\n            result = 1\n\n        # Update body\n        new_body.insert(0, self.head)\n        if not fruit_eaten:\n            new_body.pop()\n\n        # Collision\n        if new_head in new_body:\n            result = -1\n\n        return result, SnakeMap(\n            self.n,\n            new_head,\n            new_body,\n            new_fruit\n        )\n\n    def _arrow_towards(self, src: list[int], dst: list[int]) -&gt; str:\n        r, c = src\n        if (r - 1) % self.n == dst[0]:\n            return \"^\"\n        if (r + 1) % self.n == dst[0]:\n            return \"v\"\n        if (c - 1) % self.n == dst[1]:\n            return \"&lt;\"\n        if (c + 1) % self.n == dst[1]:\n            return \"&gt;\"\n        return \"·\"\n\n    def _render(self) -&gt; str:\n        grid = [[\" \"] * self.n for _ in range(self.n)]\n\n        # Head\n        grid[self.head[0]][self.head[1]] = \"O\"\n\n        # Body (arrows) – each segment points to the segment closer to head\n        for idx, seg in enumerate(self.body):\n            prev = self.head if idx == 0 else self.body[idx - 1]\n            r, c = seg\n            grid[r][c] = self._arrow_towards(seg, prev)\n\n        # Fruit\n        fr, fc = self.fruit\n        grid[fr][fc] = \"X\"\n\n        # Assemble ASCII\n        border = \"+\" + \"-\" * (2 * self.n) + \"+\"\n        rows = [border]\n        for row in grid:\n            rows.append(\"|\" + \"\".join(f\"{ch} \" for ch in row) + \"|\")\n        rows.append(border)\n\n        return \"\\n\".join(rows)\n\n    def __str__(self):\n        return self._render()\n\n    def create_fruit(self, rng):\n        free = [\n            (r, c)\n            for r in range(self.n)\n            for c in range(self.n)\n            if [r, c] != self.head and [r, c] not in self.body\n        ]\n        if not free:\n            raise Exception(\"Board is full! You win!\")\n        return list(rng.choice(free))\n\n\n\nclass SnakeGame:\n    def __init__(self, initial_map = None, seed = 42):\n        self.initial_map = initial_map or SnakeMap(n=4, head=[0, 2], body=[[0, 1], [0, 0]], fruit=[3,3])\n        self.seed = seed\n\n    def str_score(self, score: int, step: int):\n        \"\"\"Print the current score and step count.\"\"\"\n        return f\"Steps: {step}  Score: {score}\"\n\n    def str_separator(self, n=50):\n        \"\"\"Print a separator line.\"\"\"\n        return \"=\" * n\n\n    # ------------------------------------------------------------------ #\n    # Real-time loop (animated)                                          #\n    # ------------------------------------------------------------------ #\n    def game_loop(self, policy, max_steps: int = 50, delay: float = 0.5, history_size: int = 1):\n        history = deque(maxlen=history_size)\n        map = copy.deepcopy(self.initial_map)\n        rng = random.Random(self.seed)\n        score = 0\n        step = 0\n\n        try:\n            while step &lt; max_steps:\n                move = policy(map)\n                result, map = map.move_snake(move, rng)\n\n                if result == 1:\n                    score += 1\n\n                elif result == -1:\n                    print(self.str_separator())\n                    print(\"Game over! Snake collided with itself.\")\n                    break\n\n                step += 1\n\n                clear_output(wait=True)\n                print(\"\\n\\n\".join(history))\n                print(self.str_separator())\n\n                render = map._render()\n                print(move)\n                print(render)\n                print(self.str_score(score, step))\n\n                history.append(render)\n\n                time.sleep(delay)\n\n            print(self.str_separator())\n            print(\"Maximum steps achieved!\")\n\n        except Exception as exc:\n            print(self.str_separator())\n            print(exc)\n            raise exc\n\n        finally:\n            print(self.str_score(score, step))\n\n\n\n    # ------------------------------------------------------------------ #\n    # Interactive slider loop                                            #\n    # ------------------------------------------------------------------ #\n    def interact_loop(self, policy, max_steps: int = 50):\n        # ---------- simulation part (unchanged) ----------\n        map_ = copy.deepcopy(self.initial_map)   # `map` is a Python builtin\n        rng = random.Random(self.seed)\n        score = 0\n        step = 0\n        movements = \"\"\n\n        def frame_to_store(movements, map_, score, step, info=\"\"):\n            return (\n                movements + \"\\n\" +\n                map_._render() + \"\\n\" +\n                self.str_score(score, step) + \"\\n\" +\n                info\n            )\n\n        frames = [frame_to_store(movements, map_, score, step)]\n\n        while step &lt; max_steps:\n            try:\n                move = policy(map_)\n\n                for l in move:\n                    result, map_ = map_.move_snake(l, rng)\n                    movements += l\n                    step += 1\n\n                    if result == 1:\n                        score += 1\n                    elif result == -1:\n                        frames.append(frame_to_store(\n                            movements, map_, score, step,\n                            \"Game over! Snake collided with itself.\"))\n                        break\n\n                frames.append(frame_to_store(movements, map_, score, step))\n                movements += \" \"\n\n            except Exception as exc:\n                frames.append(frame_to_store(\n                    movements, map_, score, step, f\"{exc}\"))\n                break\n\n        # ---------- widgets part (changed) ----------\n        slider = widgets.IntSlider(\n            value=0, min=0, max=len(frames)-1, step=1,\n            description=\"step\", readout=True, layout=widgets.Layout(width=\"50%\")\n        )\n\n        play = widgets.Play(\n            value=0, min=0, max=len(frames)-1, step=1,\n            interval=500,              # milliseconds between frames\n            description=\"Play\",        # button text\n            disabled=False\n        )\n\n        # keep the two widgets in sync\n        widgets.jslink((play, 'value'), (slider, 'value'))\n\n        # what happens when the index changes\n        out = widgets.Output()\n\n        def _show(change):\n            with out:\n                out.clear_output(wait=True)\n                print(frames[change['new']])\n\n        slider.observe(_show, names='value')      # respond to slider (and play)\n\n        # display everything nicely\n        controls = widgets.HBox([play, slider])\n        display(widgets.VBox([controls, out]))\n\n\nCREATE YOUR OWN SNAKE STRATEGY\nYour task is to create a Python function that plays the Snake Game for you. Try to eat as many fruits as possible while avoiding eating yourself.\nIn the function my_snake you can implement your own snake strategy. Receving a map state, you must decide between 4 possible actions: - UP - DOWN - LEFT - RIGHT\n\ndef my_snake(map):\n    # IMPLEMENT YOUR CODE HERE\n    return \"UR\"  # Example: always move up\n\ngame = SnakeGame()\ngame.interact_loop(my_snake, max_steps=20)"
   }
 ]
