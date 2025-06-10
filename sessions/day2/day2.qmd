@@ -3,43 +3,33 @@ title: "Fundamental algorithms I: design strategies"
 format: html
 ---
 
+## Material
+
+- [Fundamental algorithms I](jparisu_fundamental.html)
+- [Python Introduction](python_basics.html)
+- [SnakeGame](https://colab.research.google.com/github/jparisu/CUNEF_AISummerSchool/blob/main/sessions/day2/snake.ipynb)
+- [Mentimeter link](https://www.menti.com/alqc9tbe8a68)
+
+
 ## Day 2
 
 July 1st, 2025
 
+
 ## Facilitator
 
-Javier París Uhryn (CUNEF Universidad)
+Javier París Uhryn (CUNEF Universidad) - [jparisu](https://github.com/jparisu)
 
 
 ## Session
 
 S2: 10:30 - 12:00
 
+
 ### Discussion Topics
 
 Introduction to programming from scratch:
 
-- Understanding **information processing** and automatization.
+- Understanding **information processing** and computers.
 - Exploring **logic**, computer basics, boolean math and **coding**.
 - Learning programming basics and **algorithms**.
-
-
-### Slides
-
-Available [here](jparisu_fundamental.html)
-
----
-
-## Laboratory
-
-### Discussion Topics
-
-Python introduction:
-
-- Google Colab environment.
-- Python basics.
-- Practical applications.
-
-
-### Resources

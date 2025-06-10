@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: _build
   title: "Artificial Intelligence Summer School - CUNEF Universidad"
+  render:
+    - "*.qmd"
+    - "!*.ipynb"
 
 format:
   html:

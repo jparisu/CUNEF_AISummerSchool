@@ -1,18 +1,150 @@
 ---
 title: "Fundamental algorithms I"
-subtitle: "Design strategies"
 author: "Javier Paris"
 
 metadata-files:
     - "../../templates/style/slides_metadata.yml"
 format: revealjs
+number-sections: false
 ---
 
-# Automatization
+# Computer Science
 
-## Some slide
+<!-- survey - inventions -->
+
+## Humanity inventions
+
+Enter in **menti.com** code **3342 9138**.
+[Mentimeter link](https://www.menti.com/alqc9tbe8a68)
+
+![](images/inventions.png){width=55% fig-align="center" style="opacity:75%"}
 
 
-# Logic
+<!-- Inventions -->
 
-## Some other slide
+---
+
+::: {.columns}
+:::: {.column width="45%"}
+
+![](images/fire.png){width=45%}
+
+![](images/wheel.png){width=45% fig-align="right"}
+
+::::
+:::: {.column width="45%"}
+
+![](images/printer.png){width=45%}
+
+![](images/radio.png){width=45% fig-align="right"}
+
+::::
+:::
+
+---
+
+::: {.columns}
+:::: {.column width="45%"}
+
+### Energy transformation
+
+- Temperature
+- Motion
+- Light
+
+::::
+:::: {.column width="45%"}
+
+### Energy Optimization
+
+- Automatization
+- Communication
+- Information
+
+::::
+:::
+
+\
+
+::: {.columns}
+:::: {.column width="25%"}
+
+![](images/fire.png){width=90%}
+
+::::
+:::: {.column width="25%"}
+
+![](images/wheel.png){width=90%}
+
+::::
+:::: {.column width="25%"}
+
+![](images/printer.png){width=90%}
+
+::::
+:::: {.column width="25%"}
+
+![](images/radio.png){width=90%}
+
+::::
+:::
+
+<!-- The computer -->
+
+
+# Language
+
+<!-- encoding -->
+
+<!-- binary encoding -->
+
+<!-- survey - binary -->
+
+<!-- ASCII -->
+
+<!-- survey - ascii -->
+
+
+# Rules
+
+<!-- And Door -->
+
+<!-- XOR Door -->
+
+<!-- Sum Door -->
+
+<!-- survey - doors -->
+
+<!-- Counter -->
+
+
+# Algorithm
+
+<!-- algorithm -->
+
+<!-- information + logic + repetition -->
+
+<!-- factorial -->
+
+<!-- newton binomial -->
+
+<!-- survey - newton binomial -->
+
+
+# Design strategies
+
+<!-- complexity -->
+
+<!-- recursion -->
+
+<!-- dynamic programming -->
+
+<!-- Mathematical optimization -->
+
+<!-- divide and conquer -->
+<!-- brute force -->
+<!-- greedy -->
+<!-- approximation -->
+
+
+# Python
