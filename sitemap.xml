@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/sklearn.html</loc>
-    <lastmod>2025-06-25T10:24:48.813Z</lastmod>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/tutorial/sklearn.html</loc>
+    <lastmod>2025-06-25T10:48:48.849Z</lastmod>
   </url>
   <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/pandas.html</loc>
-    <lastmod>2025-06-25T10:24:48.813Z</lastmod>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/tutorial/pandas.html</loc>
+    <lastmod>2025-06-25T10:48:48.849Z</lastmod>
   </url>
   <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/numpy.html</loc>
-    <lastmod>2025-06-25T10:24:48.813Z</lastmod>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/index.html</loc>
+    <lastmod>2025-06-25T10:48:48.839Z</lastmod>
   </url>
   <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/sessions/python.html</loc>
-    <lastmod>2025-06-25T10:24:48.813Z</lastmod>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/tutorial/numpy.html</loc>
+    <lastmod>2025-06-25T10:48:48.849Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/tutorial/python.html</loc>
+    <lastmod>2025-06-25T10:48:48.849Z</lastmod>
   </url>
 </urlset>

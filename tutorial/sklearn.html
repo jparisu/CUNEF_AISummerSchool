@@ -8,7 +8,7 @@
 
 <meta name="author" content="Javier Paris">
 
-<title>Introduction to Python – xAI PhD Material</title>
+<title>Scikit-learn – AI Summer School - CUNEF Universidad</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">xAI PhD Material</span>
+    <span class="navbar-title">AI Summer School - CUNEF Universidad</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -126,19 +126,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../sessions/python.html"> 
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tutorial/python.html"> 
 <span class="menu-text">Python Basics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../sessions/numpy.html"> 
+    <a class="nav-link" href="../tutorial/numpy.html"> 
 <span class="menu-text">Numpy</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../sessions/pandas.html"> 
+    <a class="nav-link" href="../tutorial/pandas.html"> 
 <span class="menu-text">Pandas</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../sessions/scikit-learn.html"> 
+    <a class="nav-link active" href="../tutorial/sklearn.html" aria-current="page"> 
 <span class="menu-text">Scikit-learn</span></a>
   </li>  
 </ul>
@@ -218,8 +222,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Python</h1>
-<p class="subtitle lead">Scikit-learn</p>
+<h1 class="title">Scikit-learn</h1>
+<p class="subtitle lead">Introduction to Python</p>
 </div>
 
 
@@ -253,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../resources/images/sklearn.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="../resources/images/sklearn.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -270,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="importing-scikit-learn" class="level2">
 <h2 class="anchored" data-anchor-id="importing-scikit-learn">Importing scikit-learn</h2>
 <p>Like any library in Python, we must first import it to use it. Scikit-learn is a very large library, where we usually use specific submodules. It is common to import only the parts we are going to use.</p>
-<div id="81c0f21f" class="cell" data-execution_count="1">
+<div id="1a847f35" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> datasets</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -282,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example" class="level2">
 <h2 class="anchored" data-anchor-id="example">Example</h2>
 <p>To illustrate this section, we will use the following dataset and model:</p>
-<div id="063be433" class="cell" data-execution_count="3">
+<div id="9455b76c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv"</span>)  <span class="co"># Load the dataset</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df.drop(columns<span class="op">=</span>[<span class="st">"c_box_office"</span>, <span class="st">"c_profit"</span>, <span class="st">"adult"</span>], inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># Drop 2</span></span>
@@ -319,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="columns">
 <div class="column" style="width:70%;">
-<div id="e29b6708" class="cell" data-execution_count="4">
+<div id="a64f0c0e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"c_performance"</span>])  <span class="co"># Features</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"c_performance"</span>]  <span class="co"># Target variable</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># Split the dataset</span></span>
@@ -338,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div><div class="column" style="width:30%;">
-<div id="979d4969" class="cell" data-execution_count="5">
+<div id="4e762b29" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2        great
@@ -361,7 +365,7 @@ Name: c_performance, dtype: object</code></pre>
 <p>The <code>stratify</code> argument allows for stratified splitting of the data, maintaining the class proportions in both subsets.</p>
 <div class="columns">
 <div class="column" style="width:70%;">
-<div id="d4f78450" class="cell" data-execution_count="6">
+<div id="7abd7ef2" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y)  <span class="co"># Split the dataset</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -378,7 +382,7 @@ Name: c_performance, dtype: object</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
-<div id="aa16dbb4" class="cell" data-execution_count="7">
+<div id="59513581" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4        great
@@ -401,7 +405,7 @@ Name: c_performance, dtype: object</code></pre>
 <p>To implement <em>K-Fold Cross Validation</em> in scikit-learn:</p>
 <div class="columns">
 <div class="column" style="width:70%;">
-<div id="f3d2e00f" class="cell" data-execution_count="8">
+<div id="4c999ede" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> KFold</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>kf <span class="op">=</span> KFold(n_splits<span class="op">=</span><span class="dv">3</span>, shuffle<span class="op">=</span><span class="va">True</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> train_index, test_index <span class="kw">in</span> kf.split(X):</span>
@@ -435,7 +439,7 @@ Name: c_performance, dtype: object</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
-<div id="ab255a31" class="cell" data-execution_count="9">
+<div id="ee003b99" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> train_index, test_index <span class="kw">in</span> kf.split(X):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(y.iloc[test_index])</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -475,7 +479,7 @@ Name: c_performance, dtype: object
 <section id="example-1" class="level2">
 <h2 class="anchored" data-anchor-id="example-1">Example</h2>
 <p>To illustrate this section, we will use the following dataset and model:</p>
-<div id="ddf0144e" class="cell" data-execution_count="10">
+<div id="aaefe4d5" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv"</span>)  <span class="co"># Load the dataset</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>df.drop(columns<span class="op">=</span>[<span class="st">"c_box_office"</span>, <span class="st">"c_profit"</span>, <span class="st">"genre"</span>, <span class="st">"name"</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
@@ -486,7 +490,7 @@ Name: c_performance, dtype: object
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">3</span>)  <span class="co"># Create a model</span></span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_4624/4131180979.py:4: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+<pre><code>/tmp/ipykernel_4613/4131180979.py:4: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
   df.replace({"adult": {"yes": 1, "no": 0}}, inplace=True)</code></pre>
 </div>
 </div>
@@ -494,7 +498,7 @@ Name: c_performance, dtype: object
 </p>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div id="2a5e2441" class="cell" data-execution_count="11">
+<div id="d7753f8a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    year  adult   budget
@@ -509,7 +513,7 @@ Name: c_performance, dtype: object
 </div>
 </div>
 </div><div class="column" style="width:30%;">
-<div id="514c982d" class="cell" data-execution_count="12">
+<div id="eef5068e" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5     expected
@@ -524,7 +528,7 @@ Name: c_performance, dtype: object</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
-<div id="bff71990" class="cell" data-execution_count="13">
+<div id="6e0cb751" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>predicted <span class="op">=</span> pd.Series(model.predict(X_test), index<span class="op">=</span>X_test.index)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(predicted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -545,7 +549,7 @@ dtype: object</code></pre>
 <section id="overall-accuracy" class="level2">
 <h2 class="anchored" data-anchor-id="overall-accuracy">Overall Accuracy</h2>
 <p>To measure the overall accuracy of a classification model, we can use the <code>accuracy_score</code> function.</p>
-<div id="86598882" class="cell" data-execution_count="14">
+<div id="fab7cc0c" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(accuracy_score(y_test, predicted))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -556,7 +560,7 @@ dtype: object</code></pre>
 <section id="precision-recall-and-f1-score" class="level2">
 <h2 class="anchored" data-anchor-id="precision-recall-and-f1-score">Precision, Recall, and F1-Score</h2>
 <p>To obtain the precision, recall, and F1-score of a classification model, we use the functions <code>precision_score</code>, <code>recall_score</code>, and <code>f1_score</code>.</p>
-<div id="a4a142cd" class="cell" data-execution_count="15">
+<div id="24bce30e" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> precision_score, recall_score, f1_score</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Precision: </span><span class="sc">{</span>precision_score(y_test, predicted, pos_label<span class="op">=</span><span class="st">'expected'</span>)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Recall: </span><span class="sc">{</span>recall_score(y_test, predicted, pos_label<span class="op">=</span><span class="st">'expected'</span>)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
@@ -571,7 +575,7 @@ F1-score: 0.571</code></pre>
 <section id="classification-report" class="level2">
 <h2 class="anchored" data-anchor-id="classification-report">Classification Report</h2>
 <p>Scikit-learn provides a function to obtain a classification report for a classification model: <code>classification_report</code>.</p>
-<div id="dd161c86" class="cell" data-execution_count="16">
+<div id="13838d6a" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(y_test, predicted))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -590,7 +594,7 @@ weighted avg       0.63      0.62      0.62         8
 <section id="confusion-matrix" class="level2">
 <h2 class="anchored" data-anchor-id="confusion-matrix">Confusion Matrix</h2>
 <p>To obtain the confusion matrix of a classification model, we can use the <code>confusion_matrix</code> function.</p>
-<div id="e976212b" class="cell" data-execution_count="17">
+<div id="cbd960ec" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(confusion_matrix(y_test, predicted))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -608,7 +612,7 @@ weighted avg       0.63      0.62      0.62         8
 <ul>
 <li><code>n_neighbors</code>: number of neighbors to consider.</li>
 </ul>
-<div id="5599a4b0" class="cell" data-execution_count="18">
+<div id="5bcc9237" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">3</span>)  <span class="co"># Create a model</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span>
@@ -626,7 +630,7 @@ F1-score: 0.571</code></pre>
 <ul>
 <li><code>max_iter</code>: maximum number of iterations.</li>
 </ul>
-<div id="81d560f7" class="cell" data-execution_count="19">
+<div id="cd212b72" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LogisticRegression(max_iter<span class="op">=</span><span class="dv">1000</span>)  <span class="co"># Create a model</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span>
@@ -641,7 +645,7 @@ F1-score: 0.600</code></pre>
 <section id="naive-bayes" class="level2">
 <h2 class="anchored" data-anchor-id="naive-bayes">Naive Bayes</h2>
 <p>We can create a Naive Bayes classification model with scikit-learn using the <code>GaussianNB</code> class.</p>
-<div id="7bb66c05" class="cell" data-execution_count="20">
+<div id="4ad13cfe" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> GaussianNB</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> GaussianNB()  <span class="co"># Create a model</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span>
@@ -656,7 +660,7 @@ F1-score: 0.600</code></pre>
 <section id="decision-trees" class="level2">
 <h2 class="anchored" data-anchor-id="decision-trees">Decision Trees</h2>
 <p>We can create a decision tree classification model with scikit-learn using the <code>DecisionTreeClassifier</code> class.</p>
-<div id="46ac3646" class="cell" data-execution_count="21">
+<div id="f1f1e77c" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> DecisionTreeClassifier()  <span class="co"># Create a model</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span>
@@ -674,7 +678,7 @@ F1-score: 0.333</code></pre>
 <section id="example-2" class="level2">
 <h2 class="anchored" data-anchor-id="example-2">Example</h2>
 <p>To illustrate this section, we will use the following dataset and model:</p>
-<div id="bfb1f183" class="cell" data-execution_count="22">
+<div id="214bfe75" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv"</span>)  <span class="co"># Load the dataset</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>df.drop(columns<span class="op">=</span>[<span class="st">"c_performance"</span>, <span class="st">"c_profit"</span>, <span class="st">"genre"</span>, <span class="st">"name"</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
@@ -685,7 +689,7 @@ F1-score: 0.333</code></pre>
 <span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()  <span class="co"># Create a model</span></span>
 <span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_4624/768266061.py:4: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+<pre><code>/tmp/ipykernel_4613/768266061.py:4: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
   df.replace({"adult": {"yes": 1, "no": 0}}, inplace=True)</code></pre>
 </div>
 </div>
@@ -693,7 +697,7 @@ F1-score: 0.333</code></pre>
 </p>
 <div class="columns">
 <div class="column" style="width:30%;">
-<div id="4554d3c9" class="cell" data-execution_count="23">
+<div id="14032013" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    year  adult   budget
@@ -708,7 +712,7 @@ F1-score: 0.333</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:20%;">
-<div id="5e584712" class="cell" data-execution_count="24">
+<div id="b8eaadc4" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>11   1.16e+02
@@ -723,7 +727,7 @@ Name: c_box_office, dtype: float64</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:20%;">
-<div id="d06b3170" class="cell" data-execution_count="25">
+<div id="efe0ec36" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>predicted <span class="op">=</span> pd.Series(model.predict(X_test), index<span class="op">=</span>X_test.index)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(predicted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -739,7 +743,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:20%;">
-<div id="bc6d80a7" class="cell" data-execution_count="26">
+<div id="68523543" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(predicted <span class="op">-</span> y_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>11    5.80e+01
@@ -759,7 +763,7 @@ dtype: float64</code></pre>
 <section id="mean-absolute-error" class="level2">
 <h2 class="anchored" data-anchor-id="mean-absolute-error">Mean Absolute Error</h2>
 <p>To obtain the mean absolute error of a regression model, we can use the <code>mean_absolute_error</code> function.</p>
-<div id="e4e15ef6" class="cell" data-execution_count="27">
+<div id="ca0e251a" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_absolute_error</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"MAE: </span><span class="sc">{</span>mean_absolute_error(y_test, predicted)<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -770,7 +774,7 @@ dtype: float64</code></pre>
 <section id="mean-squared-error" class="level2">
 <h2 class="anchored" data-anchor-id="mean-squared-error">Mean Squared Error</h2>
 <p>To obtain the mean squared error of a regression model, we can use the <code>mean_squared_error</code> and <code>root_mean_squared_error</code> functions.</p>
-<div id="643d408b" class="cell" data-execution_count="28">
+<div id="bc9b1986" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, root_mean_squared_error</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"MSE: </span><span class="sc">{</span>mean_squared_error(y_test, predicted)<span class="sc">:.2e}</span><span class="ss">"</span>)</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
@@ -785,7 +789,7 @@ RMSE: 2.72e+02</code></pre>
 <section id="r2" class="level2">
 <h2 class="anchored" data-anchor-id="r2">R2</h2>
 <p>To obtain the coefficient of determination of a regression model, we can use the <code>r2_score</code> function.</p>
-<div id="33661ab4" class="cell" data-execution_count="29">
+<div id="37744f2b" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r2_score(y_test, predicted))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -799,7 +803,7 @@ RMSE: 2.72e+02</code></pre>
 <section id="linear-regression" class="level2">
 <h2 class="anchored" data-anchor-id="linear-regression">Linear Regression</h2>
 <p>We can create a linear regression model with scikit-learn using the <code>LinearRegression</code> class.</p>
-<div id="4f943619" class="cell" data-execution_count="30">
+<div id="dbb6fceb" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()  <span class="co"># Create a model</span></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span>
@@ -819,7 +823,7 @@ R2: 0.025</code></pre>
 </ul>
 <div class="columns">
 <div class="column" style="width:49%;">
-<div id="e3d2fb3f" class="cell" data-execution_count="31">
+<div id="fa0c0572" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Ridge(alpha<span class="op">=</span><span class="fl">0.1</span>)  <span class="co"># Create a model</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span>
@@ -835,7 +839,7 @@ Coefficients: [-33.80455001 -68.2554692    0.6071894 ]</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:49%;">
-<div id="ee876932" class="cell" data-execution_count="32">
+<div id="ca9b94de" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Lasso</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Lasso(alpha<span class="op">=</span><span class="fl">0.1</span>)  <span class="co"># Create a model</span></span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X_train, y_train)  <span class="co"># Train the model</span></span>
@@ -862,7 +866,7 @@ Coefficients: [-33.88760854 -71.29210344   0.59389412]</code></pre>
 <ul>
 <li><code>n_clusters</code>: number of clusters to create.</li>
 </ul>
-<div id="b4fdf89d" class="cell" data-execution_count="33">
+<div id="0580b845" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>)  <span class="co"># Create a model</span></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> model.fit(X)  <span class="co"># Train the model</span></span>
@@ -870,22 +874,22 @@ Coefficients: [-33.88760854 -71.29210344   0.59389412]</code></pre>
 <span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    year  adult   budget  c_box_office  cluster
-0   1994      1 8.00e+00      2.14e+02        0
+0   1994      1 8.00e+00      2.14e+02        2
 1   1994      0 5.50e+01      6.78e+02        1
-2   1995      1 3.30e+01      3.27e+02        2
+2   1995      1 3.30e+01      3.27e+02        0
 3   1991      1 1.90e+01      2.73e+02        0
 4   1997      0 2.00e+01      2.30e+02        0
 5   1998      1 2.00e+01      2.39e+01        0
-6   1995      1 6.00e+00      2.33e+01        0
-7   1995      0 3.00e+01      3.94e+02        2
-8   1992      1 1.20e+00      2.91e+00        0
+6   1995      1 6.00e+00      2.33e+01        2
+7   1995      0 3.00e+01      3.94e+02        0
+8   1992      1 1.20e+00      2.91e+00        2
 9   1995      1 6.00e+01      1.87e+02        1
-10  1997      1 3.50e+01      1.26e+02        2
+10  1997      1 3.50e+01      1.26e+02        0
 11  1995      1 5.20e+01      1.16e+02        1
-12  1992      1 1.44e+01      1.59e+02        0
-13  1999      0 4.00e+01      6.73e+02        2
-14  1996      1 7.00e+00      6.06e+01        0
-15  1995      1 2.50e+00      5.99e+00        0
+12  1992      1 1.44e+01      1.59e+02        2
+13  1999      0 4.00e+01      6.73e+02        0
+14  1996      1 7.00e+00      6.06e+01        2
+15  1995      1 2.50e+00      5.99e+00        2
 16  1999      0 7.00e+01      2.33e+01        1
 17  1990      0 2.20e+01      4.24e+02        0</code></pre>
 </div>

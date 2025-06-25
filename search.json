@@ -1,946 +1,967 @@
 [
   {
-    "objectID": "sessions/sklearn.html",
-    "href": "sessions/sklearn.html",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html",
+    "href": "tutorial/sklearn.html",
+    "title": "Scikit-learn",
     "section": "",
     "text": "Scikit-learn is a Python library that provides a large number of machine learning algorithms, as well as tools for working with data and evaluating models.\nhttps://scikit-learn.org/stable/\n\n\n\n\n\n\n\n\n\n\n\nBy default, scikit-learn is already installed in various Python development environments, such as Anaconda or Jupyter Notebook (Google Colab).\nTo install scikit-learn in your local environment, you can do so using pip:\npip install scikit-learn\nor from a Jupyter notebook:\n!pip install scikit-learn\n\n\n\nLike any library in Python, we must first import it to use it. Scikit-learn is a very large library, where we usually use specific submodules. It is common to import only the parts we are going to use.\n\nfrom sklearn import datasets\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression"
   },
   {
-    "objectID": "sessions/sklearn.html#what-is-scikit-learn",
-    "href": "sessions/sklearn.html#what-is-scikit-learn",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#what-is-scikit-learn",
+    "href": "tutorial/sklearn.html#what-is-scikit-learn",
+    "title": "Scikit-learn",
     "section": "",
     "text": "Scikit-learn is a Python library that provides a large number of machine learning algorithms, as well as tools for working with data and evaluating models.\nhttps://scikit-learn.org/stable/"
   },
   {
-    "objectID": "sessions/sklearn.html#installation",
-    "href": "sessions/sklearn.html#installation",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#installation",
+    "href": "tutorial/sklearn.html#installation",
+    "title": "Scikit-learn",
     "section": "",
     "text": "By default, scikit-learn is already installed in various Python development environments, such as Anaconda or Jupyter Notebook (Google Colab).\nTo install scikit-learn in your local environment, you can do so using pip:\npip install scikit-learn\nor from a Jupyter notebook:\n!pip install scikit-learn"
   },
   {
-    "objectID": "sessions/sklearn.html#importing-scikit-learn",
-    "href": "sessions/sklearn.html#importing-scikit-learn",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#importing-scikit-learn",
+    "href": "tutorial/sklearn.html#importing-scikit-learn",
+    "title": "Scikit-learn",
     "section": "",
     "text": "Like any library in Python, we must first import it to use it. Scikit-learn is a very large library, where we usually use specific submodules. It is common to import only the parts we are going to use.\n\nfrom sklearn import datasets\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression"
   },
   {
-    "objectID": "sessions/sklearn.html#example",
-    "href": "sessions/sklearn.html#example",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#example",
+    "href": "tutorial/sklearn.html#example",
+    "title": "Scikit-learn",
     "section": "Example",
     "text": "Example\nTo illustrate this section, we will use the following dataset and model:\n\nimport pandas as pd\ndf = pd.read_csv(\"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv\")  # Load the dataset\ndf.drop(columns=[\"c_box_office\", \"c_profit\", \"adult\"], inplace=True)  # Drop 2\nprint(df)\n\n                        name  year    genre   budget c_performance\n0               Pulp Fiction  1994   Action 8.00e+00         great\n1               Forrest Gump  1994   Family 5.50e+01         great\n2                      Se7en  1995  Mystery 3.30e+01         great\n3   The Silence of the Lambs  1991  Mystery 1.90e+01         great\n4          Life Is Beautiful  1997   Family 2.00e+01         great\n5         American History X  1998   Action 2.00e+01      expected\n6         The Usual Suspects  1995  Mystery 6.00e+00      expected\n7                  Toy Story  1995   Family 3.00e+01         great\n8             Reservoir Dogs  1992  Mystery 1.20e+00      expected\n9                       Heat  1995   Action 6.00e+01      expected\n10         L.A. Confidential  1997  Mystery 3.50e+01      expected\n11                    Casino  1995   Action 5.20e+01      expected\n12                Unforgiven  1992   Action 1.44e+01         great\n13           The Sixth Sense  1999  Mystery 4.00e+01         great\n14                     Fargo  1996  Mystery 7.00e+00         great\n15            Before Sunrise  1995   Family 2.50e+00      expected\n16            The Iron Giant  1999   Family 7.00e+01      expected\n17        Dances with Wolves  1990   Action 2.20e+01         great"
   },
   {
-    "objectID": "sessions/sklearn.html#train-test-split",
-    "href": "sessions/sklearn.html#train-test-split",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#train-test-split",
+    "href": "tutorial/sklearn.html#train-test-split",
+    "title": "Scikit-learn",
     "section": "Train-Test Split",
     "text": "Train-Test Split\nScikit-learn provides a function to split a dataset into two subsets: train_test_split. The following parameters can be used:\n\ntest_size: size of the test set. If it is a float, it represents the proportion of the test set. If it is an int, it represents the number of samples.\nrandom_state: seed for random number generation.\n\n\n\n\nX = df.drop(columns=[\"c_performance\"])  # Features\ny = df[\"c_performance\"]  # Target variable\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)  # Split the dataset\nprint(X_train)\n\n                  name  year    genre   budget\n2                Se7en  1995  Mystery 3.30e+01\n9                 Heat  1995   Action 6.00e+01\n17  Dances with Wolves  1990   Action 2.20e+01\n4    Life Is Beautiful  1997   Family 2.00e+01\n12          Unforgiven  1992   Action 1.44e+01\n7            Toy Story  1995   Family 3.00e+01\n10   L.A. Confidential  1997  Mystery 3.50e+01\n14               Fargo  1996  Mystery 7.00e+00\n6   The Usual Suspects  1995  Mystery 6.00e+00\n\n\n\n\nprint(y_train)\n\n2        great\n9     expected\n17       great\n4        great\n12       great\n7        great\n10    expected\n14       great\n6     expected\nName: c_performance, dtype: object"
   },
   {
-    "objectID": "sessions/sklearn.html#train-test-split---stratify",
-    "href": "sessions/sklearn.html#train-test-split---stratify",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#train-test-split---stratify",
+    "href": "tutorial/sklearn.html#train-test-split---stratify",
+    "title": "Scikit-learn",
     "section": "Train-Test Split - stratify",
     "text": "Train-Test Split - stratify\nThe stratify argument allows for stratified splitting of the data, maintaining the class proportions in both subsets.\n\n\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42, stratify=y)  # Split the dataset\nprint(X_train)\n\n                        name  year    genre   budget\n4          Life Is Beautiful  1997   Family 2.00e+01\n5         American History X  1998   Action 2.00e+01\n6         The Usual Suspects  1995  Mystery 6.00e+00\n7                  Toy Story  1995   Family 3.00e+01\n3   The Silence of the Lambs  1991  Mystery 1.90e+01\n1               Forrest Gump  1994   Family 5.50e+01\n16            The Iron Giant  1999   Family 7.00e+01\n11                    Casino  1995   Action 5.20e+01\n0               Pulp Fiction  1994   Action 8.00e+00\n\n\n\n\nprint(y_train)\n\n4        great\n5     expected\n6     expected\n7        great\n3        great\n1        great\n16    expected\n11    expected\n0        great\nName: c_performance, dtype: object"
   },
   {
-    "objectID": "sessions/sklearn.html#k-fold-cross-validation",
-    "href": "sessions/sklearn.html#k-fold-cross-validation",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#k-fold-cross-validation",
+    "href": "tutorial/sklearn.html#k-fold-cross-validation",
+    "title": "Scikit-learn",
     "section": "K-Fold Cross Validation",
     "text": "K-Fold Cross Validation\nTo implement K-Fold Cross Validation in scikit-learn:\n\n\n\nfrom sklearn.model_selection import KFold\nkf = KFold(n_splits=3, shuffle=True, random_state=42)\nfor train_index, test_index in kf.split(X):\n    print(X.iloc[test_index])\n    print()\n\n                        name  year    genre   budget\n0               Pulp Fiction  1994   Action 8.00e+00\n1               Forrest Gump  1994   Family 5.50e+01\n3   The Silence of the Lambs  1991  Mystery 1.90e+01\n5         American History X  1998   Action 2.00e+01\n8             Reservoir Dogs  1992  Mystery 1.20e+00\n13           The Sixth Sense  1999  Mystery 4.00e+01\n\n                  name  year    genre   budget\n2                Se7en  1995  Mystery 3.30e+01\n9                 Heat  1995   Action 6.00e+01\n11              Casino  1995   Action 5.20e+01\n15      Before Sunrise  1995   Family 2.50e+00\n16      The Iron Giant  1999   Family 7.00e+01\n17  Dances with Wolves  1990   Action 2.20e+01\n\n                  name  year    genre   budget\n4    Life Is Beautiful  1997   Family 2.00e+01\n6   The Usual Suspects  1995  Mystery 6.00e+00\n7            Toy Story  1995   Family 3.00e+01\n10   L.A. Confidential  1997  Mystery 3.50e+01\n12          Unforgiven  1992   Action 1.44e+01\n14               Fargo  1996  Mystery 7.00e+00\n\n\n\n\n\nfor train_index, test_index in kf.split(X):\n    print(y.iloc[test_index])\n    print()\n\n0        great\n1        great\n3        great\n5     expected\n8     expected\n13       great\nName: c_performance, dtype: object\n\n2        great\n9     expected\n11    expected\n15    expected\n16    expected\n17       great\nName: c_performance, dtype: object\n\n4        great\n6     expected\n7        great\n10    expected\n12       great\n14       great\nName: c_performance, dtype: object"
   },
   {
-    "objectID": "sessions/sklearn.html#example-1",
-    "href": "sessions/sklearn.html#example-1",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#example-1",
+    "href": "tutorial/sklearn.html#example-1",
+    "title": "Scikit-learn",
     "section": "Example",
-    "text": "Example\nTo illustrate this section, we will use the following dataset and model:\n\nfrom sklearn.neighbors import KNeighborsClassifier\ndf = pd.read_csv(\"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv\")  # Load the dataset\ndf.drop(columns=[\"c_box_office\", \"c_profit\", \"genre\", \"name\"], inplace=True)\ndf.replace({\"adult\": {\"yes\": 1, \"no\": 0}}, inplace=True)\nX = df.drop(columns=[\"c_performance\"])  # Features\ny = df[\"c_performance\"]  # Target variable\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=22, stratify=y)  # Split the dataset\nmodel = KNeighborsClassifier(n_neighbors=3)  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\n\n/tmp/ipykernel_4624/4131180979.py:4: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`\n  df.replace({\"adult\": {\"yes\": 1, \"no\": 0}}, inplace=True)\n\n\n\n\n\n\n\nprint(X_test)\n\n    year  adult   budget\n5   1998      1 2.00e+01\n17  1990      0 2.20e+01\n14  1996      1 7.00e+00\n11  1995      1 5.20e+01\n4   1997      0 2.00e+01\n15  1995      1 2.50e+00\n10  1997      1 3.50e+01\n13  1999      0 4.00e+01\n\n\n\n\nprint(y_test)\n\n5     expected\n17       great\n14       great\n11    expected\n4        great\n15    expected\n10    expected\n13       great\nName: c_performance, dtype: object\n\n\n\n\npredicted = pd.Series(model.predict(X_test), index=X_test.index)\nprint(predicted)\n\n5        great\n17       great\n14    expected\n11    expected\n4        great\n15    expected\n10       great\n13       great\ndtype: object"
+    "text": "Example\nTo illustrate this section, we will use the following dataset and model:\n\nfrom sklearn.neighbors import KNeighborsClassifier\ndf = pd.read_csv(\"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv\")  # Load the dataset\ndf.drop(columns=[\"c_box_office\", \"c_profit\", \"genre\", \"name\"], inplace=True)\ndf.replace({\"adult\": {\"yes\": 1, \"no\": 0}}, inplace=True)\nX = df.drop(columns=[\"c_performance\"])  # Features\ny = df[\"c_performance\"]  # Target variable\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=22, stratify=y)  # Split the dataset\nmodel = KNeighborsClassifier(n_neighbors=3)  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\n\n/tmp/ipykernel_4613/4131180979.py:4: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`\n  df.replace({\"adult\": {\"yes\": 1, \"no\": 0}}, inplace=True)\n\n\n\n\n\n\n\nprint(X_test)\n\n    year  adult   budget\n5   1998      1 2.00e+01\n17  1990      0 2.20e+01\n14  1996      1 7.00e+00\n11  1995      1 5.20e+01\n4   1997      0 2.00e+01\n15  1995      1 2.50e+00\n10  1997      1 3.50e+01\n13  1999      0 4.00e+01\n\n\n\n\nprint(y_test)\n\n5     expected\n17       great\n14       great\n11    expected\n4        great\n15    expected\n10    expected\n13       great\nName: c_performance, dtype: object\n\n\n\n\npredicted = pd.Series(model.predict(X_test), index=X_test.index)\nprint(predicted)\n\n5        great\n17       great\n14    expected\n11    expected\n4        great\n15    expected\n10       great\n13       great\ndtype: object"
   },
   {
-    "objectID": "sessions/sklearn.html#overall-accuracy",
-    "href": "sessions/sklearn.html#overall-accuracy",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#overall-accuracy",
+    "href": "tutorial/sklearn.html#overall-accuracy",
+    "title": "Scikit-learn",
     "section": "Overall Accuracy",
     "text": "Overall Accuracy\nTo measure the overall accuracy of a classification model, we can use the accuracy_score function.\n\nfrom sklearn.metrics import accuracy_score\nprint(accuracy_score(y_test, predicted))\n\n0.625"
   },
   {
-    "objectID": "sessions/sklearn.html#precision-recall-and-f1-score",
-    "href": "sessions/sklearn.html#precision-recall-and-f1-score",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#precision-recall-and-f1-score",
+    "href": "tutorial/sklearn.html#precision-recall-and-f1-score",
+    "title": "Scikit-learn",
     "section": "Precision, Recall, and F1-Score",
     "text": "Precision, Recall, and F1-Score\nTo obtain the precision, recall, and F1-score of a classification model, we use the functions precision_score, recall_score, and f1_score.\n\nfrom sklearn.metrics import precision_score, recall_score, f1_score\nprint(f\"Precision: {precision_score(y_test, predicted, pos_label='expected'):.3f}\")\nprint(f\"Recall: {recall_score(y_test, predicted, pos_label='expected'):.3f}\")\nprint(f\"F1-score: {f1_score(y_test, predicted, pos_label='expected'):.3f}\")\n\nPrecision: 0.667\nRecall: 0.500\nF1-score: 0.571"
   },
   {
-    "objectID": "sessions/sklearn.html#classification-report",
-    "href": "sessions/sklearn.html#classification-report",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#classification-report",
+    "href": "tutorial/sklearn.html#classification-report",
+    "title": "Scikit-learn",
     "section": "Classification Report",
     "text": "Classification Report\nScikit-learn provides a function to obtain a classification report for a classification model: classification_report.\n\nfrom sklearn.metrics import classification_report\nprint(classification_report(y_test, predicted))\n\n              precision    recall  f1-score   support\n\n    expected       0.67      0.50      0.57         4\n       great       0.60      0.75      0.67         4\n\n    accuracy                           0.62         8\n   macro avg       0.63      0.62      0.62         8\nweighted avg       0.63      0.62      0.62         8"
   },
   {
-    "objectID": "sessions/sklearn.html#confusion-matrix",
-    "href": "sessions/sklearn.html#confusion-matrix",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#confusion-matrix",
+    "href": "tutorial/sklearn.html#confusion-matrix",
+    "title": "Scikit-learn",
     "section": "Confusion Matrix",
     "text": "Confusion Matrix\nTo obtain the confusion matrix of a classification model, we can use the confusion_matrix function.\n\nfrom sklearn.metrics import confusion_matrix\nprint(confusion_matrix(y_test, predicted))\n\n[[2 2]\n [1 3]]"
   },
   {
-    "objectID": "sessions/sklearn.html#k-nn",
-    "href": "sessions/sklearn.html#k-nn",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#k-nn",
+    "href": "tutorial/sklearn.html#k-nn",
+    "title": "Scikit-learn",
     "section": "K-NN",
     "text": "K-NN\nWe can create a K-NN classification model with scikit-learn using the KNeighborsClassifier class.\n\nn_neighbors: number of neighbors to consider.\n\n\nfrom sklearn.neighbors import KNeighborsClassifier\nmodel = KNeighborsClassifier(n_neighbors=3)  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\nprint(f\"Accuracy: {accuracy_score(y_test, model.predict(X_test)):.3f}\")\nprint(f\"F1-score: {f1_score(y_test, model.predict(X_test), pos_label='expected'):.3f}\")\n\nAccuracy: 0.625\nF1-score: 0.571"
   },
   {
-    "objectID": "sessions/sklearn.html#logistic-regression",
-    "href": "sessions/sklearn.html#logistic-regression",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#logistic-regression",
+    "href": "tutorial/sklearn.html#logistic-regression",
+    "title": "Scikit-learn",
     "section": "Logistic Regression",
     "text": "Logistic Regression\nWe can create a logistic regression classification model with scikit-learn using the LogisticRegression class.\n\nmax_iter: maximum number of iterations.\n\n\nfrom sklearn.linear_model import LogisticRegression\nmodel = LogisticRegression(max_iter=1000)  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\nprint(f\"Accuracy: {accuracy_score(y_test, model.predict(X_test)):.3f}\")\nprint(f\"F1-score: {f1_score(y_test, model.predict(X_test), pos_label='expected'):.3f}\")\n\nAccuracy: 0.500\nF1-score: 0.600"
   },
   {
-    "objectID": "sessions/sklearn.html#naive-bayes",
-    "href": "sessions/sklearn.html#naive-bayes",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#naive-bayes",
+    "href": "tutorial/sklearn.html#naive-bayes",
+    "title": "Scikit-learn",
     "section": "Naive Bayes",
     "text": "Naive Bayes\nWe can create a Naive Bayes classification model with scikit-learn using the GaussianNB class.\n\nfrom sklearn.naive_bayes import GaussianNB\nmodel = GaussianNB()  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\nprint(f\"Accuracy: {accuracy_score(y_test, model.predict(X_test)):.3f}\")\nprint(f\"F1-score: {f1_score(y_test, model.predict(X_test), pos_label='expected'):.3f}\")\n\nAccuracy: 0.500\nF1-score: 0.600"
   },
   {
-    "objectID": "sessions/sklearn.html#decision-trees",
-    "href": "sessions/sklearn.html#decision-trees",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#decision-trees",
+    "href": "tutorial/sklearn.html#decision-trees",
+    "title": "Scikit-learn",
     "section": "Decision Trees",
     "text": "Decision Trees\nWe can create a decision tree classification model with scikit-learn using the DecisionTreeClassifier class.\n\nfrom sklearn.tree import DecisionTreeClassifier\nmodel = DecisionTreeClassifier()  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\nprint(f\"Accuracy: {accuracy_score(y_test, model.predict(X_test)):.3f}\")\nprint(f\"F1-score: {f1_score(y_test, model.predict(X_test), pos_label='expected'):.3f}\")\n\nAccuracy: 0.500\nF1-score: 0.333"
   },
   {
-    "objectID": "sessions/sklearn.html#example-2",
-    "href": "sessions/sklearn.html#example-2",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#example-2",
+    "href": "tutorial/sklearn.html#example-2",
+    "title": "Scikit-learn",
     "section": "Example",
-    "text": "Example\nTo illustrate this section, we will use the following dataset and model:\n\nfrom sklearn.linear_model import LinearRegression\ndf = pd.read_csv(\"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv\")  # Load the dataset\ndf.drop(columns=[\"c_performance\", \"c_profit\", \"genre\", \"name\"], inplace=True)\ndf.replace({\"adult\": {\"yes\": 1, \"no\": 0}}, inplace=True)\nX = df.drop(columns=[\"c_box_office\"])  # Features\ny = df[\"c_box_office\"]  # Target variable\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=13)  # Split the dataset\nmodel = LinearRegression()  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\n\n/tmp/ipykernel_4624/768266061.py:4: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`\n  df.replace({\"adult\": {\"yes\": 1, \"no\": 0}}, inplace=True)\n\n\n\n\n\n\n\nprint(X_test)\n\n    year  adult   budget\n11  1995      1 5.20e+01\n8   1992      1 1.20e+00\n15  1995      1 2.50e+00\n1   1994      0 5.50e+01\n7   1995      0 3.00e+01\n5   1998      1 2.00e+01\n13  1999      0 4.00e+01\n14  1996      1 7.00e+00\n\n\n\n\nprint(y_test)\n\n11   1.16e+02\n8    2.91e+00\n15   5.99e+00\n1    6.78e+02\n7    3.94e+02\n5    2.39e+01\n13   6.73e+02\n14   6.06e+01\nName: c_box_office, dtype: float64\n\n\n\n\npredicted = pd.Series(model.predict(X_test), index=X_test.index)\nprint(predicted)\n\n11   1.74e+02\n8    2.46e+02\n15   1.45e+02\n1    2.82e+02\n7    2.33e+02\n5    5.34e+01\n13   1.03e+02\n14   1.13e+02\ndtype: float64\n\n\n\n\nprint(predicted - y_test)\n\n11    5.80e+01\n8     2.43e+02\n15    1.39e+02\n1    -3.97e+02\n7    -1.62e+02\n5     2.95e+01\n13   -5.70e+02\n14    5.29e+01\ndtype: float64"
+    "text": "Example\nTo illustrate this section, we will use the following dataset and model:\n\nfrom sklearn.linear_model import LinearRegression\ndf = pd.read_csv(\"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv\")  # Load the dataset\ndf.drop(columns=[\"c_performance\", \"c_profit\", \"genre\", \"name\"], inplace=True)\ndf.replace({\"adult\": {\"yes\": 1, \"no\": 0}}, inplace=True)\nX = df.drop(columns=[\"c_box_office\"])  # Features\ny = df[\"c_box_office\"]  # Target variable\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=13)  # Split the dataset\nmodel = LinearRegression()  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\n\n/tmp/ipykernel_4613/768266061.py:4: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`\n  df.replace({\"adult\": {\"yes\": 1, \"no\": 0}}, inplace=True)\n\n\n\n\n\n\n\nprint(X_test)\n\n    year  adult   budget\n11  1995      1 5.20e+01\n8   1992      1 1.20e+00\n15  1995      1 2.50e+00\n1   1994      0 5.50e+01\n7   1995      0 3.00e+01\n5   1998      1 2.00e+01\n13  1999      0 4.00e+01\n14  1996      1 7.00e+00\n\n\n\n\nprint(y_test)\n\n11   1.16e+02\n8    2.91e+00\n15   5.99e+00\n1    6.78e+02\n7    3.94e+02\n5    2.39e+01\n13   6.73e+02\n14   6.06e+01\nName: c_box_office, dtype: float64\n\n\n\n\npredicted = pd.Series(model.predict(X_test), index=X_test.index)\nprint(predicted)\n\n11   1.74e+02\n8    2.46e+02\n15   1.45e+02\n1    2.82e+02\n7    2.33e+02\n5    5.34e+01\n13   1.03e+02\n14   1.13e+02\ndtype: float64\n\n\n\n\nprint(predicted - y_test)\n\n11    5.80e+01\n8     2.43e+02\n15    1.39e+02\n1    -3.97e+02\n7    -1.62e+02\n5     2.95e+01\n13   -5.70e+02\n14    5.29e+01\ndtype: float64"
   },
   {
-    "objectID": "sessions/sklearn.html#mean-absolute-error",
-    "href": "sessions/sklearn.html#mean-absolute-error",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#mean-absolute-error",
+    "href": "tutorial/sklearn.html#mean-absolute-error",
+    "title": "Scikit-learn",
     "section": "Mean Absolute Error",
     "text": "Mean Absolute Error\nTo obtain the mean absolute error of a regression model, we can use the mean_absolute_error function.\n\nfrom sklearn.metrics import mean_absolute_error\nprint(f\"MAE: {mean_absolute_error(y_test, predicted):.2e}\")\n\nMAE: 2.06e+02"
   },
   {
-    "objectID": "sessions/sklearn.html#mean-squared-error",
-    "href": "sessions/sklearn.html#mean-squared-error",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#mean-squared-error",
+    "href": "tutorial/sklearn.html#mean-squared-error",
+    "title": "Scikit-learn",
     "section": "Mean Squared Error",
     "text": "Mean Squared Error\nTo obtain the mean squared error of a regression model, we can use the mean_squared_error and root_mean_squared_error functions.\n\nfrom sklearn.metrics import mean_squared_error, root_mean_squared_error\nprint(f\"MSE: {mean_squared_error(y_test, predicted):.2e}\")\nprint()\nprint(f\"RMSE: {root_mean_squared_error(y_test, predicted):.2e}\")\n\nMSE: 7.42e+04\n\nRMSE: 2.72e+02"
   },
   {
-    "objectID": "sessions/sklearn.html#r2",
-    "href": "sessions/sklearn.html#r2",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#r2",
+    "href": "tutorial/sklearn.html#r2",
+    "title": "Scikit-learn",
     "section": "R2",
     "text": "R2\nTo obtain the coefficient of determination of a regression model, we can use the r2_score function.\n\nfrom sklearn.metrics import r2_score\nprint(r2_score(y_test, predicted))\n\n0.024749776884423147"
   },
   {
-    "objectID": "sessions/sklearn.html#linear-regression",
-    "href": "sessions/sklearn.html#linear-regression",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#linear-regression",
+    "href": "tutorial/sklearn.html#linear-regression",
+    "title": "Scikit-learn",
     "section": "Linear Regression",
     "text": "Linear Regression\nWe can create a linear regression model with scikit-learn using the LinearRegression class.\n\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\nprint(f\"MAE: {mean_absolute_error(y_test, model.predict(X_test)):.2e}\")\nprint(f\"R2: {r2_score(y_test, model.predict(X_test)):.3f}\")\n\nMAE: 2.06e+02\nR2: 0.025"
   },
   {
-    "objectID": "sessions/sklearn.html#linear-regression---regularization",
-    "href": "sessions/sklearn.html#linear-regression---regularization",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#linear-regression---regularization",
+    "href": "tutorial/sklearn.html#linear-regression---regularization",
+    "title": "Scikit-learn",
     "section": "Linear Regression - Regularization",
     "text": "Linear Regression - Regularization\nWe can create a linear regression model with regularization using the Ridge or Lasso classes in scikit-learn.\n\nalpha: regularization strength parameter.\n\n\n\n\nfrom sklearn.linear_model import Ridge\nmodel = Ridge(alpha=0.1)  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\nprint(f\"MAE: {mean_absolute_error(y_test, model.predict(X_test)):.2e}\")\nprint(f\"R2: {r2_score(y_test, model.predict(X_test)):.3f}\")\nprint()\nprint(f\"Coefficients: {model.coef_}\")\n\nMAE: 2.08e+02\nR2: 0.016\n\nCoefficients: [-33.80455001 -68.2554692    0.6071894 ]\n\n\n\n\nfrom sklearn.linear_model import Lasso\nmodel = Lasso(alpha=0.1)  # Create a model\n_ = model.fit(X_train, y_train)  # Train the model\nprint(f\"MAE: {mean_absolute_error(y_test, model.predict(X_test)):.2e}\")\nprint(f\"R2: {r2_score(y_test, model.predict(X_test)):.3f}\")\nprint()\nprint(f\"Coefficients: {model.coef_}\")\n\nMAE: 2.06e+02\nR2: 0.023\n\nCoefficients: [-33.88760854 -71.29210344   0.59389412]"
   },
   {
-    "objectID": "sessions/sklearn.html#k-means",
-    "href": "sessions/sklearn.html#k-means",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#k-means",
+    "href": "tutorial/sklearn.html#k-means",
+    "title": "Scikit-learn",
     "section": "K-Means",
-    "text": "K-Means\nWe can create a K-Means clustering model with scikit-learn using the KMeans class.\n\nn_clusters: number of clusters to create.\n\n\nfrom sklearn.cluster import KMeans\nmodel = KMeans(n_clusters=3)  # Create a model\n_ = model.fit(X)  # Train the model\ndf['cluster'] = model.labels_\nprint(df)\n\n    year  adult   budget  c_box_office  cluster\n0   1994      1 8.00e+00      2.14e+02        0\n1   1994      0 5.50e+01      6.78e+02        1\n2   1995      1 3.30e+01      3.27e+02        2\n3   1991      1 1.90e+01      2.73e+02        0\n4   1997      0 2.00e+01      2.30e+02        0\n5   1998      1 2.00e+01      2.39e+01        0\n6   1995      1 6.00e+00      2.33e+01        0\n7   1995      0 3.00e+01      3.94e+02        2\n8   1992      1 1.20e+00      2.91e+00        0\n9   1995      1 6.00e+01      1.87e+02        1\n10  1997      1 3.50e+01      1.26e+02        2\n11  1995      1 5.20e+01      1.16e+02        1\n12  1992      1 1.44e+01      1.59e+02        0\n13  1999      0 4.00e+01      6.73e+02        2\n14  1996      1 7.00e+00      6.06e+01        0\n15  1995      1 2.50e+00      5.99e+00        0\n16  1999      0 7.00e+01      2.33e+01        1\n17  1990      0 2.20e+01      4.24e+02        0"
+    "text": "K-Means\nWe can create a K-Means clustering model with scikit-learn using the KMeans class.\n\nn_clusters: number of clusters to create.\n\n\nfrom sklearn.cluster import KMeans\nmodel = KMeans(n_clusters=3)  # Create a model\n_ = model.fit(X)  # Train the model\ndf['cluster'] = model.labels_\nprint(df)\n\n    year  adult   budget  c_box_office  cluster\n0   1994      1 8.00e+00      2.14e+02        2\n1   1994      0 5.50e+01      6.78e+02        1\n2   1995      1 3.30e+01      3.27e+02        0\n3   1991      1 1.90e+01      2.73e+02        0\n4   1997      0 2.00e+01      2.30e+02        0\n5   1998      1 2.00e+01      2.39e+01        0\n6   1995      1 6.00e+00      2.33e+01        2\n7   1995      0 3.00e+01      3.94e+02        0\n8   1992      1 1.20e+00      2.91e+00        2\n9   1995      1 6.00e+01      1.87e+02        1\n10  1997      1 3.50e+01      1.26e+02        0\n11  1995      1 5.20e+01      1.16e+02        1\n12  1992      1 1.44e+01      1.59e+02        2\n13  1999      0 4.00e+01      6.73e+02        0\n14  1996      1 7.00e+00      6.06e+01        2\n15  1995      1 2.50e+00      5.99e+00        2\n16  1999      0 7.00e+01      2.33e+01        1\n17  1990      0 2.20e+01      4.24e+02        0"
   },
   {
-    "objectID": "sessions/sklearn.html#other-models-1",
-    "href": "sessions/sklearn.html#other-models-1",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#other-models-1",
+    "href": "tutorial/sklearn.html#other-models-1",
+    "title": "Scikit-learn",
     "section": "Other Models",
     "text": "Other Models\nWithin scikit-learn, we can find a large number of machine learning algorithms, such as:\n\nSVM: from sklearn.svm import SVC\nK-NN (regression): from sklearn.neighbors import KNeighborsRegressor\nRandom Forest (classification): from sklearn.ensemble import RandomForestClassifier\nRandom Forest (regression): from sklearn.ensemble import RandomForestRegressor\nXGBoost: from xgboost import XGBClassifier"
   },
   {
-    "objectID": "sessions/sklearn.html#neural-networks",
-    "href": "sessions/sklearn.html#neural-networks",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#neural-networks",
+    "href": "tutorial/sklearn.html#neural-networks",
+    "title": "Scikit-learn",
     "section": "Neural Networks",
     "text": "Neural Networks\nScikit-learn can provide basic classes to work with neural networks. However, the great complexity and computational cost they usually require has led to the development of specialized libraries for working with them.\nThe most popular are:\n\nTensorFlow: https://www.tensorflow.org/\nKeras: https://keras.io/ (abstraction layer for TensorFlow)\nPyTorch: https://pytorch.org/"
   },
   {
-    "objectID": "sessions/sklearn.html#conclusions",
-    "href": "sessions/sklearn.html#conclusions",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/sklearn.html#conclusions",
+    "href": "tutorial/sklearn.html#conclusions",
+    "title": "Scikit-learn",
     "section": "Conclusions",
     "text": "Conclusions\n\nScikit-learn is a very comprehensive Python library for working with machine learning.\nIt provides a large number of machine learning algorithms.\nIt provides tools for working with data and evaluating models."
   },
   {
-    "objectID": "sessions/pandas.html",
-    "href": "sessions/pandas.html",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html",
+    "href": "tutorial/pandas.html",
+    "title": "Pandas",
     "section": "",
     "text": "Pandas is a powerful and flexible library for data analysis and manipulation in Python.\n\nAllows working with data structures like tables and series.\nEssential for data analysis, data science, and Machine Learning projects.\n\nhttps://pandas.pydata.org/\n\n\n\n\n\n\n\n\n\n\n\nBy default, pandas comes pre-installed in various Python development environments, such as Anaconda or Jupyter Notebook (Google Colab).\nTo install pandas in your local environment, you can do so via pip:\npip install pandas\nor from a Jupyter notebook:\n!pip install pandas\n\n\n\nLike any Python library, we must first import it to use it. It is very common to import pandas with the alias pd (although it is not mandatory):\n\nimport pandas as pd\n\nThis code set display options so the DataFrames appear correctly when printed:\n\npd.set_option('display.max_columns', 10) # To display all columns\npd.set_option('display.width', 150) # To display all columns\n\n\n\n\nPandas provides two fundamental data structures:\n\nDataFrame: A two-dimensional data table, similar to a spreadsheet.\nSeries: A column of a DataFrame, similar to a list or an array.\n\nThese data structures are essential for working with structured data in Python."
   },
   {
-    "objectID": "sessions/pandas.html#what-is-pandas",
-    "href": "sessions/pandas.html#what-is-pandas",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#what-is-pandas",
+    "href": "tutorial/pandas.html#what-is-pandas",
+    "title": "Pandas",
     "section": "",
     "text": "Pandas is a powerful and flexible library for data analysis and manipulation in Python.\n\nAllows working with data structures like tables and series.\nEssential for data analysis, data science, and Machine Learning projects.\n\nhttps://pandas.pydata.org/"
   },
   {
-    "objectID": "sessions/pandas.html#installation",
-    "href": "sessions/pandas.html#installation",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#installation",
+    "href": "tutorial/pandas.html#installation",
+    "title": "Pandas",
     "section": "",
     "text": "By default, pandas comes pre-installed in various Python development environments, such as Anaconda or Jupyter Notebook (Google Colab).\nTo install pandas in your local environment, you can do so via pip:\npip install pandas\nor from a Jupyter notebook:\n!pip install pandas"
   },
   {
-    "objectID": "sessions/pandas.html#importing-pandas",
-    "href": "sessions/pandas.html#importing-pandas",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#importing-pandas",
+    "href": "tutorial/pandas.html#importing-pandas",
+    "title": "Pandas",
     "section": "",
     "text": "Like any Python library, we must first import it to use it. It is very common to import pandas with the alias pd (although it is not mandatory):\n\nimport pandas as pd\n\nThis code set display options so the DataFrames appear correctly when printed:\n\npd.set_option('display.max_columns', 10) # To display all columns\npd.set_option('display.width', 150) # To display all columns"
   },
   {
-    "objectID": "sessions/pandas.html#data-structures-in-pandas",
-    "href": "sessions/pandas.html#data-structures-in-pandas",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#data-structures-in-pandas",
+    "href": "tutorial/pandas.html#data-structures-in-pandas",
+    "title": "Pandas",
     "section": "",
     "text": "Pandas provides two fundamental data structures:\n\nDataFrame: A two-dimensional data table, similar to a spreadsheet.\nSeries: A column of a DataFrame, similar to a list or an array.\n\nThese data structures are essential for working with structured data in Python."
   },
   {
-    "objectID": "sessions/pandas.html#from-a-matrix",
-    "href": "sessions/pandas.html#from-a-matrix",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#from-a-matrix",
+    "href": "tutorial/pandas.html#from-a-matrix",
+    "title": "Pandas",
     "section": "From a Matrix",
     "text": "From a Matrix\nWe can create a DataFrame from a NumPy matrix, which is useful when we already have the data in a tabular form.\n\nimport numpy as np  # Library for numerical computing\n\ndata = np.array([[1, 2], [3, 4], [5, 6]])\ndf = pd.DataFrame(data, columns=['A', 'B'])\nprint(df)\n\n   A  B\n0  1  2\n1  3  4\n2  5  6\n\n\nHere we created a DataFrame with two columns named ‘A’ and ‘B’. This is useful when we want to structure numerical data we have already calculated."
   },
   {
-    "objectID": "sessions/pandas.html#from-a-dictionary",
-    "href": "sessions/pandas.html#from-a-dictionary",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#from-a-dictionary",
+    "href": "tutorial/pandas.html#from-a-dictionary",
+    "title": "Pandas",
     "section": "From a Dictionary",
     "text": "From a Dictionary\nWe can create a DataFrame from a dictionary, which is convenient when the data is organized in key-value pairs.\n\ndata = {'name': ['Ana', 'Luis', 'Carlos'], 'age': [23, 25, 30]}\ndf = pd.DataFrame(data)\nprint(df)\n\n     name  age\n0     Ana   23\n1    Luis   25\n2  Carlos   30\n\n\nDictionaries are an intuitive way to organize data, especially when you have different features or attributes."
   },
   {
-    "objectID": "sessions/pandas.html#from-a-url",
-    "href": "sessions/pandas.html#from-a-url",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#from-a-url",
+    "href": "tutorial/pandas.html#from-a-url",
+    "title": "Pandas",
     "section": "From a URL",
     "text": "From a URL\nWe can import data directly from a URL, which is useful for loading publicly available online data.\n\nurl = \"https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv\"\ndf = pd.read_csv(url)\nprint(df)\n\n                        name  year    genre adult  budget  c_box_office  c_profit c_performance\n0               Pulp Fiction  1994   Action   yes     8.0        213.93     26.74         great\n1               Forrest Gump  1994   Family    no    55.0        678.23     12.33         great\n2                      Se7en  1995  Mystery   yes    33.0        327.33      9.92         great\n3   The Silence of the Lambs  1991  Mystery   yes    19.0        272.74     14.35         great\n4          Life Is Beautiful  1997   Family    no    20.0        230.10     11.50         great\n5         American History X  1998   Action   yes    20.0         23.88      1.19      expected\n6         The Usual Suspects  1995  Mystery   yes     6.0         23.34      3.89      expected\n7                  Toy Story  1995   Family    no    30.0        394.44     13.15         great\n8             Reservoir Dogs  1992  Mystery   yes     1.2          2.91      2.43      expected\n9                       Heat  1995   Action   yes    60.0        187.44      3.12      expected\n10         L.A. Confidential  1997  Mystery   yes    35.0        126.22      3.61      expected\n11                    Casino  1995   Action   yes    52.0        116.11      2.23      expected\n12                Unforgiven  1992   Action   yes    14.4        159.17     11.05         great\n13           The Sixth Sense  1999  Mystery    no    40.0        672.81     16.82         great\n14                     Fargo  1996  Mystery   yes     7.0         60.61      8.66         great\n15            Before Sunrise  1995   Family   yes     2.5          5.99      2.39      expected\n16            The Iron Giant  1999   Family    no    70.0         23.34      0.33      expected\n17        Dances with Wolves  1990   Action    no    22.0        424.21     19.28         great\n\n\nThis method is used to quickly access large amounts of publicly available data, such as research datasets."
   },
   {
-    "objectID": "sessions/pandas.html#other-data-sources",
-    "href": "sessions/pandas.html#other-data-sources",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#other-data-sources",
+    "href": "tutorial/pandas.html#other-data-sources",
+    "title": "Pandas",
     "section": "Other Data Sources",
     "text": "Other Data Sources\nPandas can also read data from:\n\nExcel files (pd.read_excel('file.xlsx'))\nJSON files (pd.read_json('file.json'))\nSQL databases (pd.read_sql(query, connection))"
   },
   {
-    "objectID": "sessions/pandas.html#exporting-a-dataframe",
-    "href": "sessions/pandas.html#exporting-a-dataframe",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#exporting-a-dataframe",
+    "href": "tutorial/pandas.html#exporting-a-dataframe",
+    "title": "Pandas",
     "section": "Exporting a DataFrame",
     "text": "Exporting a DataFrame\nWe can export a DataFrame to a CSV file using the df.to_csv() method.\n\ndf.to_csv('file.csv', index=False)"
   },
   {
-    "objectID": "sessions/pandas.html#viewing-data",
-    "href": "sessions/pandas.html#viewing-data",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#viewing-data",
+    "href": "tutorial/pandas.html#viewing-data",
+    "title": "Pandas",
     "section": "Viewing Data",
     "text": "Viewing Data\nTo view the dataset, simply print the DataFrame:\n\nprint(df)\n\n                        name  year    genre adult  budget  c_box_office  c_profit c_performance\n0               Pulp Fiction  1994   Action   yes     8.0        213.93     26.74         great\n1               Forrest Gump  1994   Family    no    55.0        678.23     12.33         great\n2                      Se7en  1995  Mystery   yes    33.0        327.33      9.92         great\n3   The Silence of the Lambs  1991  Mystery   yes    19.0        272.74     14.35         great\n4          Life Is Beautiful  1997   Family    no    20.0        230.10     11.50         great\n5         American History X  1998   Action   yes    20.0         23.88      1.19      expected\n6         The Usual Suspects  1995  Mystery   yes     6.0         23.34      3.89      expected\n7                  Toy Story  1995   Family    no    30.0        394.44     13.15         great\n8             Reservoir Dogs  1992  Mystery   yes     1.2          2.91      2.43      expected\n9                       Heat  1995   Action   yes    60.0        187.44      3.12      expected\n10         L.A. Confidential  1997  Mystery   yes    35.0        126.22      3.61      expected\n11                    Casino  1995   Action   yes    52.0        116.11      2.23      expected\n12                Unforgiven  1992   Action   yes    14.4        159.17     11.05         great\n13           The Sixth Sense  1999  Mystery    no    40.0        672.81     16.82         great\n14                     Fargo  1996  Mystery   yes     7.0         60.61      8.66         great\n15            Before Sunrise  1995   Family   yes     2.5          5.99      2.39      expected\n16            The Iron Giant  1999   Family    no    70.0         23.34      0.33      expected\n17        Dances with Wolves  1990   Action    no    22.0        424.21     19.28         great\n\n\nThis will display the first and last rows of the DataFrame, as well as the columns and the values in each cell.\n\n\nThere are other functions to view the first or last elements of the DataFrame: df.head() and df.tail().\n\nprint(df.head(3))  # Shows the first 3 rows\nprint(df.tail(3))  # Shows the last 3 rows\n\n           name  year    genre adult  budget  c_box_office  c_profit c_performance\n0  Pulp Fiction  1994   Action   yes     8.0        213.93     26.74         great\n1  Forrest Gump  1994   Family    no    55.0        678.23     12.33         great\n2         Se7en  1995  Mystery   yes    33.0        327.33      9.92         great\n                  name  year   genre adult  budget  c_box_office  c_profit c_performance\n15      Before Sunrise  1995  Family   yes     2.5          5.99      2.39      expected\n16      The Iron Giant  1999  Family    no    70.0         23.34      0.33      expected\n17  Dances with Wolves  1990  Action    no    22.0        424.21     19.28         great"
   },
   {
-    "objectID": "sessions/pandas.html#dataset-information",
-    "href": "sessions/pandas.html#dataset-information",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#dataset-information",
+    "href": "tutorial/pandas.html#dataset-information",
+    "title": "Pandas",
     "section": "Dataset Information",
     "text": "Dataset Information\nWe can obtain information about the DataFrame using the df.info() method, which provides details about the columns, data types, and the number of non-null values.\n\nprint(df.info())\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 18 entries, 0 to 17\nData columns (total 8 columns):\n #   Column         Non-Null Count  Dtype  \n---  ------         --------------  -----  \n 0   name           18 non-null     object \n 1   year           18 non-null     int64  \n 2   genre          18 non-null     object \n 3   adult          18 non-null     object \n 4   budget         18 non-null     float64\n 5   c_box_office   18 non-null     float64\n 6   c_profit       18 non-null     float64\n 7   c_performance  18 non-null     object \ndtypes: float64(3), int64(1), object(4)\nmemory usage: 1.3+ KB\nNone"
   },
   {
-    "objectID": "sessions/pandas.html#accessing-attributes",
-    "href": "sessions/pandas.html#accessing-attributes",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#accessing-attributes",
+    "href": "tutorial/pandas.html#accessing-attributes",
+    "title": "Pandas",
     "section": "Accessing Attributes",
     "text": "Accessing Attributes\n\nTo access column names, use df.columns.\nTo access data types of columns, use df.dtypes.\nTo access the dimensions of the DataFrame, use df.shape.\n\n\nprint(df.columns)\nprint()\nprint(df.dtypes)\nprint()\nprint(df.shape)\n\nIndex(['name', 'year', 'genre', 'adult', 'budget', 'c_box_office', 'c_profit', 'c_performance'], dtype='object')\n\nname              object\nyear               int64\ngenre             object\nadult             object\nbudget           float64\nc_box_office     float64\nc_profit         float64\nc_performance     object\ndtype: object\n\n(18, 8)"
   },
   {
-    "objectID": "sessions/pandas.html#descriptive-statistics",
-    "href": "sessions/pandas.html#descriptive-statistics",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#descriptive-statistics",
+    "href": "tutorial/pandas.html#descriptive-statistics",
+    "title": "Pandas",
     "section": "Descriptive Statistics",
     "text": "Descriptive Statistics\nWe can obtain descriptive statistics of numeric columns using the df.describe() method.\n\nprint(df.describe())\n\n              year     budget  c_box_office   c_profit\ncount    18.000000  18.000000     18.000000  18.000000\nmean   1994.944444  27.505556    219.044444   9.055000\nstd       2.554632  20.911648    211.446207   7.310049\nmin    1990.000000   1.200000      2.910000   0.330000\n25%    1994.000000   9.600000     33.062500   2.602500\n50%    1995.000000  21.000000    173.305000   9.290000\n75%    1996.750000  38.750000    313.682500  12.945000\nmax    1999.000000  70.000000    678.230000  26.740000"
   },
   {
-    "objectID": "sessions/pandas.html#accessing-columns",
-    "href": "sessions/pandas.html#accessing-columns",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#accessing-columns",
+    "href": "tutorial/pandas.html#accessing-columns",
+    "title": "Pandas",
     "section": "Accessing Columns",
     "text": "Accessing Columns\nWe can access a specific column of a DataFrame using its name:\n\nprint(df['name'])\n\n0                 Pulp Fiction\n1                 Forrest Gump\n2                        Se7en\n3     The Silence of the Lambs\n4            Life Is Beautiful\n5           American History X\n6           The Usual Suspects\n7                    Toy Story\n8               Reservoir Dogs\n9                         Heat\n10           L.A. Confidential\n11                      Casino\n12                  Unforgiven\n13             The Sixth Sense\n14                       Fargo\n15              Before Sunrise\n16              The Iron Giant\n17          Dances with Wolves\nName: name, dtype: object\n\n\nWe can also access multiple columns at once:\n\nprint(df[['name', 'year']])\n\n                        name  year\n0               Pulp Fiction  1994\n1               Forrest Gump  1994\n2                      Se7en  1995\n3   The Silence of the Lambs  1991\n4          Life Is Beautiful  1997\n5         American History X  1998\n6         The Usual Suspects  1995\n7                  Toy Story  1995\n8             Reservoir Dogs  1992\n9                       Heat  1995\n10         L.A. Confidential  1997\n11                    Casino  1995\n12                Unforgiven  1992\n13           The Sixth Sense  1999\n14                     Fargo  1996\n15            Before Sunrise  1995\n16            The Iron Giant  1999\n17        Dances with Wolves  1990"
   },
   {
-    "objectID": "sessions/pandas.html#accessing-rows",
-    "href": "sessions/pandas.html#accessing-rows",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#accessing-rows",
+    "href": "tutorial/pandas.html#accessing-rows",
+    "title": "Pandas",
     "section": "Accessing Rows",
     "text": "Accessing Rows\nWe can access a specific row of a DataFrame using its index:\n\nprint(df.loc[0])\n\nname             Pulp Fiction\nyear                     1994\ngenre                  Action\nadult                     yes\nbudget                    8.0\nc_box_office           213.93\nc_profit                26.74\nc_performance           great\nName: 0, dtype: object\n\n\nWe can also access multiple rows at once:\n\nprint(df.loc[[0, 2, 4]])\n\n                name  year    genre adult  budget  c_box_office  c_profit c_performance\n0       Pulp Fiction  1994   Action   yes     8.0        213.93     26.74         great\n2              Se7en  1995  Mystery   yes    33.0        327.33      9.92         great\n4  Life Is Beautiful  1997   Family    no    20.0        230.10     11.50         great\n\n\n\n\n\n\n\n\nCaution\n\n\n\nThe row index is not strictly its position in the DataFrame but can be any unique value. To access rows by position, use df.iloc[].\n\n\n\nprint(df.iloc[[0, 2, 4]])\n\n                name  year    genre adult  budget  c_box_office  c_profit c_performance\n0       Pulp Fiction  1994   Action   yes     8.0        213.93     26.74         great\n2              Se7en  1995  Mystery   yes    33.0        327.33      9.92         great\n4  Life Is Beautiful  1997   Family    no    20.0        230.10     11.50         great"
   },
   {
-    "objectID": "sessions/pandas.html#accessing-cells",
-    "href": "sessions/pandas.html#accessing-cells",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#accessing-cells",
+    "href": "tutorial/pandas.html#accessing-cells",
+    "title": "Pandas",
     "section": "Accessing Cells",
     "text": "Accessing Cells\nWe can access a specific cell in a DataFrame using its index and column name:\n\nprint(df.loc[0, 'name'])\n\nPulp Fiction\n\n\n\n\nWe can also access multiple cells at once:\n\nprint(df.loc[[0, 2, 4], ['name', 'year']])\n\n                name  year\n0       Pulp Fiction  1994\n2              Se7en  1995\n4  Life Is Beautiful  1997"
   },
   {
-    "objectID": "sessions/pandas.html#unique-values",
-    "href": "sessions/pandas.html#unique-values",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#unique-values",
+    "href": "tutorial/pandas.html#unique-values",
+    "title": "Pandas",
     "section": "Unique Values",
     "text": "Unique Values\nWe can obtain the unique values of a column using the df['column'].unique() method.\n\nprint(df['year'].unique())\n\n[1994 1995 1991 1997 1998 1992 1999 1996 1990]"
   },
   {
-    "objectID": "sessions/pandas.html#null-values",
-    "href": "sessions/pandas.html#null-values",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#null-values",
+    "href": "tutorial/pandas.html#null-values",
+    "title": "Pandas",
     "section": "Null Values",
     "text": "Null Values\nWe can get the null values in the DataFrame using the df.isnull() method. This can also be applied to specific columns using df['column'].isnull().\n\nprint(df.isnull())\n\n     name   year  genre  adult  budget  c_box_office  c_profit  c_performance\n0   False  False  False  False   False         False     False          False\n1   False  False  False  False   False         False     False          False\n2   False  False  False  False   False         False     False          False\n3   False  False  False  False   False         False     False          False\n4   False  False  False  False   False         False     False          False\n5   False  False  False  False   False         False     False          False\n6   False  False  False  False   False         False     False          False\n7   False  False  False  False   False         False     False          False\n8   False  False  False  False   False         False     False          False\n9   False  False  False  False   False         False     False          False\n10  False  False  False  False   False         False     False          False\n11  False  False  False  False   False         False     False          False\n12  False  False  False  False   False         False     False          False\n13  False  False  False  False   False         False     False          False\n14  False  False  False  False   False         False     False          False\n15  False  False  False  False   False         False     False          False\n16  False  False  False  False   False         False     False          False\n17  False  False  False  False   False         False     False          False\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn this dataset, there are no null values. If there were, they would appear as True in the table."
   },
   {
-    "objectID": "sessions/pandas.html#filtering-data",
-    "href": "sessions/pandas.html#filtering-data",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#filtering-data",
+    "href": "tutorial/pandas.html#filtering-data",
+    "title": "Pandas",
     "section": "Filtering Data",
     "text": "Filtering Data\nA column in a DataFrame can be used as an operand in a boolean expression. This generates a column of boolean values. These types of columns can be used to filter the DataFrame.\n\n\n\nprint(df['year'] &gt; 1995)\n\n0     False\n1     False\n2     False\n3     False\n4      True\n5      True\n6     False\n7     False\n8     False\n9     False\n10     True\n11    False\n12    False\n13     True\n14     True\n15    False\n16     True\n17    False\nName: year, dtype: bool\n\n\n\n\nprint(df[df['year'] &gt; 1995])\n\n                  name  year    genre adult  budget  c_box_office  c_profit c_performance\n4    Life Is Beautiful  1997   Family    no    20.0        230.10     11.50         great\n5   American History X  1998   Action   yes    20.0         23.88      1.19      expected\n10   L.A. Confidential  1997  Mystery   yes    35.0        126.22      3.61      expected\n13     The Sixth Sense  1999  Mystery    no    40.0        672.81     16.82         great\n14               Fargo  1996  Mystery   yes     7.0         60.61      8.66         great\n16      The Iron Giant  1999   Family    no    70.0         23.34      0.33      expected"
   },
   {
-    "objectID": "sessions/pandas.html#grouping-data",
-    "href": "sessions/pandas.html#grouping-data",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#grouping-data",
+    "href": "tutorial/pandas.html#grouping-data",
+    "title": "Pandas",
     "section": "Grouping Data",
     "text": "Grouping Data\nWe can group data in a DataFrame by a column using the df.groupby() method. Similar to the GROUP BY clause in SQL, it allows us to perform operations on groups of data.\n\ngrouped = df.groupby('year')\nprint(grouped['budget'].mean())\n\nyear\n1990    22.000000\n1991    19.000000\n1992     7.800000\n1994    31.500000\n1995    30.583333\n1996     7.000000\n1997    27.500000\n1998    20.000000\n1999    55.000000\nName: budget, dtype: float64"
   },
   {
-    "objectID": "sessions/pandas.html#values",
-    "href": "sessions/pandas.html#values",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#values",
+    "href": "tutorial/pandas.html#values",
+    "title": "Pandas",
     "section": "Values",
     "text": "Values\nWe can count the number of non-null values in each column using the df.count() method.\n\nprint(df['year'].count())\n\n18\n\n\nWe can also count the number of occurrences of each unique value in a column using the df['column'].value_counts() method.\n\nprint(df['year'].value_counts())\n\nyear\n1995    6\n1994    2\n1997    2\n1999    2\n1992    2\n1998    1\n1991    1\n1996    1\n1990    1\nName: count, dtype: int64"
   },
   {
-    "objectID": "sessions/pandas.html#minimum-and-maximum",
-    "href": "sessions/pandas.html#minimum-and-maximum",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#minimum-and-maximum",
+    "href": "tutorial/pandas.html#minimum-and-maximum",
+    "title": "Pandas",
     "section": "Minimum and Maximum",
     "text": "Minimum and Maximum\nWe can get the minimum and maximum value of a column using the df['column'].min() and df['column'].max() methods.\n\nprint(df['year'].min())\nprint(df['year'].max())\n\n1990\n1999"
   },
   {
-    "objectID": "sessions/pandas.html#statistical-measures",
-    "href": "sessions/pandas.html#statistical-measures",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#statistical-measures",
+    "href": "tutorial/pandas.html#statistical-measures",
+    "title": "Pandas",
     "section": "Statistical Measures",
     "text": "Statistical Measures\nWe can obtain several statistical measures using specific Pandas methods:\n\n\n\nMean: df['column'].mean()\nMedian: df['column'].median()\nVariance: df['column'].var()\nMode: df['column'].mode()\nStandard Deviation: df['column'].std()\n\nFor population standard deviation: df['column'].std(ddof=0)\n\nQuantiles: df['column'].quantile(q)\n\nFor the 25th percentile: df['column'].quantile(0.25)\n\n\n\n\n\n\n\n\nNote\n\n\n\nGenerally, 2 degrees of freedom are used for the standard deviation of a sample. To calculate the population standard deviation (divided by N), use ddof=0. For the sample standard deviation (divided by N-1), use ddof=1, which is the default value.\n\n\n\n\nprint(f\"Mean: {df['year'].mean()}\")\nprint(f\"Median: {df['year'].median()}\")\nprint(f\"Variance: {df['year'].var()}\")\nprint(f\"Mode: {df['year'].mode()}\")\nprint(f\"Standard deviation: {df['year'].std()}\")\nprint(f\"25th percentile: {df['year'].quantile(0.25)}\")\n\nMean: 1994.9444444444443\nMedian: 1995.0\nVariance: 6.526143790849672\nMode: 0    1995\nName: year, dtype: int64\nStandard deviation: 2.554631830782994\n25th percentile: 1994.0"
   },
   {
-    "objectID": "sessions/pandas.html#adding-columns",
-    "href": "sessions/pandas.html#adding-columns",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#adding-columns",
+    "href": "tutorial/pandas.html#adding-columns",
+    "title": "Pandas",
     "section": "Adding Columns",
     "text": "Adding Columns\nWe can add a column to a DataFrame by simply assigning a series of values to a new column:\n\ndf['new_column'] = [0] * len(df)\nprint(df)\n\n                        name  year    genre adult  budget  c_box_office  c_profit c_performance  new_column\n0               Pulp Fiction  1994   Action   yes     8.0        213.93     26.74         great           0\n1               Forrest Gump  1994   Family    no    55.0        678.23     12.33         great           0\n2                      Se7en  1995  Mystery   yes    33.0        327.33      9.92         great           0\n3   The Silence of the Lambs  1991  Mystery   yes    19.0        272.74     14.35         great           0\n4          Life Is Beautiful  1997   Family    no    20.0        230.10     11.50         great           0\n5         American History X  1998   Action   yes    20.0         23.88      1.19      expected           0\n6         The Usual Suspects  1995  Mystery   yes     6.0         23.34      3.89      expected           0\n7                  Toy Story  1995   Family    no    30.0        394.44     13.15         great           0\n8             Reservoir Dogs  1992  Mystery   yes     1.2          2.91      2.43      expected           0\n9                       Heat  1995   Action   yes    60.0        187.44      3.12      expected           0\n10         L.A. Confidential  1997  Mystery   yes    35.0        126.22      3.61      expected           0\n11                    Casino  1995   Action   yes    52.0        116.11      2.23      expected           0\n12                Unforgiven  1992   Action   yes    14.4        159.17     11.05         great           0\n13           The Sixth Sense  1999  Mystery    no    40.0        672.81     16.82         great           0\n14                     Fargo  1996  Mystery   yes     7.0         60.61      8.66         great           0\n15            Before Sunrise  1995   Family   yes     2.5          5.99      2.39      expected           0\n16            The Iron Giant  1999   Family    no    70.0         23.34      0.33      expected           0\n17        Dances with Wolves  1990   Action    no    22.0        424.21     19.28         great           0"
   },
   {
-    "objectID": "sessions/pandas.html#deleting-columns",
-    "href": "sessions/pandas.html#deleting-columns",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#deleting-columns",
+    "href": "tutorial/pandas.html#deleting-columns",
+    "title": "Pandas",
     "section": "Deleting Columns",
     "text": "Deleting Columns\nWe can delete a column from a DataFrame using the df.drop() method.\n\ndf = df.drop(columns=['new_column'])\nprint(df)\n\n                        name  year    genre adult  budget  c_box_office  c_profit c_performance\n0               Pulp Fiction  1994   Action   yes     8.0        213.93     26.74         great\n1               Forrest Gump  1994   Family    no    55.0        678.23     12.33         great\n2                      Se7en  1995  Mystery   yes    33.0        327.33      9.92         great\n3   The Silence of the Lambs  1991  Mystery   yes    19.0        272.74     14.35         great\n4          Life Is Beautiful  1997   Family    no    20.0        230.10     11.50         great\n5         American History X  1998   Action   yes    20.0         23.88      1.19      expected\n6         The Usual Suspects  1995  Mystery   yes     6.0         23.34      3.89      expected\n7                  Toy Story  1995   Family    no    30.0        394.44     13.15         great\n8             Reservoir Dogs  1992  Mystery   yes     1.2          2.91      2.43      expected\n9                       Heat  1995   Action   yes    60.0        187.44      3.12      expected\n10         L.A. Confidential  1997  Mystery   yes    35.0        126.22      3.61      expected\n11                    Casino  1995   Action   yes    52.0        116.11      2.23      expected\n12                Unforgiven  1992   Action   yes    14.4        159.17     11.05         great\n13           The Sixth Sense  1999  Mystery    no    40.0        672.81     16.82         great\n14                     Fargo  1996  Mystery   yes     7.0         60.61      8.66         great\n15            Before Sunrise  1995   Family   yes     2.5          5.99      2.39      expected\n16            The Iron Giant  1999   Family    no    70.0         23.34      0.33      expected\n17        Dances with Wolves  1990   Action    no    22.0        424.21     19.28         great\n\n\n\n\n\n\n\n\nCaution\n\n\n\nMany Pandas methods create a copy of the original DataFrame. Therefore, all modifications made to this copy will not be reflected in the original DataFrame. To do so, we need to save the result back to the dataset (or to the columns we want to modify).\n\n\n\n\n\n\n\n\nTip\n\n\n\nSome methods allow you to modify the original DataFrame directly by using the inplace=True argument. For example, df.drop(columns=['new_column'], inplace=True) does not require reassigning df."
   },
   {
-    "objectID": "sessions/pandas.html#renaming-columns",
-    "href": "sessions/pandas.html#renaming-columns",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#renaming-columns",
+    "href": "tutorial/pandas.html#renaming-columns",
+    "title": "Pandas",
     "section": "Renaming Columns",
     "text": "Renaming Columns\nWe can rename a column in a DataFrame using the df.rename() method.\n\ndf = df.rename(columns={'year': 'release_year'})\nprint(df)\ndf = df.rename(columns={'release_year': 'year'})  # To revert the change\n\n                        name  release_year    genre adult  budget  c_box_office  c_profit c_performance\n0               Pulp Fiction          1994   Action   yes     8.0        213.93     26.74         great\n1               Forrest Gump          1994   Family    no    55.0        678.23     12.33         great\n2                      Se7en          1995  Mystery   yes    33.0        327.33      9.92         great\n3   The Silence of the Lambs          1991  Mystery   yes    19.0        272.74     14.35         great\n4          Life Is Beautiful          1997   Family    no    20.0        230.10     11.50         great\n5         American History X          1998   Action   yes    20.0         23.88      1.19      expected\n6         The Usual Suspects          1995  Mystery   yes     6.0         23.34      3.89      expected\n7                  Toy Story          1995   Family    no    30.0        394.44     13.15         great\n8             Reservoir Dogs          1992  Mystery   yes     1.2          2.91      2.43      expected\n9                       Heat          1995   Action   yes    60.0        187.44      3.12      expected\n10         L.A. Confidential          1997  Mystery   yes    35.0        126.22      3.61      expected\n11                    Casino          1995   Action   yes    52.0        116.11      2.23      expected\n12                Unforgiven          1992   Action   yes    14.4        159.17     11.05         great\n13           The Sixth Sense          1999  Mystery    no    40.0        672.81     16.82         great\n14                     Fargo          1996  Mystery   yes     7.0         60.61      8.66         great\n15            Before Sunrise          1995   Family   yes     2.5          5.99      2.39      expected\n16            The Iron Giant          1999   Family    no    70.0         23.34      0.33      expected\n17        Dances with Wolves          1990   Action    no    22.0        424.21     19.28         great"
   },
   {
-    "objectID": "sessions/pandas.html#reordering-columns",
-    "href": "sessions/pandas.html#reordering-columns",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#reordering-columns",
+    "href": "tutorial/pandas.html#reordering-columns",
+    "title": "Pandas",
     "section": "Reordering Columns",
     "text": "Reordering Columns\nWe can reorder the columns of a DataFrame by simply assigning a dataset with the columns in the desired order.\n\ndf = df[['year', 'name', 'genre', 'adult', 'budget', 'c_box_office', 'c_profit', 'c_performance']]\nprint(df)\ndf = df[['name', 'year', 'genre', 'adult', 'budget', 'c_box_office', 'c_profit', 'c_performance']]  # To revert the change\n\n    year                      name    genre adult  budget  c_box_office  c_profit c_performance\n0   1994              Pulp Fiction   Action   yes     8.0        213.93     26.74         great\n1   1994              Forrest Gump   Family    no    55.0        678.23     12.33         great\n2   1995                     Se7en  Mystery   yes    33.0        327.33      9.92         great\n3   1991  The Silence of the Lambs  Mystery   yes    19.0        272.74     14.35         great\n4   1997         Life Is Beautiful   Family    no    20.0        230.10     11.50         great\n5   1998        American History X   Action   yes    20.0         23.88      1.19      expected\n6   1995        The Usual Suspects  Mystery   yes     6.0         23.34      3.89      expected\n7   1995                 Toy Story   Family    no    30.0        394.44     13.15         great\n8   1992            Reservoir Dogs  Mystery   yes     1.2          2.91      2.43      expected\n9   1995                      Heat   Action   yes    60.0        187.44      3.12      expected\n10  1997         L.A. Confidential  Mystery   yes    35.0        126.22      3.61      expected\n11  1995                    Casino   Action   yes    52.0        116.11      2.23      expected\n12  1992                Unforgiven   Action   yes    14.4        159.17     11.05         great\n13  1999           The Sixth Sense  Mystery    no    40.0        672.81     16.82         great\n14  1996                     Fargo  Mystery   yes     7.0         60.61      8.66         great\n15  1995            Before Sunrise   Family   yes     2.5          5.99      2.39      expected\n16  1999            The Iron Giant   Family    no    70.0         23.34      0.33      expected\n17  1990        Dances with Wolves   Action    no    22.0        424.21     19.28         great"
   },
   {
-    "objectID": "sessions/pandas.html#changing-data-types",
-    "href": "sessions/pandas.html#changing-data-types",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#changing-data-types",
+    "href": "tutorial/pandas.html#changing-data-types",
+    "title": "Pandas",
     "section": "Changing Data Types",
     "text": "Changing Data Types\nWe can change the data type of a column using the df.astype() method.\n\ndf['year'] = df['year'].astype('float')\nprint(df.dtypes)\nprint(df['year'])\n\nname              object\nyear             float64\ngenre             object\nadult             object\nbudget           float64\nc_box_office     float64\nc_profit         float64\nc_performance     object\ndtype: object\n0     1994.0\n1     1994.0\n2     1995.0\n3     1991.0\n4     1997.0\n5     1998.0\n6     1995.0\n7     1995.0\n8     1992.0\n9     1995.0\n10    1997.0\n11    1995.0\n12    1992.0\n13    1999.0\n14    1996.0\n15    1995.0\n16    1999.0\n17    1990.0\nName: year, dtype: float64"
   },
   {
-    "objectID": "sessions/pandas.html#concatenating-dataframes",
-    "href": "sessions/pandas.html#concatenating-dataframes",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#concatenating-dataframes",
+    "href": "tutorial/pandas.html#concatenating-dataframes",
+    "title": "Pandas",
     "section": "Concatenating DataFrames",
     "text": "Concatenating DataFrames\nWe can concatenate two DataFrames using the pd.concat() method.\n\ndf1 = pd.DataFrame({'name': ['Iron man', 'Thor'], 'year': [2008, 2011]})\ndf = pd.concat([df, df1])\nprint(df)\n\n                        name    year    genre adult  budget  c_box_office  c_profit c_performance\n0               Pulp Fiction  1994.0   Action   yes     8.0        213.93     26.74         great\n1               Forrest Gump  1994.0   Family    no    55.0        678.23     12.33         great\n2                      Se7en  1995.0  Mystery   yes    33.0        327.33      9.92         great\n3   The Silence of the Lambs  1991.0  Mystery   yes    19.0        272.74     14.35         great\n4          Life Is Beautiful  1997.0   Family    no    20.0        230.10     11.50         great\n5         American History X  1998.0   Action   yes    20.0         23.88      1.19      expected\n6         The Usual Suspects  1995.0  Mystery   yes     6.0         23.34      3.89      expected\n7                  Toy Story  1995.0   Family    no    30.0        394.44     13.15         great\n8             Reservoir Dogs  1992.0  Mystery   yes     1.2          2.91      2.43      expected\n9                       Heat  1995.0   Action   yes    60.0        187.44      3.12      expected\n10         L.A. Confidential  1997.0  Mystery   yes    35.0        126.22      3.61      expected\n11                    Casino  1995.0   Action   yes    52.0        116.11      2.23      expected\n12                Unforgiven  1992.0   Action   yes    14.4        159.17     11.05         great\n13           The Sixth Sense  1999.0  Mystery    no    40.0        672.81     16.82         great\n14                     Fargo  1996.0  Mystery   yes     7.0         60.61      8.66         great\n15            Before Sunrise  1995.0   Family   yes     2.5          5.99      2.39      expected\n16            The Iron Giant  1999.0   Family    no    70.0         23.34      0.33      expected\n17        Dances with Wolves  1990.0   Action    no    22.0        424.21     19.28         great\n0                   Iron man  2008.0      NaN   NaN     NaN           NaN       NaN           NaN\n1                       Thor  2011.0      NaN   NaN     NaN           NaN       NaN           NaN\n\n\n\n\n\n\n\n\nCaution\n\n\n\nWhen concatenating DataFrames, the row indices are retained. To reorganize the indices, we can use the df.reset_index(drop=True) method."
   },
   {
-    "objectID": "sessions/pandas.html#merging-dataframes",
-    "href": "sessions/pandas.html#merging-dataframes",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#merging-dataframes",
+    "href": "tutorial/pandas.html#merging-dataframes",
+    "title": "Pandas",
     "section": "Merging DataFrames",
     "text": "Merging DataFrames\nWe can merge two DataFrames on a common column using the pd.merge() method. Similar to the JOIN clause in SQL, it allows us to combine two DataFrames into one.\n\ndf1 = pd.DataFrame({'adult': ['no', 'yes'], 'rating': ['PG-13', 'R']})\ndf = pd.merge(df, df1, on='adult')\nprint(df)\n\n                        name    year    genre adult  budget  c_box_office  c_profit c_performance rating\n0               Pulp Fiction  1994.0   Action   yes     8.0        213.93     26.74         great      R\n1               Forrest Gump  1994.0   Family    no    55.0        678.23     12.33         great  PG-13\n2                      Se7en  1995.0  Mystery   yes    33.0        327.33      9.92         great      R\n3   The Silence of the Lambs  1991.0  Mystery   yes    19.0        272.74     14.35         great      R\n4          Life Is Beautiful  1997.0   Family    no    20.0        230.10     11.50         great  PG-13\n5         American History X  1998.0   Action   yes    20.0         23.88      1.19      expected      R\n6         The Usual Suspects  1995.0  Mystery   yes     6.0         23.34      3.89      expected      R\n7                  Toy Story  1995.0   Family    no    30.0        394.44     13.15         great  PG-13\n8             Reservoir Dogs  1992.0  Mystery   yes     1.2          2.91      2.43      expected      R\n9                       Heat  1995.0   Action   yes    60.0        187.44      3.12      expected      R\n10         L.A. Confidential  1997.0  Mystery   yes    35.0        126.22      3.61      expected      R\n11                    Casino  1995.0   Action   yes    52.0        116.11      2.23      expected      R\n12                Unforgiven  1992.0   Action   yes    14.4        159.17     11.05         great      R\n13           The Sixth Sense  1999.0  Mystery    no    40.0        672.81     16.82         great  PG-13\n14                     Fargo  1996.0  Mystery   yes     7.0         60.61      8.66         great      R\n15            Before Sunrise  1995.0   Family   yes     2.5          5.99      2.39      expected      R\n16            The Iron Giant  1999.0   Family    no    70.0         23.34      0.33      expected  PG-13\n17        Dances with Wolves  1990.0   Action    no    22.0        424.21     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#modifying-specific-data",
-    "href": "sessions/pandas.html#modifying-specific-data",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#modifying-specific-data",
+    "href": "tutorial/pandas.html#modifying-specific-data",
+    "title": "Pandas",
     "section": "Modifying Specific Data",
     "text": "Modifying Specific Data\nWe can modify a specific cell value using the df.loc[] method.\n\nprint(df.loc[0, 'year'])\ndf.loc[0, 'year'] = 1990\nprint(df.loc[0, 'year'])\n\n1994.0\n1990.0"
   },
   {
-    "objectID": "sessions/pandas.html#modifying-columns",
-    "href": "sessions/pandas.html#modifying-columns",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#modifying-columns",
+    "href": "tutorial/pandas.html#modifying-columns",
+    "title": "Pandas",
     "section": "Modifying Columns",
     "text": "Modifying Columns\nTo modify a column in the original DataFrame, we need to assign the result back to the original column:\n\n\n\nprint(df['year'])\nprint()\n\n0     1990.0\n1     1994.0\n2     1995.0\n3     1991.0\n4     1997.0\n5     1998.0\n6     1995.0\n7     1995.0\n8     1992.0\n9     1995.0\n10    1997.0\n11    1995.0\n12    1992.0\n13    1999.0\n14    1996.0\n15    1995.0\n16    1999.0\n17    1990.0\nName: year, dtype: float64\n\n\n\n\n\ndf['year'] = df['year'] + 1\nprint(df['year'])\n\n0     1991.0\n1     1995.0\n2     1996.0\n3     1992.0\n4     1998.0\n5     1999.0\n6     1996.0\n7     1996.0\n8     1993.0\n9     1996.0\n10    1998.0\n11    1996.0\n12    1993.0\n13    2000.0\n14    1997.0\n15    1996.0\n16    2000.0\n17    1991.0\nName: year, dtype: float64"
   },
   {
-    "objectID": "sessions/pandas.html#deleting-rows",
-    "href": "sessions/pandas.html#deleting-rows",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#deleting-rows",
+    "href": "tutorial/pandas.html#deleting-rows",
+    "title": "Pandas",
     "section": "Deleting Rows",
     "text": "Deleting Rows\nWe can delete a row from a DataFrame using the df.drop() method.\n\ndf = df.drop(index=0)\nprint(df)\n\n                        name    year    genre adult  budget  c_box_office  c_profit c_performance rating\n1               Forrest Gump  1995.0   Family    no    55.0        678.23     12.33         great  PG-13\n2                      Se7en  1996.0  Mystery   yes    33.0        327.33      9.92         great      R\n3   The Silence of the Lambs  1992.0  Mystery   yes    19.0        272.74     14.35         great      R\n4          Life Is Beautiful  1998.0   Family    no    20.0        230.10     11.50         great  PG-13\n5         American History X  1999.0   Action   yes    20.0         23.88      1.19      expected      R\n6         The Usual Suspects  1996.0  Mystery   yes     6.0         23.34      3.89      expected      R\n7                  Toy Story  1996.0   Family    no    30.0        394.44     13.15         great  PG-13\n8             Reservoir Dogs  1993.0  Mystery   yes     1.2          2.91      2.43      expected      R\n9                       Heat  1996.0   Action   yes    60.0        187.44      3.12      expected      R\n10         L.A. Confidential  1998.0  Mystery   yes    35.0        126.22      3.61      expected      R\n11                    Casino  1996.0   Action   yes    52.0        116.11      2.23      expected      R\n12                Unforgiven  1993.0   Action   yes    14.4        159.17     11.05         great      R\n13           The Sixth Sense  2000.0  Mystery    no    40.0        672.81     16.82         great  PG-13\n14                     Fargo  1997.0  Mystery   yes     7.0         60.61      8.66         great      R\n15            Before Sunrise  1996.0   Family   yes     2.5          5.99      2.39      expected      R\n16            The Iron Giant  2000.0   Family    no    70.0         23.34      0.33      expected  PG-13\n17        Dances with Wolves  1991.0   Action    no    22.0        424.21     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#deleting-rows-with-null-values",
-    "href": "sessions/pandas.html#deleting-rows-with-null-values",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#deleting-rows-with-null-values",
+    "href": "tutorial/pandas.html#deleting-rows-with-null-values",
+    "title": "Pandas",
     "section": "Deleting Rows with Null Values",
     "text": "Deleting Rows with Null Values\nWe can delete rows with null values from a DataFrame using the df.dropna() method.\n\ndf = df.dropna()\nprint(df)\n\n                        name    year    genre adult  budget  c_box_office  c_profit c_performance rating\n1               Forrest Gump  1995.0   Family    no    55.0        678.23     12.33         great  PG-13\n2                      Se7en  1996.0  Mystery   yes    33.0        327.33      9.92         great      R\n3   The Silence of the Lambs  1992.0  Mystery   yes    19.0        272.74     14.35         great      R\n4          Life Is Beautiful  1998.0   Family    no    20.0        230.10     11.50         great  PG-13\n5         American History X  1999.0   Action   yes    20.0         23.88      1.19      expected      R\n6         The Usual Suspects  1996.0  Mystery   yes     6.0         23.34      3.89      expected      R\n7                  Toy Story  1996.0   Family    no    30.0        394.44     13.15         great  PG-13\n8             Reservoir Dogs  1993.0  Mystery   yes     1.2          2.91      2.43      expected      R\n9                       Heat  1996.0   Action   yes    60.0        187.44      3.12      expected      R\n10         L.A. Confidential  1998.0  Mystery   yes    35.0        126.22      3.61      expected      R\n11                    Casino  1996.0   Action   yes    52.0        116.11      2.23      expected      R\n12                Unforgiven  1993.0   Action   yes    14.4        159.17     11.05         great      R\n13           The Sixth Sense  2000.0  Mystery    no    40.0        672.81     16.82         great  PG-13\n14                     Fargo  1997.0  Mystery   yes     7.0         60.61      8.66         great      R\n15            Before Sunrise  1996.0   Family   yes     2.5          5.99      2.39      expected      R\n16            The Iron Giant  2000.0   Family    no    70.0         23.34      0.33      expected  PG-13\n17        Dances with Wolves  1991.0   Action    no    22.0        424.21     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#deleting-duplicate-rows",
-    "href": "sessions/pandas.html#deleting-duplicate-rows",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#deleting-duplicate-rows",
+    "href": "tutorial/pandas.html#deleting-duplicate-rows",
+    "title": "Pandas",
     "section": "Deleting Duplicate Rows",
     "text": "Deleting Duplicate Rows\nWe can delete duplicate rows from a DataFrame using the df.drop_duplicates() method.\n\ndf = df.drop_duplicates()\nprint(df)\n\n                        name    year    genre adult  budget  c_box_office  c_profit c_performance rating\n1               Forrest Gump  1995.0   Family    no    55.0        678.23     12.33         great  PG-13\n2                      Se7en  1996.0  Mystery   yes    33.0        327.33      9.92         great      R\n3   The Silence of the Lambs  1992.0  Mystery   yes    19.0        272.74     14.35         great      R\n4          Life Is Beautiful  1998.0   Family    no    20.0        230.10     11.50         great  PG-13\n5         American History X  1999.0   Action   yes    20.0         23.88      1.19      expected      R\n6         The Usual Suspects  1996.0  Mystery   yes     6.0         23.34      3.89      expected      R\n7                  Toy Story  1996.0   Family    no    30.0        394.44     13.15         great  PG-13\n8             Reservoir Dogs  1993.0  Mystery   yes     1.2          2.91      2.43      expected      R\n9                       Heat  1996.0   Action   yes    60.0        187.44      3.12      expected      R\n10         L.A. Confidential  1998.0  Mystery   yes    35.0        126.22      3.61      expected      R\n11                    Casino  1996.0   Action   yes    52.0        116.11      2.23      expected      R\n12                Unforgiven  1993.0   Action   yes    14.4        159.17     11.05         great      R\n13           The Sixth Sense  2000.0  Mystery    no    40.0        672.81     16.82         great  PG-13\n14                     Fargo  1997.0  Mystery   yes     7.0         60.61      8.66         great      R\n15            Before Sunrise  1996.0   Family   yes     2.5          5.99      2.39      expected      R\n16            The Iron Giant  2000.0   Family    no    70.0         23.34      0.33      expected  PG-13\n17        Dances with Wolves  1991.0   Action    no    22.0        424.21     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#applying-functions-to-columns",
-    "href": "sessions/pandas.html#applying-functions-to-columns",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#applying-functions-to-columns",
+    "href": "tutorial/pandas.html#applying-functions-to-columns",
+    "title": "Pandas",
     "section": "Applying Functions to Columns",
     "text": "Applying Functions to Columns\nWe can apply functions to columns in a DataFrame using the df.apply() method.\n\ndf['year'] = df['year'].apply(lambda x: x - 1)\nprint(df)\n\n                        name    year    genre adult  budget  c_box_office  c_profit c_performance rating\n1               Forrest Gump  1994.0   Family    no    55.0        678.23     12.33         great  PG-13\n2                      Se7en  1995.0  Mystery   yes    33.0        327.33      9.92         great      R\n3   The Silence of the Lambs  1991.0  Mystery   yes    19.0        272.74     14.35         great      R\n4          Life Is Beautiful  1997.0   Family    no    20.0        230.10     11.50         great  PG-13\n5         American History X  1998.0   Action   yes    20.0         23.88      1.19      expected      R\n6         The Usual Suspects  1995.0  Mystery   yes     6.0         23.34      3.89      expected      R\n7                  Toy Story  1995.0   Family    no    30.0        394.44     13.15         great  PG-13\n8             Reservoir Dogs  1992.0  Mystery   yes     1.2          2.91      2.43      expected      R\n9                       Heat  1995.0   Action   yes    60.0        187.44      3.12      expected      R\n10         L.A. Confidential  1997.0  Mystery   yes    35.0        126.22      3.61      expected      R\n11                    Casino  1995.0   Action   yes    52.0        116.11      2.23      expected      R\n12                Unforgiven  1992.0   Action   yes    14.4        159.17     11.05         great      R\n13           The Sixth Sense  1999.0  Mystery    no    40.0        672.81     16.82         great  PG-13\n14                     Fargo  1996.0  Mystery   yes     7.0         60.61      8.66         great      R\n15            Before Sunrise  1995.0   Family   yes     2.5          5.99      2.39      expected      R\n16            The Iron Giant  1999.0   Family    no    70.0         23.34      0.33      expected  PG-13\n17        Dances with Wolves  1990.0   Action    no    22.0        424.21     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#sorting-the-dataframe",
-    "href": "sessions/pandas.html#sorting-the-dataframe",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#sorting-the-dataframe",
+    "href": "tutorial/pandas.html#sorting-the-dataframe",
+    "title": "Pandas",
     "section": "Sorting the DataFrame",
     "text": "Sorting the DataFrame\nWe can sort a DataFrame by one or more columns using the df.sort_values() method.\n\ndf = df.sort_values(by='year', ascending=False)\nprint(df)\n\n                        name    year    genre adult  budget  c_box_office  c_profit c_performance rating\n16            The Iron Giant  1999.0   Family    no    70.0         23.34      0.33      expected  PG-13\n13           The Sixth Sense  1999.0  Mystery    no    40.0        672.81     16.82         great  PG-13\n5         American History X  1998.0   Action   yes    20.0         23.88      1.19      expected      R\n10         L.A. Confidential  1997.0  Mystery   yes    35.0        126.22      3.61      expected      R\n4          Life Is Beautiful  1997.0   Family    no    20.0        230.10     11.50         great  PG-13\n14                     Fargo  1996.0  Mystery   yes     7.0         60.61      8.66         great      R\n15            Before Sunrise  1995.0   Family   yes     2.5          5.99      2.39      expected      R\n2                      Se7en  1995.0  Mystery   yes    33.0        327.33      9.92         great      R\n6         The Usual Suspects  1995.0  Mystery   yes     6.0         23.34      3.89      expected      R\n7                  Toy Story  1995.0   Family    no    30.0        394.44     13.15         great  PG-13\n11                    Casino  1995.0   Action   yes    52.0        116.11      2.23      expected      R\n9                       Heat  1995.0   Action   yes    60.0        187.44      3.12      expected      R\n1               Forrest Gump  1994.0   Family    no    55.0        678.23     12.33         great  PG-13\n12                Unforgiven  1992.0   Action   yes    14.4        159.17     11.05         great      R\n8             Reservoir Dogs  1992.0  Mystery   yes     1.2          2.91      2.43      expected      R\n3   The Silence of the Lambs  1991.0  Mystery   yes    19.0        272.74     14.35         great      R\n17        Dances with Wolves  1990.0   Action    no    22.0        424.21     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#resetting-the-index",
-    "href": "sessions/pandas.html#resetting-the-index",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#resetting-the-index",
+    "href": "tutorial/pandas.html#resetting-the-index",
+    "title": "Pandas",
     "section": "Resetting the Index",
     "text": "Resetting the Index\nWe can reset the index of a DataFrame using the df.reset_index() method. This is useful for reorganizing the index after deleting rows or reordering the DataFrame.\n\ndf = df.reset_index(drop=True)\nprint(df)\n\n                        name    year    genre adult  budget  c_box_office  c_profit c_performance rating\n0             The Iron Giant  1999.0   Family    no    70.0         23.34      0.33      expected  PG-13\n1            The Sixth Sense  1999.0  Mystery    no    40.0        672.81     16.82         great  PG-13\n2         American History X  1998.0   Action   yes    20.0         23.88      1.19      expected      R\n3          L.A. Confidential  1997.0  Mystery   yes    35.0        126.22      3.61      expected      R\n4          Life Is Beautiful  1997.0   Family    no    20.0        230.10     11.50         great  PG-13\n5                      Fargo  1996.0  Mystery   yes     7.0         60.61      8.66         great      R\n6             Before Sunrise  1995.0   Family   yes     2.5          5.99      2.39      expected      R\n7                      Se7en  1995.0  Mystery   yes    33.0        327.33      9.92         great      R\n8         The Usual Suspects  1995.0  Mystery   yes     6.0         23.34      3.89      expected      R\n9                  Toy Story  1995.0   Family    no    30.0        394.44     13.15         great  PG-13\n10                    Casino  1995.0   Action   yes    52.0        116.11      2.23      expected      R\n11                      Heat  1995.0   Action   yes    60.0        187.44      3.12      expected      R\n12              Forrest Gump  1994.0   Family    no    55.0        678.23     12.33         great  PG-13\n13                Unforgiven  1992.0   Action   yes    14.4        159.17     11.05         great      R\n14            Reservoir Dogs  1992.0  Mystery   yes     1.2          2.91      2.43      expected      R\n15  The Silence of the Lambs  1991.0  Mystery   yes    19.0        272.74     14.35         great      R\n16        Dances with Wolves  1990.0   Action    no    22.0        424.21     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#normalization",
-    "href": "sessions/pandas.html#normalization",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#normalization",
+    "href": "tutorial/pandas.html#normalization",
+    "title": "Pandas",
     "section": "Normalization",
     "text": "Normalization\nThere is no specific normalization method in Pandas. We can use a mathematical formula:\n\nMin-Max Scaling\ndf['column'] = (df['column'] - df['column'].min()) / (df['column'].max() - df['column'].min())\n\n\nStandardization\ndf['column'] = (df['column'] - df['column'].mean()) / df['column'].std()\n\n\n\ndf['budget'] = (df['budget'] - df['budget'].mean()) / df['budget'].std()\ndf['c_box_office'] = (df['c_box_office'] - df['c_box_office'].min()) / (df['c_box_office'].max() - df['c_box_office'].min())\nprint(df)\n\n                        name    year    genre adult    budget  c_box_office  c_profit c_performance rating\n0             The Iron Giant  1999.0   Family    no  1.972376      0.030252      0.33      expected  PG-13\n1            The Sixth Sense  1999.0  Mystery    no  0.541288      0.991974     16.82         great  PG-13\n2         American History X  1998.0   Action   yes -0.412771      0.031052      1.19      expected      R\n3          L.A. Confidential  1997.0  Mystery   yes  0.302773      0.182595      3.61      expected      R\n4          Life Is Beautiful  1997.0   Family    no -0.412771      0.336418     11.50         great  PG-13\n5                      Fargo  1996.0  Mystery   yes -1.032909      0.085441      8.66         great      R\n6             Before Sunrise  1995.0   Family   yes -1.247572      0.004561      2.39      expected      R\n7                      Se7en  1995.0  Mystery   yes  0.207368      0.480394      9.92         great      R\n8         The Usual Suspects  1995.0  Mystery   yes -1.080612      0.030252      3.89      expected      R\n9                  Toy Story  1995.0   Family    no  0.064259      0.579770     13.15         great  PG-13\n10                    Casino  1995.0   Action   yes  1.113723      0.167624      2.23      expected      R\n11                      Heat  1995.0   Action   yes  1.495347      0.273248      3.12      expected      R\n12              Forrest Gump  1994.0   Family    no  1.256832      1.000000     12.33         great  PG-13\n13                Unforgiven  1992.0   Action   yes -0.679907      0.231387     11.05         great      R\n14            Reservoir Dogs  1992.0  Mystery   yes -1.309586      0.000000      2.43      expected      R\n15  The Silence of the Lambs  1991.0  Mystery   yes -0.460474      0.399559     14.35         great      R\n16        Dances with Wolves  1990.0   Action    no -0.317365      0.623852     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#discretization---mapping",
-    "href": "sessions/pandas.html#discretization---mapping",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#discretization---mapping",
+    "href": "tutorial/pandas.html#discretization---mapping",
+    "title": "Pandas",
     "section": "Discretization - Mapping",
     "text": "Discretization - Mapping\nTo convert a categorical column into a numerical column, we can use the df.map() method.\n\ndf['adult'] = df['adult'].map({'no': 0, 'yes': 1})\nprint(df)\n\n                        name    year    genre  adult    budget  c_box_office  c_profit c_performance rating\n0             The Iron Giant  1999.0   Family      0  1.972376      0.030252      0.33      expected  PG-13\n1            The Sixth Sense  1999.0  Mystery      0  0.541288      0.991974     16.82         great  PG-13\n2         American History X  1998.0   Action      1 -0.412771      0.031052      1.19      expected      R\n3          L.A. Confidential  1997.0  Mystery      1  0.302773      0.182595      3.61      expected      R\n4          Life Is Beautiful  1997.0   Family      0 -0.412771      0.336418     11.50         great  PG-13\n5                      Fargo  1996.0  Mystery      1 -1.032909      0.085441      8.66         great      R\n6             Before Sunrise  1995.0   Family      1 -1.247572      0.004561      2.39      expected      R\n7                      Se7en  1995.0  Mystery      1  0.207368      0.480394      9.92         great      R\n8         The Usual Suspects  1995.0  Mystery      1 -1.080612      0.030252      3.89      expected      R\n9                  Toy Story  1995.0   Family      0  0.064259      0.579770     13.15         great  PG-13\n10                    Casino  1995.0   Action      1  1.113723      0.167624      2.23      expected      R\n11                      Heat  1995.0   Action      1  1.495347      0.273248      3.12      expected      R\n12              Forrest Gump  1994.0   Family      0  1.256832      1.000000     12.33         great  PG-13\n13                Unforgiven  1992.0   Action      1 -0.679907      0.231387     11.05         great      R\n14            Reservoir Dogs  1992.0  Mystery      1 -1.309586      0.000000      2.43      expected      R\n15  The Silence of the Lambs  1991.0  Mystery      1 -0.460474      0.399559     14.35         great      R\n16        Dances with Wolves  1990.0   Action      0 -0.317365      0.623852     19.28         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#discretization---one-hot-encoding",
-    "href": "sessions/pandas.html#discretization---one-hot-encoding",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#discretization---one-hot-encoding",
+    "href": "tutorial/pandas.html#discretization---one-hot-encoding",
+    "title": "Pandas",
     "section": "Discretization - One-Hot Encoding",
     "text": "Discretization - One-Hot Encoding\nTo convert a categorical column into a binary matrix, we can use the pd.get_dummies() method. The drop_first=True argument removes the first column, avoiding multicollinearity.\n\ndf_dummies = pd.get_dummies(df, columns=['genre'], drop_first=True)\nprint(df_dummies.drop(columns=['c_performance', 'c_profit']))  # Remove some columns for better visualization\n\n                        name    year  adult    budget  c_box_office rating  genre_Family  genre_Mystery\n0             The Iron Giant  1999.0      0  1.972376      0.030252  PG-13          True          False\n1            The Sixth Sense  1999.0      0  0.541288      0.991974  PG-13         False           True\n2         American History X  1998.0      1 -0.412771      0.031052      R         False          False\n3          L.A. Confidential  1997.0      1  0.302773      0.182595      R         False           True\n4          Life Is Beautiful  1997.0      0 -0.412771      0.336418  PG-13          True          False\n5                      Fargo  1996.0      1 -1.032909      0.085441      R         False           True\n6             Before Sunrise  1995.0      1 -1.247572      0.004561      R          True          False\n7                      Se7en  1995.0      1  0.207368      0.480394      R         False           True\n8         The Usual Suspects  1995.0      1 -1.080612      0.030252      R         False           True\n9                  Toy Story  1995.0      0  0.064259      0.579770  PG-13          True          False\n10                    Casino  1995.0      1  1.113723      0.167624      R         False          False\n11                      Heat  1995.0      1  1.495347      0.273248      R         False          False\n12              Forrest Gump  1994.0      0  1.256832      1.000000  PG-13          True          False\n13                Unforgiven  1992.0      1 -0.679907      0.231387      R         False          False\n14            Reservoir Dogs  1992.0      1 -1.309586      0.000000      R         False           True\n15  The Silence of the Lambs  1991.0      1 -0.460474      0.399559      R         False           True\n16        Dances with Wolves  1990.0      0 -0.317365      0.623852  PG-13         False          False"
   },
   {
-    "objectID": "sessions/pandas.html#categorization",
-    "href": "sessions/pandas.html#categorization",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#categorization",
+    "href": "tutorial/pandas.html#categorization",
+    "title": "Pandas",
     "section": "Categorization",
     "text": "Categorization\nTo convert a numerical column into a categorical column, we can use the pd.cut() method.\n\ndf['c_profit'] = pd.cut(df['c_profit'], bins=3, labels=['low', 'medium', 'high'])\nprint(df)\n\n                        name    year    genre  adult    budget  c_box_office c_profit c_performance rating\n0             The Iron Giant  1999.0   Family      0  1.972376      0.030252      low      expected  PG-13\n1            The Sixth Sense  1999.0  Mystery      0  0.541288      0.991974     high         great  PG-13\n2         American History X  1998.0   Action      1 -0.412771      0.031052      low      expected      R\n3          L.A. Confidential  1997.0  Mystery      1  0.302773      0.182595      low      expected      R\n4          Life Is Beautiful  1997.0   Family      0 -0.412771      0.336418   medium         great  PG-13\n5                      Fargo  1996.0  Mystery      1 -1.032909      0.085441   medium         great      R\n6             Before Sunrise  1995.0   Family      1 -1.247572      0.004561      low      expected      R\n7                      Se7en  1995.0  Mystery      1  0.207368      0.480394   medium         great      R\n8         The Usual Suspects  1995.0  Mystery      1 -1.080612      0.030252      low      expected      R\n9                  Toy Story  1995.0   Family      0  0.064259      0.579770     high         great  PG-13\n10                    Casino  1995.0   Action      1  1.113723      0.167624      low      expected      R\n11                      Heat  1995.0   Action      1  1.495347      0.273248      low      expected      R\n12              Forrest Gump  1994.0   Family      0  1.256832      1.000000   medium         great  PG-13\n13                Unforgiven  1992.0   Action      1 -0.679907      0.231387   medium         great      R\n14            Reservoir Dogs  1992.0  Mystery      1 -1.309586      0.000000      low      expected      R\n15  The Silence of the Lambs  1991.0  Mystery      1 -0.460474      0.399559     high         great      R\n16        Dances with Wolves  1990.0   Action      0 -0.317365      0.623852     high         great  PG-13"
   },
   {
-    "objectID": "sessions/pandas.html#correlation-matrix",
-    "href": "sessions/pandas.html#correlation-matrix",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#correlation-matrix",
+    "href": "tutorial/pandas.html#correlation-matrix",
+    "title": "Pandas",
     "section": "Correlation Matrix",
     "text": "Correlation Matrix\nWe can calculate the correlation matrix of a DataFrame using the df.corr() method. It can only calculate the correlation between numerical columns.\n\ndf_numeric = df.select_dtypes(include='number')\nprint(df_numeric.corr())\n\n                  year     adult    budget  c_box_office\nyear          1.000000 -0.193560  0.374325     -0.081696\nadult        -0.193560  1.000000 -0.393914     -0.644476\nbudget        0.374325 -0.393914  1.000000      0.353091\nc_box_office -0.081696 -0.644476  0.353091      1.000000"
   },
   {
-    "objectID": "sessions/pandas.html#train-test-split",
-    "href": "sessions/pandas.html#train-test-split",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#train-test-split",
+    "href": "tutorial/pandas.html#train-test-split",
+    "title": "Pandas",
     "section": "Train-Test Split",
     "text": "Train-Test Split\nWe can split a DataFrame into two DataFrames, one for training and one for testing, using the df.sample() method. The frac argument specifies the proportion of rows to select. The random_state argument sets the seed to ensure the selection is reproducible.\nThe df.drop() function can accept a list of indices. This is useful for removing the selected rows from the train DataFrame.\n\n\n\ndf_train = df.sample(frac=0.8, random_state=42)\nprint(df_train['name'])\n\n0               The Iron Giant\n1              The Sixth Sense\n5                        Fargo\n15    The Silence of the Lambs\n11                        Heat\n14              Reservoir Dogs\n8           The Usual Suspects\n13                  Unforgiven\n2           American History X\n9                    Toy Story\n16          Dances with Wolves\n4            Life Is Beautiful\n7                        Se7en\n10                      Casino\nName: name, dtype: object\n\n\n\n\ndf_test = df.drop(df_train.index)\nprint(df_test['name'])\n\n3     L.A. Confidential\n6        Before Sunrise\n12         Forrest Gump\nName: name, dtype: object"
   },
   {
-    "objectID": "sessions/pandas.html#conclusions",
-    "href": "sessions/pandas.html#conclusions",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/pandas.html#conclusions",
+    "href": "tutorial/pandas.html#conclusions",
+    "title": "Pandas",
     "section": "Conclusions",
     "text": "Conclusions\n\nPandas is a fundamental library for data analysis and manipulation in Python.\nIt allows working with data structures like tables and series.\nIt is useful for loading, exploring, cleaning, and transforming data.\nIt is useful for performing statistical and mathematical operations on data."
   },
   {
-    "objectID": "sessions/numpy.html",
-    "href": "sessions/numpy.html",
-    "title": "Introduction to Python",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad - Code Repository",
+    "section": "",
+    "text": "DATES: 30 June 2025 – 18 July 2025\nLOCATION: CUNEF Universidad (PIR 0.5)\nTIME: 09 h – 14 h, Monday → Friday\nCREDITS: 9 ECTS"
+  },
+  {
+    "objectID": "index.html#python-tutorial",
+    "href": "index.html#python-tutorial",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad - Code Repository",
+    "section": "Python tutorial",
+    "text": "Python tutorial\n\nPython Basics\nNumpy\nPandas\nScikit-learn"
+  },
+  {
+    "objectID": "index.html#code",
+    "href": "index.html#code",
+    "title": "Artificial Intelligence Summer School - CUNEF Universidad - Code Repository",
+    "section": "Code",
+    "text": "Code\n\nSnakeGame"
+  },
+  {
+    "objectID": "tutorial/numpy.html",
+    "href": "tutorial/numpy.html",
+    "title": "Numpy",
     "section": "",
     "text": "Numpy is a Python library that provides support for multidimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.\n\nIt allows performing mathematical and logical operations on arrays in a simple and efficient manner.\nIt provides a wide range of mathematical functions to work with arrays and matrices.\n\nhttps://numpy.org/\n\n\n\n\n\n\n\n\n\n\n\nBy default, numpy comes pre-installed in various Python development environments like Anaconda or Jupyter Notebook (Google Colab).\nTo install numpy in your local environment, you can do it using pip:\npip install numpy\nor from a Jupyter notebook:\n!pip install numpy\n\n\n\nLike any library in Python, we must first import it to use it. It is very common to import numpy with the alias np (but it is not mandatory):\n\nimport numpy as np"
   },
   {
-    "objectID": "sessions/numpy.html#what-is-numpy",
-    "href": "sessions/numpy.html#what-is-numpy",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#what-is-numpy",
+    "href": "tutorial/numpy.html#what-is-numpy",
+    "title": "Numpy",
     "section": "",
     "text": "Numpy is a Python library that provides support for multidimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.\n\nIt allows performing mathematical and logical operations on arrays in a simple and efficient manner.\nIt provides a wide range of mathematical functions to work with arrays and matrices.\n\nhttps://numpy.org/"
   },
   {
-    "objectID": "sessions/numpy.html#installation",
-    "href": "sessions/numpy.html#installation",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#installation",
+    "href": "tutorial/numpy.html#installation",
+    "title": "Numpy",
     "section": "",
     "text": "By default, numpy comes pre-installed in various Python development environments like Anaconda or Jupyter Notebook (Google Colab).\nTo install numpy in your local environment, you can do it using pip:\npip install numpy\nor from a Jupyter notebook:\n!pip install numpy"
   },
   {
-    "objectID": "sessions/numpy.html#importing-numpy",
-    "href": "sessions/numpy.html#importing-numpy",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#importing-numpy",
+    "href": "tutorial/numpy.html#importing-numpy",
+    "title": "Numpy",
     "section": "",
     "text": "Like any library in Python, we must first import it to use it. It is very common to import numpy with the alias np (but it is not mandatory):\n\nimport numpy as np"
   },
   {
-    "objectID": "sessions/numpy.html#creating-arrays-and-matrices-1",
-    "href": "sessions/numpy.html#creating-arrays-and-matrices-1",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#creating-arrays-and-matrices-1",
+    "href": "tutorial/numpy.html#creating-arrays-and-matrices-1",
+    "title": "Numpy",
     "section": "Creating arrays and matrices",
     "text": "Creating arrays and matrices\nWe can create numpy arrays and matrices in several ways:\n\nFrom lists or tuples\nUsing numpy-specific functions\nFrom a range of values\netc."
   },
   {
-    "objectID": "sessions/numpy.html#creating-arrays-from-lists",
-    "href": "sessions/numpy.html#creating-arrays-from-lists",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#creating-arrays-from-lists",
+    "href": "tutorial/numpy.html#creating-arrays-from-lists",
+    "title": "Numpy",
     "section": "Creating arrays from lists",
     "text": "Creating arrays from lists\nWe can create a numpy array from a Python list:\n\nl = [1, 2, 3, 4, 5]\na = np.array(l)\nprint(a)\n\n[1 2 3 4 5]"
   },
   {
-    "objectID": "sessions/numpy.html#creating-arrays-from-iterables",
-    "href": "sessions/numpy.html#creating-arrays-from-iterables",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#creating-arrays-from-iterables",
+    "href": "tutorial/numpy.html#creating-arrays-from-iterables",
+    "title": "Numpy",
     "section": "Creating arrays from iterables",
     "text": "Creating arrays from iterables\nWe can create a numpy array from any iterable:\n\nit = range(0, 10, 2)\na = np.array(it)\nprint(a)\n\n[0 2 4 6 8]"
   },
   {
-    "objectID": "sessions/numpy.html#creating-matrices-from-lists",
-    "href": "sessions/numpy.html#creating-matrices-from-lists",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#creating-matrices-from-lists",
+    "href": "tutorial/numpy.html#creating-matrices-from-lists",
+    "title": "Numpy",
     "section": "Creating matrices from lists",
     "text": "Creating matrices from lists\nWe can create a numpy matrix from a list of lists:\n\nl = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nm = np.array(l)\nprint(m)\n\n[[1 2 3]\n [4 5 6]\n [7 8 9]]"
   },
   {
-    "objectID": "sessions/numpy.html#properties-of-arrays",
-    "href": "sessions/numpy.html#properties-of-arrays",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#properties-of-arrays",
+    "href": "tutorial/numpy.html#properties-of-arrays",
+    "title": "Numpy",
     "section": "Properties of arrays",
     "text": "Properties of arrays\nNumpy arrays have several properties that allow us to know their size, shape, data type, etc.\n\na = np.array([[1, 2, 3], [4, 5, 6]])\nprint(f\"Array:\\n{a}\\n\")\nprint(f\"Shape:\\n{a.shape}\\n\")\nprint(f\"Type:\\n{a.dtype}\\n\")\nprint(f\"Size:\\n{a.size}\\n\")\n\nArray:\n[[1 2 3]\n [4 5 6]]\n\nShape:\n(2, 3)\n\nType:\nint64\n\nSize:\n6"
   },
   {
-    "objectID": "sessions/numpy.html#accessing-elements",
-    "href": "sessions/numpy.html#accessing-elements",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#accessing-elements",
+    "href": "tutorial/numpy.html#accessing-elements",
+    "title": "Numpy",
     "section": "Accessing elements",
     "text": "Accessing elements\nWe can access numpy array elements in the same way as Python list elements. To access an element of a matrix, we use the [] operator with a tuple containing the indices.\n\na = np.array([1, 2, 3, 4, 5])\nprint(a[0])\na = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nprint(a[1, 1])\n\n1\n5"
   },
   {
-    "objectID": "sessions/numpy.html#arithmetic-operations",
-    "href": "sessions/numpy.html#arithmetic-operations",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#arithmetic-operations",
+    "href": "tutorial/numpy.html#arithmetic-operations",
+    "title": "Numpy",
     "section": "Arithmetic operations",
     "text": "Arithmetic operations\nWe can perform arithmetic operations to modify all the elements of an array. These operations are carried out element by element.\n\na = np.array([1, 2, 3, 4, 5])\nprint(a + 1)\nb = np.array([5, 4, 3, 2, 1])\nprint(a + b)\n\n[2 3 4 5 6]\n[6 6 6 6 6]"
   },
   {
-    "objectID": "sessions/numpy.html#mathematical-functions",
-    "href": "sessions/numpy.html#mathematical-functions",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#mathematical-functions",
+    "href": "tutorial/numpy.html#mathematical-functions",
+    "title": "Numpy",
     "section": "Mathematical functions",
     "text": "Mathematical functions\nNumpy provides a wide range of mathematical functions to work with arrays and matrices:\n\nnp.sin, np.cos, np.tan\nnp.exp, np.log, np.log10\nnp.sqrt, np.power, np.abs\nnp.mean, np.median, np.std\netc."
   },
   {
-    "objectID": "sessions/numpy.html#vector-operations",
-    "href": "sessions/numpy.html#vector-operations",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#vector-operations",
+    "href": "tutorial/numpy.html#vector-operations",
+    "title": "Numpy",
     "section": "Vector operations",
     "text": "Vector operations\nWe can perform vector operations with numpy arrays:\n\nNorm: np.linalg.norm\nDot product: @\nCross product: np.dot\n\n\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nprint(f\"norm(a):\\n{np.linalg.norm(a)}\\n\")\nprint(f\"scalar:\\n{a @ b}\\n\")\nprint(f\"vectorial:\\n{np.dot(a, b)}\\n\")\n\nnorm(a):\n3.7416573867739413\n\nscalar:\n32\n\nvectorial:\n32"
   },
   {
-    "objectID": "sessions/numpy.html#matrix-operations",
-    "href": "sessions/numpy.html#matrix-operations",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#matrix-operations",
+    "href": "tutorial/numpy.html#matrix-operations",
+    "title": "Numpy",
     "section": "Matrix operations",
     "text": "Matrix operations\nWe can perform matrix operations with numpy arrays:\n\nTransposed matrix: np.transpose\nInverse matrix: np.linalg.inv\nMatrix multiplication: @\n\n\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6], [7, 8]])\nprint(f\"transpose(a):\\n{np.transpose(a)}\\n\")\nprint(f\"inverse(a):\\n{np.linalg.inv(a)}\\n\")\nprint(f\"matrix:\\n{a @ b}\\n\")\n\ntranspose(a):\n[[1 3]\n [2 4]]\n\ninverse(a):\n[[-2.   1. ]\n [ 1.5 -0.5]]\n\nmatrix:\n[[19 22]\n [43 50]]"
   },
   {
-    "objectID": "sessions/numpy.html#statistical-operations",
-    "href": "sessions/numpy.html#statistical-operations",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#statistical-operations",
+    "href": "tutorial/numpy.html#statistical-operations",
+    "title": "Numpy",
     "section": "Statistical operations",
     "text": "Statistical operations\nWe can perform statistical operations with numpy arrays:\n\nMean: np.mean\nMedian: np.median\nVariance: np.var\nStandard deviation: np.std\n\nddof=0 for population (default ddof=1 for sample)\n\nCovariance: np.cov\nCorrelation: np.corrcoef\n\n\n\n\na = np.array([1, 2, 3, 4, 5])\nprint(f\"mean:\\n{np.mean(a)}\\n\")\nprint(f\"median:\\n{np.median(a)}\\n\")\nprint(f\"variance:\\n{np.var(a)}\\n\")\nprint(f\"std:\\n{np.std(a)}\\n\")\n\nmean:\n3.0\n\nmedian:\n3.0\n\nvariance:\n2.0\n\nstd:\n1.4142135623730951\n\n\n\n\n\na = np.array([1, 2, 3, 4, 5])\nb = np.array([5, 4, 3, 2, 1])\nprint(f\"covariance:\\n{np.cov(a, b)}\\n\")\nprint(f\"correlation:\\n{np.corrcoef(a, b)}\\n\")\n\ncovariance:\n[[ 2.5 -2.5]\n [-2.5  2.5]]\n\ncorrelation:\n[[ 1. -1.]\n [-1.  1.]]"
   },
   {
-    "objectID": "sessions/numpy.html#conclusions",
-    "href": "sessions/numpy.html#conclusions",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/numpy.html#conclusions",
+    "href": "tutorial/numpy.html#conclusions",
+    "title": "Numpy",
     "section": "Conclusions",
     "text": "Conclusions\n\nNumpy is a Python library that provides support for multidimensional arrays and matrices.\nIt allows performing mathematical operations on arrays in a simple and efficient manner.\nIt provides a wide range of mathematical functions to work with arrays and matrices.\nIt is widely used in data science and machine learning."
   },
   {
-    "objectID": "sessions/python.html",
-    "href": "sessions/python.html",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html",
+    "href": "tutorial/python.html",
+    "title": "Python basics",
     "section": "",
     "text": "Python is an interpreted high-level language. It is a multiparadigm language since it supports object-oriented programming, imperative programming, and, to a lesser extent, functional programming. It is a dynamically typed and cross-platform language.\n\nNot compiled: Interpreted\nHigh level: Easy and abstract\nDynamically typed: Variables are not bound to a type (names)\nAI: numpy, pandas, scikit-learn, tensorflow, etc.\n\nhttps://python.org/\n\n\n\n\n\n\n\n\n\n\n\nPython is the most popular programming language: .\n\n\n\n\n\nEasy to learn\nCompact and understandable code\nWidely used (has broad support)\nMany libraries\n\n\n\n\n\n\nVery high level\nSlow (compared to C)\nNot strongly typed\n\n\n\n\n\n\n\nPython is used in many fields, such as:\n\nData Analysis: Pandas, Numpy, etc.\nArtificial Intelligence: Machine Learning, Deep Learning, etc.\nWeb Development: Django, Flask, etc.\nAutomation: Scripts, bots, etc.\nIndustry: Automation, IoT, etc.\nGames: Pygame, Panda3D, etc.\netc."
   },
   {
-    "objectID": "sessions/python.html#what-is-python",
-    "href": "sessions/python.html#what-is-python",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#what-is-python",
+    "href": "tutorial/python.html#what-is-python",
+    "title": "Python basics",
     "section": "",
     "text": "Python is an interpreted high-level language. It is a multiparadigm language since it supports object-oriented programming, imperative programming, and, to a lesser extent, functional programming. It is a dynamically typed and cross-platform language.\n\nNot compiled: Interpreted\nHigh level: Easy and abstract\nDynamically typed: Variables are not bound to a type (names)\nAI: numpy, pandas, scikit-learn, tensorflow, etc.\n\nhttps://python.org/"
   },
   {
-    "objectID": "sessions/python.html#motivation",
-    "href": "sessions/python.html#motivation",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#motivation",
+    "href": "tutorial/python.html#motivation",
+    "title": "Python basics",
     "section": "",
     "text": "Python is the most popular programming language: .\n\n\n\n\n\nEasy to learn\nCompact and understandable code\nWidely used (has broad support)\nMany libraries\n\n\n\n\n\n\nVery high level\nSlow (compared to C)\nNot strongly typed"
   },
   {
-    "objectID": "sessions/python.html#uses",
-    "href": "sessions/python.html#uses",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#uses",
+    "href": "tutorial/python.html#uses",
+    "title": "Python basics",
     "section": "",
     "text": "Python is used in many fields, such as:\n\nData Analysis: Pandas, Numpy, etc.\nArtificial Intelligence: Machine Learning, Deep Learning, etc.\nWeb Development: Django, Flask, etc.\nAutomation: Scripts, bots, etc.\nIndustry: Automation, IoT, etc.\nGames: Pygame, Panda3D, etc.\netc."
   },
   {
-    "objectID": "sessions/python.html#installation",
-    "href": "sessions/python.html#installation",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#installation",
+    "href": "tutorial/python.html#installation",
+    "title": "Python basics",
     "section": "Installation",
     "text": "Installation\nThere are various ways to work with Python, depending on the environment you want to use, its purpose, and the operating system.\n\nLocal: Installation on your own computer\n\nAnaconda: Python distribution that includes libraries and a development environment.\npip: Python package installer.\n\nOnline: Online platforms like Google Colab, Jupyter Notebook, etc."
   },
   {
-    "objectID": "sessions/python.html#interpreter",
-    "href": "sessions/python.html#interpreter",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#interpreter",
+    "href": "tutorial/python.html#interpreter",
+    "title": "Python basics",
     "section": "Interpreter",
     "text": "Interpreter\nPython is an interpreted language, meaning that the code is executed line by line. Python can be used as an interactive interpreter where one line of code is executed at a time.\n\nprint(\"Hello World!\")\n\nHello World!\n\n\nThis is usually done from a command terminal:\npython"
   },
   {
-    "objectID": "sessions/python.html#python-file",
-    "href": "sessions/python.html#python-file",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#python-file",
+    "href": "tutorial/python.html#python-file",
+    "title": "Python basics",
     "section": "Python File",
     "text": "Python File\nThe most common use of Python is to write a script in a file with the .py extension. These files are executed via the Python interpreter, which reads and executes the code line by line.\n\n# File: hello.py\ns = \"Hello World!\"\nprint(s)\n\nHello World!\n\n\nTo execute the file, use the terminal:\npython hello.py"
   },
   {
-    "objectID": "sessions/python.html#jupyter-notebook",
-    "href": "sessions/python.html#jupyter-notebook",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#jupyter-notebook",
+    "href": "tutorial/python.html#jupyter-notebook",
+    "title": "Python basics",
     "section": "Jupyter Notebook",
     "text": "Jupyter Notebook\n\n\nJupyter Notebook is a document format that allows combining text and graphics with Python code. This is the most widely used tool in the fields of data science and machine learning.\n\nInteractive: Runs cell by cell\nVisual: Displays graphics and text\nExportable: To HTML, PDF, etc."
   },
   {
-    "objectID": "sessions/python.html#google-colab",
-    "href": "sessions/python.html#google-colab",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#google-colab",
+    "href": "tutorial/python.html#google-colab",
+    "title": "Python basics",
     "section": "Google Colab",
     "text": "Google Colab\n\n\nGoogle Colab is a free platform from Google that allows running Jupyter notebooks in the cloud. It offers many advantages:\n\nNotebook: Works natively with Jupyter notebooks\nOnline: No installation or updates required\nCloud: Independent of the device (no hardware or compatibility issues)\nDependencies: Includes many pre-installed libraries with consistent versions for all users\n\n\n\n\n\n\n\nImportant\n\n\n\nThis is the recommended platform for the course."
   },
   {
-    "objectID": "sessions/python.html#variables",
-    "href": "sessions/python.html#variables",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#variables",
+    "href": "tutorial/python.html#variables",
+    "title": "Python basics",
     "section": "Variables",
     "text": "Variables\nVariables in Python are dynamically typed, meaning you don’t specify the variable type when declaring it.\n\nx = 5       # int\ny = \"Hello\" # str\nprint(x, y)\n\n5 Hello"
   },
   {
-    "objectID": "sessions/python.html#assignment",
-    "href": "sessions/python.html#assignment",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#assignment",
+    "href": "tutorial/python.html#assignment",
+    "title": "Python basics",
     "section": "Assignment",
     "text": "Assignment\nValues are assigned to variables using the = operator.\n\nx = 5  # x is 5\ny = x  # y is 5\nx = 3  # x is 3\na, b = x, 2 # a is 3, b is 2\nprint(x, y, a, b)\n\n3 5 3 2"
   },
   {
-    "objectID": "sessions/python.html#comments",
-    "href": "sessions/python.html#comments",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#comments",
+    "href": "tutorial/python.html#comments",
+    "title": "Python basics",
     "section": "Comments",
     "text": "Comments\nAnything written after a # or within \"\"\" is a comment and will not be executed.\n\nx = 5\n# This is a comment\n# x = 3\n\"\"\" x = 2 \"\"\"\nprint(x)\n\n5"
   },
   {
-    "objectID": "sessions/python.html#data-types",
-    "href": "sessions/python.html#data-types",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#data-types",
+    "href": "tutorial/python.html#data-types",
+    "title": "Python basics",
     "section": "Data Types",
     "text": "Data Types\nPython has several basic data types:\n\nNumeric: int, float\nText: str\nBooleans: bool\nSequences: list, tuple\nSets: set\nDictionaries: dict\n\n\nx = 5       # int\ny = 5.0     # float\nz = \"Hello\" # str\nprint(type(x), type(y), type(z))\n\n&lt;class 'int'&gt; &lt;class 'float'&gt; &lt;class 'str'&gt;"
   },
   {
-    "objectID": "sessions/python.html#casting",
-    "href": "sessions/python.html#casting",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#casting",
+    "href": "tutorial/python.html#casting",
+    "title": "Python basics",
     "section": "Casting",
     "text": "Casting\nYou can change the type of a variable using casting.\n\nx = 5       # int\ny = str(x)  # str\nprint(y, type(y))\n\n5 &lt;class 'str'&gt;"
   },
   {
-    "objectID": "sessions/python.html#arithmetic-operators",
-    "href": "sessions/python.html#arithmetic-operators",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#arithmetic-operators",
+    "href": "tutorial/python.html#arithmetic-operators",
+    "title": "Python basics",
     "section": "Arithmetic Operators",
     "text": "Arithmetic Operators\n\nx = 5   # int\ny = 2   # int\nprint(x + y)  # Add\nprint(x - y)  # Subtract\nprint(x * y)  # Multiply\nprint(x / y)  # Divide\nprint(x % y)  # Modulus\nprint(x ** y) # Exponentiation\nprint(x // y) # Floor division\n\n7\n3\n10\n2.5\n1\n25\n2"
   },
   {
-    "objectID": "sessions/python.html#logical-operators",
-    "href": "sessions/python.html#logical-operators",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#logical-operators",
+    "href": "tutorial/python.html#logical-operators",
+    "title": "Python basics",
     "section": "Logical Operators",
     "text": "Logical Operators\n\nx = True   # bool\ny = False  # bool\nprint(not x)   # Not\nprint(x and y) # And\nprint(x or y)  # Or\n\nFalse\nFalse\nTrue\n\n\n0, empty strings, empty lists, etc., are considered False in Python.\n\nx = 0   # int -&gt; False\ny = \"\"  # str -&gt; False\nprint(bool(x), bool(y))\n\nFalse False"
   },
   {
-    "objectID": "sessions/python.html#comparison-operators",
-    "href": "sessions/python.html#comparison-operators",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#comparison-operators",
+    "href": "tutorial/python.html#comparison-operators",
+    "title": "Python basics",
     "section": "Comparison Operators",
     "text": "Comparison Operators\n\nx = 5  # int\ny = 2  # int\nprint(x == y) # Equal\nprint(x != y) # Not equal\nprint(x &gt; y)  # Greater than\nprint(x &gt;= y) # Greater than or equal\nprint(x &lt; y)  # Less than\nprint(x is y) # Same object\n\nFalse\nTrue\nTrue\nTrue\nFalse\nFalse"
   },
   {
-    "objectID": "sessions/python.html#lists",
-    "href": "sessions/python.html#lists",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#lists",
+    "href": "tutorial/python.html#lists",
+    "title": "Python basics",
     "section": "Lists",
     "text": "Lists\nLists are an ordered and mutable collection of elements.\n\nl = [1, 2, 3, 4, 5]  # list\nprint(l)\n\n[1, 2, 3, 4, 5]"
   },
   {
-    "objectID": "sessions/python.html#lists---accessing-elements",
-    "href": "sessions/python.html#lists---accessing-elements",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#lists---accessing-elements",
+    "href": "tutorial/python.html#lists---accessing-elements",
+    "title": "Python basics",
     "section": "Lists - Accessing Elements",
     "text": "Lists - Accessing Elements\nTo access an element in a list, use the [] operator.\n\nl = [1, 2, 3, 4, 5]\nprint(l[0])   # First element\nprint(l[-1])  # Last element\nprint(l[1:3]) # Slice [2,3]\n\n1\n5\n[2, 3]"
   },
   {
-    "objectID": "sessions/python.html#lists---modification",
-    "href": "sessions/python.html#lists---modification",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#lists---modification",
+    "href": "tutorial/python.html#lists---modification",
+    "title": "Python basics",
     "section": "Lists - Modification",
     "text": "Lists - Modification\nElements in a list can be modified by accessing them with []. Lists can also be extended using append and concatenated with +.\n\nl = [1, 2]  # list\nprint(l)\nl[0] = 0    # l = [0,2]\nprint(l)\nl.append(3) # l = [0,2,3]\nprint(l)\nl = l + l   # l = [0,2,3,0,2,3]\nprint(l)\n\n[1, 2]\n[0, 2]\n[0, 2, 3]\n[0, 2, 3, 0, 2, 3]"
   },
   {
-    "objectID": "sessions/python.html#tuples",
-    "href": "sessions/python.html#tuples",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#tuples",
+    "href": "tutorial/python.html#tuples",
+    "title": "Python basics",
     "section": "Tuples",
     "text": "Tuples\nTuples are an ordered and immutable collection of elements. They are accessed like lists but cannot be modified.\n\nt = (1, 2, 3, 4, 5)\nprint(t)\nprint(t[1:3])\n\n(1, 2, 3, 4, 5)\n(2, 3)"
   },
   {
-    "objectID": "sessions/python.html#sets",
-    "href": "sessions/python.html#sets",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#sets",
+    "href": "tutorial/python.html#sets",
+    "title": "Python basics",
     "section": "Sets",
     "text": "Sets\nSets are an unordered and mutable collection of unique elements. You cannot access elements directly except through iteration, but elements can be added or removed.\n\ns = {1, 2, 3, 4, 5}\nprint(s)\ns.add(6)\nprint(s)\ns.add(6)\nprint(s)\ns.remove(1)\nprint(s)\n\n{1, 2, 3, 4, 5}\n{1, 2, 3, 4, 5, 6}\n{1, 2, 3, 4, 5, 6}\n{2, 3, 4, 5, 6}"
   },
   {
-    "objectID": "sessions/python.html#dictionaries",
-    "href": "sessions/python.html#dictionaries",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#dictionaries",
+    "href": "tutorial/python.html#dictionaries",
+    "title": "Python basics",
     "section": "Dictionaries",
     "text": "Dictionaries\nDictionaries are an unordered collection of key-value pairs.\n\nd = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(d)\nprint(d[\"a\"])\nd[\"a\"] = 0\nprint(d)\n\n{'a': 1, 'b': 2, 'c': 3}\n1\n{'a': 0, 'b': 2, 'c': 3}"
   },
   {
-    "objectID": "sessions/python.html#strings",
-    "href": "sessions/python.html#strings",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#strings",
+    "href": "tutorial/python.html#strings",
+    "title": "Python basics",
     "section": "Strings",
     "text": "Strings\nStrings are tuples of characters with specific methods.\n\ns = \"Hello World!\"\nprint(s)\nprint(s[0])\nprint(s[1:5])\n\nHello World!\nH\nello"
   },
   {
-    "objectID": "sessions/python.html#string---methods",
-    "href": "sessions/python.html#string---methods",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#string---methods",
+    "href": "tutorial/python.html#string---methods",
+    "title": "Python basics",
     "section": "String - Methods",
     "text": "String - Methods\n\ns = \"Hello World!\"\nprint(s.upper())\nprint(s.lower())\nprint(s.replace(\"H\", \"J\"))\nprint(s.split(\" \"))\nprint(s.find(\"W\"))\n\nHELLO WORLD!\nhello world!\nJello World!\n['Hello', 'World!']\n6"
   },
   {
-    "objectID": "sessions/python.html#blocks",
-    "href": "sessions/python.html#blocks",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#blocks",
+    "href": "tutorial/python.html#blocks",
+    "title": "Python basics",
     "section": "Blocks",
     "text": "Blocks\nCode blocks in Python are defined by indentation (spaces or tabs at the beginning of a line). Therefore, it is very important to maintain the correct indentation.\n\nif True:\n    print(\"Block 1\")\n    if False:\n        print(\"Block 2\")\nprint(\"Block 3\")\n\nBlock 1\nBlock 3"
   },
   {
-    "objectID": "sessions/python.html#conditionals",
-    "href": "sessions/python.html#conditionals",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#conditionals",
+    "href": "tutorial/python.html#conditionals",
+    "title": "Python basics",
     "section": "Conditionals",
     "text": "Conditionals\nConditionals in Python are written using if, elif, and else.\n\nx = 5\nif x &gt; 5:\n    print(\"Greater than 5\")\nelif x &lt; 5:\n    print(\"Less than 5\")\nelse:\n    print(\"Equal to 5\")\n\nEqual to 5"
   },
   {
-    "objectID": "sessions/python.html#while-loop",
-    "href": "sessions/python.html#while-loop",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#while-loop",
+    "href": "tutorial/python.html#while-loop",
+    "title": "Python basics",
     "section": "While Loop",
     "text": "While Loop\nThe while loop runs as long as the condition is true.\n\nx = 0\nwhile x &lt; 5:\n    print(x)\n    x += 1\n\n0\n1\n2\n3\n4"
   },
   {
-    "objectID": "sessions/python.html#for-loop",
-    "href": "sessions/python.html#for-loop",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#for-loop",
+    "href": "tutorial/python.html#for-loop",
+    "title": "Python basics",
     "section": "For Loop",
     "text": "For Loop\nThe for loop is used to iterate over a sequence.\n\nl = [1, 2, 3, 4, 5]\nfor x in l:\n    print(x)\n\n1\n2\n3\n4\n5"
   },
   {
-    "objectID": "sessions/python.html#for-loop---range",
-    "href": "sessions/python.html#for-loop---range",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#for-loop---range",
+    "href": "tutorial/python.html#for-loop---range",
+    "title": "Python basics",
     "section": "For Loop - Range",
     "text": "For Loop - Range\nThe range function generates a sequence of numbers.\n\nfor x in range(5):\n    print(x)\n\n0\n1\n2\n3\n4"
   },
   {
-    "objectID": "sessions/python.html#loop-operators",
-    "href": "sessions/python.html#loop-operators",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#loop-operators",
+    "href": "tutorial/python.html#loop-operators",
+    "title": "Python basics",
     "section": "Loop Operators",
     "text": "Loop Operators\nThe break operator is used to exit a loop. The continue operator is used to skip to the next iteration.\n\nfor x in range(5):\n    if x % 2:\n        continue\n    if x == 4:\n        break\n    print(x)\n\n0\n2"
   },
   {
-    "objectID": "sessions/python.html#libraries",
-    "href": "sessions/python.html#libraries",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#libraries",
+    "href": "tutorial/python.html#libraries",
+    "title": "Python basics",
     "section": "Libraries",
     "text": "Libraries\nPython has a large number of libraries that can be imported and used. To import, use the keyword import. Libraries can also be renamed with as.\n\nimport numpy        # To use numpy, use numpy.function()\nimport numpy as np  # To use numpy, use np.function()"
   },
   {
-    "objectID": "sessions/python.html#functions-1",
-    "href": "sessions/python.html#functions-1",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#functions-1",
+    "href": "tutorial/python.html#functions-1",
+    "title": "Python basics",
     "section": "Functions",
     "text": "Functions\nFunctions in Python are defined using the def keyword. They are used to encapsulate and reuse code.\n\ndef my_function():\n    print(\"Hello from a function\")\n\nmy_function()\nmy_function()\n\nHello from a function\nHello from a function"
   },
   {
-    "objectID": "sessions/python.html#functions---arguments",
-    "href": "sessions/python.html#functions---arguments",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#functions---arguments",
+    "href": "tutorial/python.html#functions---arguments",
+    "title": "Python basics",
     "section": "Functions - Arguments",
     "text": "Functions - Arguments\nFunctions can take arguments, which are passed when calling the function. Arguments can be used by position or by name. Default arguments can also be defined, which are used if not explicitly specified when calling the function.\n\ndef my_function(name, age=25):\n    print(f\"Hello {name}, you are {age} years old\")\n\nmy_function(\"Alice\")\nmy_function(age=30, name=\"Bob\")\n\nHello Alice, you are 25 years old\nHello Bob, you are 30 years old"
   },
   {
-    "objectID": "sessions/python.html#functions---return",
-    "href": "sessions/python.html#functions---return",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#functions---return",
+    "href": "tutorial/python.html#functions---return",
+    "title": "Python basics",
     "section": "Functions - Return",
     "text": "Functions - Return\nFunctions can return a value using the return keyword.\n\ndef my_function(x):\n    return x * 2\n\nprint(my_function(3))\nprint(my_function(5))\n\n6\n10"
   },
   {
-    "objectID": "sessions/python.html#built-in-functions",
-    "href": "sessions/python.html#built-in-functions",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#built-in-functions",
+    "href": "tutorial/python.html#built-in-functions",
+    "title": "Python basics",
     "section": "Built-in Functions",
     "text": "Built-in Functions\nThese are some frequently used built-in functions in Python:\n\nprint: Prints to the screen\nrange: Returns an iterable sequence of numbers\nlen: Returns the length of an iterable or container\ninput: Reads from the keyboard\nsum: Returns the sum of elements in an iterable\nmin: Returns the minimum of elements in an iterable\nmax: Returns the maximum of elements in an iterable\nany: Returns True if any element in an iterable is True\nall: Returns True if all elements in an iterable are True\nsorted: Returns a sorted list of elements in an iterable"
   },
   {
-    "objectID": "sessions/python.html#classes-1",
-    "href": "sessions/python.html#classes-1",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#classes-1",
+    "href": "tutorial/python.html#classes-1",
+    "title": "Python basics",
     "section": "Classes",
     "text": "Classes\nTo create more complex data structures, you can use classes. The class keyword is used to define a class.\n\nclass MyClass:\n    x = 5\n\nc = MyClass()\nprint(c.x)\n\n5"
   },
   {
-    "objectID": "sessions/python.html#classes---methods",
-    "href": "sessions/python.html#classes---methods",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#classes---methods",
+    "href": "tutorial/python.html#classes---methods",
+    "title": "Python basics",
     "section": "Classes - Methods",
     "text": "Classes - Methods\nClasses can have methods, which are functions that belong to the class. The first argument of a method is the object calling it, conventionally called self.\n\nclass MyClass:\n    def my_method(self):\n        print(\"Hello from a method\")\n\nc = MyClass()\nc.my_method()\n\nHello from a method"
   },
   {
-    "objectID": "sessions/python.html#classes---built-in-methods",
-    "href": "sessions/python.html#classes---built-in-methods",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#classes---built-in-methods",
+    "href": "tutorial/python.html#classes---built-in-methods",
+    "title": "Python basics",
     "section": "Classes - Built-in Methods",
     "text": "Classes - Built-in Methods\nThere are several special methods that can be defined in a class:\n\n__init__: Class constructor\n__str__: String representation of the class\n__len__: Length of the class\n__getitem__: Access elements using []\netc."
   },
   {
-    "objectID": "sessions/python.html#list-comprehension",
-    "href": "sessions/python.html#list-comprehension",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#list-comprehension",
+    "href": "tutorial/python.html#list-comprehension",
+    "title": "Python basics",
     "section": "List Comprehension",
     "text": "List Comprehension\nList comprehension is a quick and compact way to create lists.\n\nl1 = [x for x in range(5)]\nprint(l1)\n\nl2 = [x for x in range(5) if x % 2]\nprint(l2)\n\n[0, 1, 2, 3, 4]\n[1, 3]"
   },
   {
-    "objectID": "sessions/python.html#lambda",
-    "href": "sessions/python.html#lambda",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#lambda",
+    "href": "tutorial/python.html#lambda",
+    "title": "Python basics",
     "section": "Lambda",
     "text": "Lambda\nLambda is a way to define anonymous functions in a single line.\n\nf = lambda x: x * 2\nprint(f(3))\n\n# Sort by the second element\nl = [(1, 2), (3, 1), (5, 3)]\nl.sort(key=lambda x: x[1])\n\n6"
   },
   {
-    "objectID": "sessions/python.html#enumerate",
-    "href": "sessions/python.html#enumerate",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#enumerate",
+    "href": "tutorial/python.html#enumerate",
+    "title": "Python basics",
     "section": "Enumerate",
     "text": "Enumerate\nenumerate is a function that returns an iterable with indices and values.\n\nl = [\"a\", \"b\", \"c\"]\nfor i, x in enumerate(l):\n    print(i, x)\n\n0 a\n1 b\n2 c"
   },
   {
-    "objectID": "sessions/python.html#working-with-dictionaries",
-    "href": "sessions/python.html#working-with-dictionaries",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#working-with-dictionaries",
+    "href": "tutorial/python.html#working-with-dictionaries",
+    "title": "Python basics",
     "section": "Working with Dictionaries",
     "text": "Working with Dictionaries\nDictionaries can be iterated by key, value, or both.\n\nd = {\"a\": 1, \"b\": 2, \"c\": 3}\nfor k in d.keys():\n    print(k)\n\nfor v in d.values():\n    print(v)\n\nfor k, v in d.items():\n    print(k, v)\n\na\nb\nc\n1\n2\n3\na 1\nb 2\nc 3"
   },
   {
-    "objectID": "sessions/python.html#iterating-over-multiple-values",
-    "href": "sessions/python.html#iterating-over-multiple-values",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#iterating-over-multiple-values",
+    "href": "tutorial/python.html#iterating-over-multiple-values",
+    "title": "Python basics",
     "section": "Iterating Over Multiple Values",
     "text": "Iterating Over Multiple Values\nYou can create loops that iterate over more than one iterable at a time when the iterable is a collection. The zip function creates an iterable that groups elements from the iterables it is passed.\n\nl1 = [1, 2, 3]\nl2 = [\"a\", \"b\", \"c\"]\nfor x, y in zip(l1, l2):\n    print(x, y)\n\n1 a\n2 b\n3 c"
   },
   {
-    "objectID": "sessions/python.html#inheritance",
-    "href": "sessions/python.html#inheritance",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#inheritance",
+    "href": "tutorial/python.html#inheritance",
+    "title": "Python basics",
     "section": "Inheritance",
     "text": "Inheritance\nInheritance is an object-oriented programming feature that allows creating a new class from an existing one.\n\nclass Parent:\n    def __init__(self, x):\n        self.x = x\n\nclass Child(Parent):\n    def __init__(self, x, y):\n        super().__init__(x)\n        self.y = y\n\nc = Child(1, 2)\nprint(c.x, c.y)\n\n1 2"
   },
   {
-    "objectID": "sessions/python.html#much-more",
-    "href": "sessions/python.html#much-more",
-    "title": "Introduction to Python",
+    "objectID": "tutorial/python.html#much-more",
+    "href": "tutorial/python.html#much-more",
+    "title": "Python basics",
     "section": "Much More",
     "text": "Much More\nThe Python language is very extensive and has many more features and functionalities. This topic provides a basic overview of the main ideas and the most commonly used elements of the language.\nWe encourage students to explore more about the language and delve deeper into areas that interest them the most."
   }
