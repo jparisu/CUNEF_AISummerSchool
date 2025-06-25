@@ -1,5 +1,5 @@
 ---
-title: "Artificial Intelligence Summer School - CUNEF Universidad"
+title: "Artificial Intelligence Summer School - CUNEF Universidad - Code Repository"
 toc: false
 ---
 
@@ -25,29 +25,17 @@ toc: false
 
 ---
 
-## Objectives
+## Python tutorial
 
-- Obtain a global vision of Artificial Intelligence as a widely used technology and discover the challenges and opportunities of its applications.
-Understand the new way of obtaining, managing and analysing data to generate knowledge and incorporate it into the development of novel intelligent systems.
+- [Python Basics](tutorial/python.html)
+- [Numpy](tutorial/numpy.html)
+- [Pandas](tutorial/pandas.html)
+- [Scikit-learn](tutorial/sklearn.html)
 
-- Reflect, analyse and open the mind to the change in society that we are experiencing to understand its impact on today's society and find new professions, challenges and opportunities.
 
-- Learn to program simple algorithms in Python, to illustrate the foundation of the implementation of intelligent systems using machine learning techniques.
-
-- Learn the fundamentals of Generative Artificial Intelligence and the different tools available and their applications in different areas of business.
-
-- Learn applications of intelligent systems such as Natural Language Processing and other cutting edge technologies.
 
 ---
 
-## Methodology
+## Code
 
-The summer course on artificial intelligence will employ a comprehensive methodology, combining lectures, debates, and hands-on programming sessions.
-Students will gain theoretical knowledge through expert-led lectures, engage in critical discussions during debates, and apply their learning in practical programming classes.
-This approach ensures a well-rounded understanding of AI concepts and their real-world applications.
-
----
-
-## Sources
-
-Access to the course materials in the following [GitHub repository](https://github.com/jparisu/CUNEF_AISummerSchool).
+- [SnakeGame](https://colab.research.google.com/github/jparisu/CUNEF_AISummerSchool/blob/main/resources/code/snake.ipynb)

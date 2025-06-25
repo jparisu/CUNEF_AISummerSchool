@@ -1,0 +1,678 @@
+---
+subtitle: Introduction to Python
+title: Pandas
+author: Javier Paris
+---
+
+# Introduction to Pandas
+
+## What is Pandas?
+
+::: {.columns}
+:::: {.column width=50%}
+
+Pandas is a powerful and flexible **library** for data analysis and manipulation in Python.
+
+- Allows working with data structures like tables and series.
+- Essential for data analysis, data science, and Machine Learning projects.
+
+<https://pandas.pydata.org/>
+
+::::
+:::: {.column width=50%}
+
+![](../resources/images/pandas.png){width=100% fig-align="center"}
+
+::::
+:::
+
+## Installation
+
+By default, pandas comes pre-installed in various Python development environments, such as Anaconda or Jupyter Notebook (Google Colab).
+
+To install pandas in your local environment, you can do so via pip:
+
+``` {.bash}
+pip install pandas
+```
+
+or from a Jupyter notebook:
+
+``` {.python}
+!pip install pandas
+```
+
+## Importing Pandas
+
+Like any Python library, we must first import it to use it.
+It is very common to import pandas with the alias `pd` (although it is not mandatory):
+
+``` {python}
+import pandas as pd
+```
+
+This code set display options so the DataFrames appear correctly when printed:
+``` {python}
+pd.set_option('display.max_columns', 10) # To display all columns
+pd.set_option('display.width', 150) # To display all columns
+```
+
+## Data Structures in Pandas
+
+Pandas provides two fundamental data structures:
+
+- **DataFrame**: A two-dimensional data table, similar to a spreadsheet.
+- **Series**: A column of a DataFrame, similar to a list or an array.
+
+These data structures are essential for working with structured data in Python.
+
+# Creating a DataFrame
+
+## From a Matrix
+
+We can create a DataFrame from a NumPy matrix, which is useful when we already have the data in a tabular form.
+
+``` {python}
+#| output: true
+import numpy as np  # Library for numerical computing
+
+data = np.array([[1, 2], [3, 4], [5, 6]])
+df = pd.DataFrame(data, columns=['A', 'B'])
+print(df)
+```
+
+Here we created a DataFrame with two columns named 'A' and 'B'. This is useful when we want to structure numerical data we have already calculated.
+
+## From a Dictionary
+
+We can create a DataFrame from a dictionary, which is convenient when the data is organized in key-value pairs.
+
+``` {python}
+#| output: true
+data = {'name': ['Ana', 'Luis', 'Carlos'], 'age': [23, 25, 30]}
+df = pd.DataFrame(data)
+print(df)
+```
+
+Dictionaries are an intuitive way to organize data, especially when you have different features or attributes.
+
+## From a URL
+
+We can import data directly from a URL, which is useful for loading publicly available online data.
+
+``` {python}
+#| output: true
+url = "https://raw.githubusercontent.com/jparisu/CUNEF-ML-Resources/main/datasets/imdb/imdb.csv"
+df = pd.read_csv(url)
+print(df)
+```
+
+This method is used to quickly access large amounts of publicly available data, such as research datasets.
+
+## Other Data Sources
+
+Pandas can also read data from:
+
+- Excel files (`pd.read_excel('file.xlsx')`)
+- JSON files (`pd.read_json('file.json')`)
+- SQL databases (`pd.read_sql(query, connection)`)
+
+## Exporting a DataFrame
+
+We can export a DataFrame to a CSV file using the `df.to_csv()` method.
+
+``` {python}
+#| output: false
+#| eval: false
+df.to_csv('file.csv', index=False)
+```
+
+# Exploring a DataFrame
+
+## Viewing Data
+
+To view the dataset, simply print the DataFrame:
+
+``` {python}
+#| output: true
+print(df)
+```
+
+This will display the first and last rows of the DataFrame, as well as the columns and the values in each cell.
+
+\
+
+There are other functions to view the first or last elements of the DataFrame: `df.head()` and `df.tail()`.
+
+``` {python}
+#| output: true
+print(df.head(3))  # Shows the first 3 rows
+print(df.tail(3))  # Shows the last 3 rows
+```
+
+## Dataset Information
+
+We can obtain information about the DataFrame using the `df.info()` method, which provides details about the columns, data types, and the number of non-null values.
+
+``` {python}
+#| output: true
+print(df.info())
+```
+
+## Accessing Attributes
+
+- To access column names, use `df.columns`.
+- To access data types of columns, use `df.dtypes`.
+- To access the dimensions of the DataFrame, use `df.shape`.
+
+``` {python}
+#| output: true
+#| code-line-numbers: "1,3,5"
+print(df.columns)
+print()
+print(df.dtypes)
+print()
+print(df.shape)
+```
+
+## Descriptive Statistics
+
+We can obtain descriptive statistics of numeric columns using the `df.describe()` method.
+
+``` {python}
+#| output: true
+print(df.describe())
+```
+
+## Accessing Columns
+
+We can access a specific column of a DataFrame using its name:
+
+``` {python}
+#| output: true
+print(df['name'])
+```
+
+We can also access multiple columns at once:
+
+``` {python}
+#| output: true
+print(df[['name', 'year']])
+```
+
+## Accessing Rows
+
+We can access a specific row of a DataFrame using its index:
+
+``` {python}
+#| output: true
+print(df.loc[0])
+```
+
+We can also access multiple rows at once:
+
+``` {python}
+#| output: true
+print(df.loc[[0, 2, 4]])
+```
+
+::: {.callout-caution}
+The row index is not strictly its position in the DataFrame but can be any unique value.
+To access rows by position, use `df.iloc[]`.
+:::
+
+``` {python}
+#| output: true
+print(df.iloc[[0, 2, 4]])
+```
+
+## Accessing Cells
+
+We can access a specific cell in a DataFrame using its index and column name:
+
+``` {python}
+#| output: true
+print(df.loc[0, 'name'])
+```
+
+\
+
+We can also access multiple cells at once:
+
+``` {python}
+#| output: true
+print(df.loc[[0, 2, 4], ['name', 'year']])
+```
+
+## Unique Values
+
+We can obtain the unique values of a column using the `df['column'].unique()` method.
+
+``` {python}
+#| output: true
+print(df['year'].unique())
+```
+
+## Null Values
+
+We can get the null values in the DataFrame using the `df.isnull()` method. This can also be applied to specific columns using `df['column'].isnull()`.
+
+``` {python}
+#| output: true
+print(df.isnull())
+```
+
+::: {.callout-note}
+In this dataset, there are no null values.
+If there were, they would appear as `True` in the table.
+:::
+
+## Filtering Data
+
+A column in a DataFrame can be used as an operand in a boolean expression.
+This generates a column of boolean values.
+These types of columns can be used to filter the DataFrame.
+
+::: {.columns}
+:::: {.column width=15%}
+
+``` {python}
+#| output: true
+print(df['year'] > 1995)
+```
+
+::::
+:::: {.column width=85%}
+
+``` {python}
+#| output: true
+print(df[df['year'] > 1995])
+```
+
+::::
+:::
+
+## Grouping Data
+
+We can group data in a DataFrame by a column using the `df.groupby()` method.
+Similar to the `GROUP BY` clause in SQL, it allows us to perform operations on groups of data.
+
+``` {python}
+#| output: true
+grouped = df.groupby('year')
+print(grouped['budget'].mean())
+```
+
+# Measures on a DataFrame
+
+## Values
+
+We can count the number of non-null values in each column using the `df.count()` method.
+
+``` {python}
+#| output: true
+print(df['year'].count())
+```
+
+We can also count the number of occurrences of each unique value in a column using the `df['column'].value_counts()` method.
+
+``` {python}
+#| output: true
+print(df['year'].value_counts())
+```
+
+## Minimum and Maximum
+
+We can get the minimum and maximum value of a column using the `df['column'].min()` and `df['column'].max()` methods.
+
+``` {python}
+#| output: true
+print(df['year'].min())
+print(df['year'].max())
+```
+
+## Statistical Measures
+
+We can obtain several statistical measures using specific Pandas methods:
+
+::: {.columns}
+:::: {.column width=60%}
+
+- Mean: `df['column'].mean()`
+- Median: `df['column'].median()`
+- Variance: `df['column'].var()`
+- Mode: `df['column'].mode()`
+- Standard Deviation: `df['column'].std()`
+    - For population standard deviation: `df['column'].std(ddof=0)`
+- Quantiles: `df['column'].quantile(q)`
+    - For the 25th percentile: `df['column'].quantile(0.25)`
+
+::::: {.callout-note}
+Generally, 2 degrees of freedom are used for the standard deviation of a sample. To calculate the population standard deviation (divided by `N`), use `ddof=0`. For the sample standard deviation (divided by `N-1`), use `ddof=1`, which is the default value.
+:::::
+
+::::
+:::: {.column width=40%}
+
+``` {python}
+#| output: true
+print(f"Mean: {df['year'].mean()}")
+print(f"Median: {df['year'].median()}")
+print(f"Variance: {df['year'].var()}")
+print(f"Mode: {df['year'].mode()}")
+print(f"Standard deviation: {df['year'].std()}")
+print(f"25th percentile: {df['year'].quantile(0.25)}")
+```
+
+::::
+:::
+
+# Modifying the Structure of the DataFrame
+
+## Adding Columns
+
+We can add a column to a DataFrame by simply assigning a series of values to a new column:
+
+``` {python}
+#| output: true
+df['new_column'] = [0] * len(df)
+print(df)
+```
+
+## Deleting Columns
+
+We can delete a column from a DataFrame using the `df.drop()` method.
+
+``` {python}
+#| output: true
+df = df.drop(columns=['new_column'])
+print(df)
+```
+
+::: {.callout-caution}
+Many Pandas methods create a copy of the original DataFrame.
+Therefore, all modifications made to this copy will not be reflected in the original DataFrame.
+To do so, we need to save the result back to the dataset (or to the columns we want to modify).
+:::
+
+::: {.callout-tip}
+Some methods allow you to modify the original DataFrame directly by using the `inplace=True` argument.
+For example, `df.drop(columns=['new_column'], inplace=True)` does not require reassigning `df`.
+:::
+
+## Renaming Columns
+
+We can rename a column in a DataFrame using the `df.rename()` method.
+
+``` {python}
+#| output: true
+#| code-line-numbers: "1,2"
+df = df.rename(columns={'year': 'release_year'})
+print(df)
+df = df.rename(columns={'release_year': 'year'})  # To revert the change
+```
+
+## Reordering Columns
+
+We can reorder the columns of a DataFrame by simply assigning a dataset with the columns in the desired order.
+
+``` {python}
+#| output: true
+#| code-line-numbers: "1,2"
+df = df[['year', 'name', 'genre', 'adult', 'budget', 'c_box_office', 'c_profit', 'c_performance']]
+print(df)
+df = df[['name', 'year', 'genre', 'adult', 'budget', 'c_box_office', 'c_profit', 'c_performance']]  # To revert the change
+```
+
+## Changing Data Types
+
+We can change the data type of a column using the `df.astype()` method.
+
+``` {python}
+#| output: true
+df['year'] = df['year'].astype('float')
+print(df.dtypes)
+print(df['year'])
+```
+
+## Concatenating DataFrames
+
+We can concatenate two DataFrames using the `pd.concat()` method.
+
+``` {python}
+#| output: true
+df1 = pd.DataFrame({'name': ['Iron man', 'Thor'], 'year': [2008, 2011]})
+df = pd.concat([df, df1])
+print(df)
+```
+
+::: {.callout-caution}
+When concatenating DataFrames, the row indices are retained.
+To reorganize the indices, we can use the `df.reset_index(drop=True)` method.
+:::
+
+``` {python}
+#| output: false
+#| echo: false
+df.reset_index(drop=True, inplace=True)  # To reset the index
+```
+
+## Merging DataFrames
+
+We can merge two DataFrames on a common column using the `pd.merge()` method.
+Similar to the `JOIN` clause in SQL, it allows us to combine two DataFrames into one.
+
+``` {python}
+#| output: true
+df1 = pd.DataFrame({'adult': ['no', 'yes'], 'rating': ['PG-13', 'R']})
+df = pd.merge(df, df1, on='adult')
+print(df)
+```
+
+# Modifying Data in the DataFrame
+
+## Modifying Specific Data
+
+We can modify a specific cell value using the `df.loc[]` method.
+
+``` {python}
+#| output: true
+print(df.loc[0, 'year'])
+df.loc[0, 'year'] = 1990
+print(df.loc[0, 'year'])
+```
+
+## Modifying Columns
+
+To modify a column in the original DataFrame, we need to assign the result back to the original column:
+
+::: {.columns}
+:::: {.column width=50%}
+
+``` {python}
+#| output: true
+print(df['year'])
+print()
+```
+
+::::
+:::: {.column width=50%}
+
+``` {python}
+#| output: true
+df['year'] = df['year'] + 1
+print(df['year'])
+```
+
+::::
+:::
+
+## Deleting Rows
+
+We can delete a row from a DataFrame using the `df.drop()` method.
+
+``` {python}
+#| output: true
+df = df.drop(index=0)
+print(df)
+```
+
+## Deleting Rows with Null Values
+
+We can delete rows with null values from a DataFrame using the `df.dropna()` method.
+
+``` {python}
+#| output: true
+df = df.dropna()
+print(df)
+```
+
+## Deleting Duplicate Rows
+
+We can delete duplicate rows from a DataFrame using the `df.drop_duplicates()` method.
+
+``` {python}
+#| output: true
+df = df.drop_duplicates()
+print(df)
+```
+
+## Applying Functions to Columns
+
+We can apply functions to columns in a DataFrame using the `df.apply()` method.
+
+``` {python}
+#| output: true
+df['year'] = df['year'].apply(lambda x: x - 1)
+print(df)
+```
+
+## Sorting the DataFrame
+
+We can sort a DataFrame by one or more columns using the `df.sort_values()` method.
+
+``` {python}
+#| output: true
+df = df.sort_values(by='year', ascending=False)
+print(df)
+```
+
+## Resetting the Index
+
+We can reset the index of a DataFrame using the `df.reset_index()` method.
+This is useful for reorganizing the index after deleting rows or reordering the DataFrame.
+
+``` {python}
+#| output: true
+df = df.reset_index(drop=True)
+print(df)
+```
+
+# Operations for Machine Learning
+
+## Normalization
+
+There is no specific normalization method in Pandas.
+We can use a mathematical formula:
+
+### Min-Max Scaling
+
+``` {.python}
+df['column'] = (df['column'] - df['column'].min()) / (df['column'].max() - df['column'].min())
+```
+
+### Standardization
+
+``` {.python}
+df['column'] = (df['column'] - df['column'].mean()) / df['column'].std()
+```
+
+\
+
+``` {python}
+#| output: true
+df['budget'] = (df['budget'] - df['budget'].mean()) / df['budget'].std()
+df['c_box_office'] = (df['c_box_office'] - df['c_box_office'].min()) / (df['c_box_office'].max() - df['c_box_office'].min())
+print(df)
+```
+
+## Discretization - Mapping
+
+To convert a categorical column into a numerical column, we can use the `df.map()` method.
+
+``` {python}
+#| output: true
+df['adult'] = df['adult'].map({'no': 0, 'yes': 1})
+print(df)
+```
+
+## Discretization - One-Hot Encoding
+
+To convert a categorical column into a binary matrix, we can use the `pd.get_dummies()` method.
+The `drop_first=True` argument removes the first column, avoiding multicollinearity.
+
+``` {python}
+#| output: true
+df_dummies = pd.get_dummies(df, columns=['genre'], drop_first=True)
+print(df_dummies.drop(columns=['c_performance', 'c_profit']))  # Remove some columns for better visualization
+```
+
+## Categorization
+
+To convert a numerical column into a categorical column, we can use the `pd.cut()` method.
+
+``` {python}
+#| output: true
+df['c_profit'] = pd.cut(df['c_profit'], bins=3, labels=['low', 'medium', 'high'])
+print(df)
+```
+
+## Correlation Matrix
+
+We can calculate the correlation matrix of a DataFrame using the `df.corr()` method.
+It can only calculate the correlation between numerical columns.
+
+``` {python}
+#| output: true
+df_numeric = df.select_dtypes(include='number')
+print(df_numeric.corr())
+```
+
+## Train-Test Split
+
+We can split a DataFrame into two DataFrames, one for training and one for testing, using the `df.sample()` method.
+The `frac` argument specifies the proportion of rows to select.
+The `random_state` argument sets the seed to ensure the selection is reproducible.
+
+The `df.drop()` function can accept a list of indices.
+This is useful for removing the selected rows from the train DataFrame.
+
+::: {.columns}
+:::: {.column width=50%}
+
+``` {python}
+#| output: true
+df_train = df.sample(frac=0.8, random_state=42)
+print(df_train['name'])
+```
+
+::::
+:::: {.column width=50%}
+
+``` {python}
+#| output: true
+df_test = df.drop(df_train.index)
+print(df_test['name'])
+```
+
+::::
+:::
+
+# Conclusion
+
+## Conclusions
+
+- Pandas is a fundamental library for data analysis and manipulation in Python.
+- It allows working with data structures like tables and series.
+- It is useful for loading, exploring, cleaning, and transforming data.
+- It is useful for performing statistical and mathematical operations on data.

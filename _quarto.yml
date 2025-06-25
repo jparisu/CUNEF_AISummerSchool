@@ -11,19 +11,23 @@ format:
     theme: cosmo
     toc: true
 
-    # TODO add custom CSS
-    # css: styles.css
-
 
 website:
-  title: "xAI PhD Material"
+  title: "AI Summer School - CUNEF Universidad"
   favicon: templates/images/cunef.png
   navbar:
     left:
       - text: "Home"
         href: index.html
-      - text: "Day 2"
-        href: sessions/day2/day2.html
+      - text: "Python Basics"
+        href: tutorial/python.html
+      - text: "Numpy"
+        href: tutorial/numpy.html
+      - text: "Pandas"
+        href: tutorial/pandas.html
+      - text: "Scikit-learn"
+        href: tutorial/sklearn.html
+
 
   page-footer:
     left: |

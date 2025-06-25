@@ -1,6 +1,7 @@
 ---
-title: "Fundamental algorithms I"
 subtitle: Introduction to Python
+title: Python basics
+author: Javier Paris
 ---
 
 # Introduction to Python
@@ -24,7 +25,7 @@ It is a **dynamically typed** and **cross-platform** language.
 ::::
 :::: {.column width=50%}
 
-![](../../resources/images/python.png){width=80% fig-align="center"}
+![](../resources/images/python.png){width=40% fig-align="center"}
 
 ::::
 :::
@@ -127,7 +128,7 @@ This is the most widely used tool in the fields of data science and machine lear
 ::::
 :::: {.column width=50%}
 
-![](../../resources/images/jupyter.png){width=50% fig-align="center"}
+![](../resources/images/jupyter.png){width=40% fig-align="center"}
 
 ::::
 :::
@@ -152,7 +153,7 @@ This is the recommended platform for the course.
 ::::
 :::: {.column width=50%}
 
-![](../../resources/images/colab.png){width=80% fig-align="center"}
+![](../resources/images/colab.png){width=40% fig-align="center"}
 
 ::::
 :::
@@ -665,4 +666,4 @@ This topic provides a basic overview of the main ideas and the most commonly use
 
 We encourage students to explore more about the language and delve deeper into areas that interest them the most.
 
-![](../../resources/images/python.png){width=30% fig-align="center"}
+![](../resources/images/python.png){width=30% fig-align="center"}
