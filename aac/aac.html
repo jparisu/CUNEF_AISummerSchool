@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -200,27 +200,32 @@ window.Quarto = {
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="listing-actions-group">
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="VGVtYSUyMDQ=" data-listing-file-modified-sort="1752687310287" data-listing-reading-time-sort="1" data-listing-word-count-sort="29">
-<a href="../aac/material/AAC_04_03_visualization.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="VGVtYSUyMDQ=" data-listing-file-modified-sort="1752690935027" data-listing-reading-time-sort="1" data-listing-word-count-sort="29">
+<div class="thumbnail"><a href="../aac/material/AAC_04_03_visualization.html" class="no-external">
+
 <p class="card-img-top"><img src="../templates/images/placeholder_aac.png" style="height: 75px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-4.3. Test de visualización
-</h5>
-<div class="card-subtitle listing-subtitle">
-Tema 4. Implementación y aplicación
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../aac/material/AAC_04_03_visualization.html" class="no-external">4.3. Test de visualización</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../aac/material/AAC_04_03_visualization.html" class="no-external">Tema 4. Implementación y aplicación</a>
 </div>
 </div>
-</div></a>
+<div class="metadata">
+<a href="../aac/material/AAC_04_03_visualization.html" class="no-external">
+</a>
+</div>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>

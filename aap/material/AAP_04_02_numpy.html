@@ -250,7 +250,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="importar-numpy" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="importar-numpy"><span class="header-section-number">1.3</span> Importar Numpy</h2>
 <p>Como cualquier librería en Python, primero debemos importarla para poder utilizarla. Es muy común importar numpy con el alias <code>np</code> (pero no es obligatorio):</p>
-<div id="97b08314" class="cell" data-execution_count="1">
+<div id="b903dc2c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -270,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creación-de-arrays-a-partir-de-listas" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="creación-de-arrays-a-partir-de-listas"><span class="header-section-number">2.2</span> Creación de arrays a partir de listas</h2>
 <p>Podemos crear un array de numpy a partir de una lista de Python:</p>
-<div id="ad5da55c" class="cell" data-execution_count="2">
+<div id="097bbdd1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array(l)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -282,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creación-de-arrays-a-partir-iterables" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="creación-de-arrays-a-partir-iterables"><span class="header-section-number">2.3</span> Creación de arrays a partir iterables</h2>
 <p>Podemos crear un array de numpy a partir de cualquier iterable:</p>
-<div id="e5c848f9" class="cell" data-execution_count="3">
+<div id="f90b3639" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>it <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array(it)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -294,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creación-de-matrices-a-partir-de-listas" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="creación-de-matrices-a-partir-de-listas"><span class="header-section-number">2.4</span> Creación de matrices a partir de listas</h2>
 <p>Podemos crear una matriz de numpy a partir de una lista de listas:</p>
-<div id="5b33ca29" class="cell" data-execution_count="4">
+<div id="a3b26a80" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> np.array(l)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -311,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="propiedades-de-los-arrays" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="propiedades-de-los-arrays"><span class="header-section-number">3.1</span> Propiedades de los arrays</h2>
 <p>Los arrays de numpy tienen varias propiedades que nos permiten conocer su tamaño, forma, tipo de datos, etc.</p>
-<div id="f272e01f" class="cell" data-execution_count="5">
+<div id="02952315" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Array:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Shape:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">.</span>shape<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -337,7 +337,7 @@ Size:
 <section id="acceso-a-elementos" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="acceso-a-elementos"><span class="header-section-number">3.2</span> Acceso a elementos</h2>
 <p>Podemos acceder a los elementos de un array de numpy de la misma forma que accedemos a los elementos de una lista de Python. Para acceder a un elemento de una matriz, utilizamos el operador <code>[]</code> con una tuple con los índices.</p>
-<div id="3e27f67f" class="cell" data-execution_count="6">
+<div id="ad84370b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>])</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
@@ -351,7 +351,7 @@ Size:
 <section id="operaciones-aritméticas" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="operaciones-aritméticas"><span class="header-section-number">3.3</span> Operaciones aritméticas</h2>
 <p>Podemos realizar operaciones aritméticas para modificar todos los elementos de un array. Estas operaciones se realizan elemento a elemento.</p>
-<div id="4f2c3622" class="cell" data-execution_count="7">
+<div id="a01a75df" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>])</span>
@@ -384,7 +384,7 @@ Size:
 <li>Producto escalar: <code>@</code></li>
 <li>Producto vectorial: <code>np.dot</code></li>
 </ul>
-<div id="0b27d944" class="cell" data-execution_count="8">
+<div id="b56f3b05" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"norm(a):</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>linalg<span class="sc">.</span>norm(a)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -411,7 +411,7 @@ vectorial:
 <li>Matriz inversa: <code>np.linalg.inv</code></li>
 <li>Producto matricial: <code>@</code></li>
 </ul>
-<div id="0fdcb9a0" class="cell" data-execution_count="9">
+<div id="20b110f7" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"transpose(a):</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>transpose(a)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -449,7 +449,7 @@ matrix:
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="c4c4497d" class="cell" data-execution_count="10">
+<div id="a3453bd7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"mean:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>mean(a)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"median:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>median(a)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -471,7 +471,7 @@ std:
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="5fd8eb22" class="cell" data-execution_count="11">
+<div id="2c97b57b" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>])</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"covariance:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>cov(a, b)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
