@@ -1,0 +1,17 @@
+---
+title: "Aprendizaje Automático - Clasificación"
+format: html
+
+toc: false
+
+listing:
+    type: grid
+
+    image-placeholder: ../templates/images/placeholder_aac.png
+    categories: true
+    filter-ui: true
+    image-height: 75px
+
+    fields: [image, title, subtitle]
+    contents: material/*.qmd
+---

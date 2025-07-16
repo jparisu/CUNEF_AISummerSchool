@@ -1,41 +1,49 @@
 ---
-title: "Artificial Intelligence Summer School - CUNEF Universidad - Code Repository"
+title: "Aprendizaje Automático - Ciencia de Datos"
 toc: false
 ---
 
 ::: columns
-::: {.column width="15%"}
+::: {.column width="40%"}
 
-![](templates/images/logo.jpg){width=100%}
-
-:::
-::: {.column width="70%"}
-
-- **DATES:** 30 June 2025 – 18 July 2025
-- **LOCATION:** CUNEF Universidad (PIR 0.5)
-- **TIME:** 09 h – 14 h, Monday → Friday
-- **CREDITS:** 9 ECTS
+![](templates/images/cunef.png){width=100%}
 
 :::
+::: {.column width="30%"}
+
+**Coordinador**
+
+- **Javier Paris**: <javier.paris@cunef.edu>
+
 :::
+::: {.column width="30%"}
 
-\
+**Profesores**
 
-![](templates/images/cunef_page_image.png){width=100% align="center"}
+- **Ricardo Hidalgo**: <ricardo.hidalgo@cunef.edu>
+- **Óscar Sánchez**: <TODO>
+
+:::
+:::
 
 ---
 
-## Python tutorial
+El itinerario de **Aprendizaje Automático** para el **Grado en Ciencia de Datos** [G008] y **Doble Grado en Administración y Dirección de Empresas y Ciencia de Datos** [DG04] está dividido en 2 asignaturas:
 
-- [Python Basics](tutorial/python.html)
-- [Numpy](tutorial/numpy.html)
-- [Pandas](tutorial/pandas.html)
-- [Scikit-learn](tutorial/sklearn.html)
+- **Aprendizaje Automático - Predicción** [G244] (6 ECTS)
+- **Aprendizaje Automático - Clasificación** [G249] (6 ECTS)
 
-
+Estas asignaturas son secuenciales y comparten gran parte del contenido.
+En esta página encontrarás el temario y recursos de ambas asignaturas.
 
 ---
 
-## Code
+## Aprendizaje Automático - Predicción
 
-- [SnakeGame](https://colab.research.google.com/github/jparisu/CUNEF_AISummerSchool/blob/main/resources/code/snake.ipynb)
+- [Aprendizaje Automático - Predicción](aap/aap.html)
+
+---
+
+## Aprendizaje Automático - Clasificación
+
+- [Aprendizaje Automático - Clasificación](aac/aac.html)

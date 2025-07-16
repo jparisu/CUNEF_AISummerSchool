@@ -1,0 +1,235 @@
+---
+title: 4.2. Numpy
+subtitle: Tema 4. Implementación y aplicación
+
+categories: [Tema 4]
+---
+
+
+# Introducción a Numpy
+
+## ¿Qué es Numpy?
+
+::: {.columns}
+:::: {.column width=50%}
+
+Numpy es una librería de Python que proporciona soporte para arrays y matrices multidimensionales, junto con una colección de funciones matemáticas para operar con estos arrays.
+
+- Permite realizar operaciones matemáticas y lógicas sobre arrays de forma simple y eficiente.
+- Proporciona una gran cantidad de funciones matemáticas para operar con arrays y matrices.
+
+<https://numpy.org/>
+
+::::
+:::: {.column width=50%}
+
+![](../../resources/images/numpy.png){width=100% fig-align="center"}
+
+::::
+:::
+
+## Instalación
+
+Por defecto, numpy ya viene instalado en diversos entornos de desarrollo de Python, como Anaconda o Jupyter Notebook (Google Colab).
+
+Para instalar numpy en tu entorno local, puedes hacerlo mediante pip:
+
+``` {.bash}
+pip install numpy
+```
+
+o desde un cuaderno de Jupyter:
+
+``` {.python}
+!pip install numpy
+```
+
+## Importar Numpy
+
+Como cualquier librería en Python, primero debemos importarla para poder utilizarla.
+Es muy común importar numpy con el alias `np` (pero no es obligatorio):
+
+``` {python}
+import numpy as np
+```
+
+# Creación de arrays y matrices
+
+## Creación de arrays y matrices
+
+Podemos crear arrays y matrices de numpy de varias formas:
+
+- A partir de listas o tuplas
+- Utilizando funciones específicas de numpy
+- A partir de un rango de valores
+- etc.
+
+## Creación de arrays a partir de listas
+
+Podemos crear un array de numpy a partir de una lista de Python:
+
+``` {python}
+#| output: true
+l = [1, 2, 3, 4, 5]
+a = np.array(l)
+print(a)
+```
+
+## Creación de arrays a partir iterables
+
+Podemos crear un array de numpy a partir de cualquier iterable:
+
+``` {python}
+#| output: true
+it = range(0, 10, 2)
+a = np.array(it)
+print(a)
+```
+
+## Creación de matrices a partir de listas
+
+Podemos crear una matriz de numpy a partir de una lista de listas:
+
+``` {python}
+#| output: true
+l = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+m = np.array(l)
+print(m)
+```
+
+# Exploración de arrays y matrices
+
+## Propiedades de los arrays
+
+Los arrays de numpy tienen varias propiedades que nos permiten conocer su tamaño, forma, tipo de datos, etc.
+
+``` {python}
+#| output: true
+a = np.array([[1, 2, 3], [4, 5, 6]])
+print(f"Array:\n{a}\n")
+print(f"Shape:\n{a.shape}\n")
+print(f"Type:\n{a.dtype}\n")
+print(f"Size:\n{a.size}\n")
+```
+
+## Acceso a elementos
+
+Podemos acceder a los elementos de un array de numpy de la misma forma que accedemos a los elementos de una lista de Python.
+Para acceder a un elemento de una matriz, utilizamos el operador `[]` con una tuple con los índices.
+
+``` {python}
+#| output: true
+a = np.array([1, 2, 3, 4, 5])
+print(a[0])
+a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(a[1, 1])
+```
+
+## Operaciones aritméticas
+
+Podemos realizar operaciones aritméticas para modificar todos los elementos de un array.
+Estas operaciones se realizan elemento a elemento.
+
+``` {python}
+#| output: true
+a = np.array([1, 2, 3, 4, 5])
+print(a + 1)
+b = np.array([5, 4, 3, 2, 1])
+print(a + b)
+```
+
+# Funciones
+
+## Funciones matemáticas
+
+Numpy proporciona una gran cantidad de funciones matemáticas para operar con arrays y matrices:
+
+- `np.sin`, `np.cos`, `np.tan`
+- `np.exp`, `np.log`, `np.log10`
+- `np.sqrt`, `np.power`, `np.abs`
+- `np.mean`, `np.median`, `np.std`
+- etc.
+
+## Operaciones vectoriales
+
+Podemos realizar operaciones vectoriales con arrays de numpy:
+
+- Norma: `np.linalg.norm`
+- Producto escalar: `@`
+- Producto vectorial: `np.dot`
+
+``` {python}
+#| output: true
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+print(f"norm(a):\n{np.linalg.norm(a)}\n")
+print(f"scalar:\n{a @ b}\n")
+print(f"vectorial:\n{np.dot(a, b)}\n")
+```
+
+
+## Operaciones matriciales
+
+Podemos realizar operaciones matriciales con arrays de numpy:
+
+- Matriz transpuesta: `np.transpose`
+- Matriz inversa: `np.linalg.inv`
+- Producto matricial: `@`
+
+``` {python}
+#| output: true
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6], [7, 8]])
+print(f"transpose(a):\n{np.transpose(a)}\n")
+print(f"inverse(a):\n{np.linalg.inv(a)}\n")
+print(f"matrix:\n{a @ b}\n")
+```
+
+
+## Operaciones estadísticas
+
+Podemos realizar operaciones estadísticas con arrays de numpy:
+
+- Media: `np.mean`
+- Mediana: `np.median`
+- Varianza: `np.var`
+- Desviación estándar: `np.std`
+    - `ddfo=0` para población (por defecto `ddof=1` para muestra)
+- Covarianza: `np.cov`
+- Correlación: `np.corrcoef`
+
+::: {.columns}
+:::: {.column width=50%}
+
+``` {python}
+#| output: true
+a = np.array([1, 2, 3, 4, 5])
+print(f"mean:\n{np.mean(a)}\n")
+print(f"median:\n{np.median(a)}\n")
+print(f"variance:\n{np.var(a)}\n")
+print(f"std:\n{np.std(a)}\n")
+```
+
+::::
+:::: {.column width=50%}
+
+``` {python}
+#| output: true
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([5, 4, 3, 2, 1])
+print(f"covariance:\n{np.cov(a, b)}\n")
+print(f"correlation:\n{np.corrcoef(a, b)}\n")
+```
+
+::::
+:::
+
+
+# Conclusión
+
+## Conclusiones
+
+- Numpy es una librería de Python que proporciona soporte para arrays y matrices multidimensionales.
+- Permite realizar operaciones matemáticas sobre arrays de forma simple y eficiente.
+- Proporciona una gran cantidad de funciones matemáticas para operar con arrays y matrices.
+- Es una librería muy utilizada en el ámbito de la ciencia de datos y el aprendizaje automático.
