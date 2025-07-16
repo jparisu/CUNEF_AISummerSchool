@@ -1,0 +1,299 @@
+
+/* TODO: learn how to make text resize when changing zoom */
+/* body {
+    font-size: calc(1rem + 1vw);
+} */
+.reveal {
+    font-size: calc(3rem - 1vw);
+}
+
+/* Every slide specific style */
+.reveal section.level2{
+    /* This is for being able to scroll higher and avoid the ToC*/
+    box-sizing: border-box;
+    padding-bottom: 9%;
+    /* overflow: auto; */
+}
+
+.reveal section.level2 .slide-content {
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto; /* Scrollable content */
+}
+
+.reveal section.level2 .slide-content aside {
+    /* position: relative;
+    top: 10%; */
+    position: absolute;
+    bottom: 13%;
+    right: 5px;
+    text-align: right;
+}
+
+.reveal .smaller {
+    font-size: 0.8em;
+}
+
+.reveal .bigger {
+    font-size: 1.2em;
+}
+
+/* Title slide specific style */
+.reveal #title-slide {
+    font-size: 1.9em;  /* Adjust as needed for larger font */
+    text-align: center;  /* Centered text for title slides */
+    /* line-height: 2em; */
+}
+
+/* Title slide specific style */
+.reveal #title-slide h1 {
+    font-size: 1.5em;  /* Adjust as needed for larger font */
+    text-align: center;  /* Centered text for title slides */
+    /* line-height: 2em; */
+    padding-bottom: 3%;
+}
+
+
+/* Chapter title slide specific style */
+.reveal .title-slide {
+    font-size: 1.9em;
+    text-align: center;
+}
+
+/* Title slide background */
+.reveal .slide-background.quarto-title-block {
+    background-image: url("../images/background.png");
+    opacity: 0.4;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+/* Non-Chapter title slide background */
+.reveal .slide-background.level2 {
+    background-image: url("../images/background.png");
+    opacity: 0.3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+/* Chapter title slide background */
+.reveal .slide-background.level1 {
+    background-image: url("../images/background.png");
+    opacity: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+/* Common slide specific style */
+.reveal .slide.level2 {
+    font-size: 1em;
+}
+
+.reveal .footer {
+    font-weight: bold;
+    bottom: 1% !important;
+}
+
+.reveal .slide-logo {
+    max-height: 2.9rem !important;
+    /* width: 200% !important; */
+    margin-right: 0.5%;
+    margin-bottom: 2.6%;
+}
+
+.reveal .novel, .reveal .novel h1, .reveal .novel h2, .reveal .inh_novel, .reveal .inh_novel h1, .reveal .inh_novel h2 {
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    color: #737056;
+}
+
+.slide-content h3 {
+    margin-top: 1em; /* Adjust the value as needed */
+} /* Add subsubtitlestop margin */
+
+
+/* TODO: learn how to do TOC scrollable */
+/* .reveal #TOC {
+    box-sizing: border-box;
+    padding-bottom: 8%;
+    overflow: auto;
+} */
+
+/******************************************************************
+ * Special templates
+ ******************************************************************/
+
+.highlight {
+    background-color: rgb(212, 212, 161);
+    font-style: bold;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 4px solid white;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+} /* To highlight text */
+
+
+.figure-box {
+    border: 2px solid black;
+    padding: 10px;
+    display: inline-block;
+    background-color: #ffffff; /* Optional: Light background */
+    border-radius: 15px; /* Optional: Rounded corners */
+} /* To create a box around a figure */
+
+/******************************************************************
+ * Dynamic ToC
+ ******************************************************************/
+
+/* .dynamic-toc {
+    background-color: #7c7c7c;
+    padding: 0%;
+    margin: 0%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+    white-space: normal;
+    text-align: center;
+    z-index: 2;
+} */
+
+#dynamic-toc {
+    position: absolute;
+    bottom: 6%;
+    left: 5%;
+    width: 85%;
+    height: 9%;
+    overflow-y: auto;
+    background-color: #7c7c7c;
+    opacity: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+}
+
+.toc-main-title {
+    flex: 1;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.45em; /* Adjust font size as needed */
+    color: white;
+    box-sizing: border-box;
+}
+
+.toc-main-title.toc-highlight {
+    font-size: 0.55em; /* Adjust font size as needed */
+    color: white;
+    font-weight: bold;
+}
+
+
+/******************************************************************
+ * Tables
+ ******************************************************************/
+
+.vrt-header th {
+    writing-mode: vertical-rl;
+    /* text-orientation: upright; */
+    transform: rotate(190deg); /* Adjust the degree as needed */
+    border: 2px solid black;
+}
+
+.vrt-header td {
+    border: 2px solid black;
+}
+
+
+/******************************************************************
+ * Advanced Icon
+ ******************************************************************/
+
+/* Icon + tooltip container (absolutely positioned) */
+.advanced-tooltip {
+    position: absolute;
+    right: -12rem;
+    bottom: 10rem;
+}
+
+/* Icon styling (make it small, red, etc.) */
+.advanced-icon {
+    height: 10rem;
+    width: auto;
+}
+
+.advanced-tooltip-title {
+    position: absolute;
+    right: -12rem;
+    bottom: -20rem;
+}
+
+/* Icon styling (make it small, red, etc.) */
+.advanced-icon-title {
+    height: 12rem;
+    width: auto;
+}
+
+/******************************************************************
+ * Exercise callout
+ ******************************************************************/
+.callout-exercise-header {
+    padding-left:  60px;
+    padding-top:  5px;
+    padding-bottom: 0.1em;
+    background-color: rgb(227, 187, 255);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-image: url("../images/callout-exercise.png");
+}
+
+.callout-exercise-content > p{
+    font-size: 1em !important;
+}
+
+
+/******************************************************************
+ * Dummy callout
+ ******************************************************************/
+ .callout-dummy-header {
+    padding-left:  60px;
+    padding-top:  5px;
+    padding-bottom: 0.1em;
+    background-color: rgb(255, 250, 198);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-image: url("../images/callout-dummy.png");
+}
+
+/******************************************************************
+ * theorem callout
+ ******************************************************************/
+ .callout-theorem-header {
+    padding-left:  60px;
+    padding-top:  5px;
+    padding-bottom: 0.1em;
+    background-color: rgb(123, 107, 79);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-image: url("../images/callout-theorem.png");
+}
+
+.callout-theorem-content > p{
+    font-size: 1.4em !important;
+}
+
+.callout-theorem-header > p{
+    font-size: 1.5em !important;
+    color: white;
+}

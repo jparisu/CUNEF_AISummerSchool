@@ -8,7 +8,7 @@
 
 <meta name="author" content="Javier Paris">
 
-<title>Numpy – AI Summer School - CUNEF Universidad</title>
+<title>4.2. Numpy – Aprendizaje Automático - Ciencia de Datos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,24 +59,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../templates/images/cunef.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../templates/images/cunef.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-817abd8cdb7be821f1e1333d3d957080.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,8 +115,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">AI Summer School - CUNEF Universidad</span>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Aprendizaje Automático - Ciencia de Datos</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -126,24 +126,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Aprendizaje Automático</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutorial/python.html"> 
-<span class="menu-text">Python Basics</span></a>
+    <a class="nav-link" href="../../aap/aap.html"> 
+<span class="menu-text">Aprendizaje Automático - Predicción</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../tutorial/numpy.html" aria-current="page"> 
-<span class="menu-text">Numpy</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tutorial/pandas.html"> 
-<span class="menu-text">Pandas</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tutorial/sklearn.html"> 
-<span class="menu-text">Scikit-learn</span></a>
+    <a class="nav-link" href="../../aac/aac.html"> 
+<span class="menu-text">Aprendizaje Automático - Clasificación</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -161,47 +153,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-numpy" id="toc-introduction-to-numpy" class="nav-link active" data-scroll-target="#introduction-to-numpy">Introduction to Numpy</a>
+  <li><a href="#introducción-a-numpy" id="toc-introducción-a-numpy" class="nav-link active" data-scroll-target="#introducción-a-numpy"><span class="header-section-number">1</span> Introducción a Numpy</a>
   <ul class="collapse">
-  <li><a href="#what-is-numpy" id="toc-what-is-numpy" class="nav-link" data-scroll-target="#what-is-numpy">What is Numpy?</a></li>
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#importing-numpy" id="toc-importing-numpy" class="nav-link" data-scroll-target="#importing-numpy">Importing Numpy</a></li>
+  <li><a href="#qué-es-numpy" id="toc-qué-es-numpy" class="nav-link" data-scroll-target="#qué-es-numpy"><span class="header-section-number">1.1</span> ¿Qué es Numpy?</a></li>
+  <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación"><span class="header-section-number">1.2</span> Instalación</a></li>
+  <li><a href="#importar-numpy" id="toc-importar-numpy" class="nav-link" data-scroll-target="#importar-numpy"><span class="header-section-number">1.3</span> Importar Numpy</a></li>
   </ul></li>
-  <li><a href="#creating-arrays-and-matrices" id="toc-creating-arrays-and-matrices" class="nav-link" data-scroll-target="#creating-arrays-and-matrices">Creating arrays and matrices</a>
+  <li><a href="#creación-de-arrays-y-matrices" id="toc-creación-de-arrays-y-matrices" class="nav-link" data-scroll-target="#creación-de-arrays-y-matrices"><span class="header-section-number">2</span> Creación de arrays y matrices</a>
   <ul class="collapse">
-  <li><a href="#creating-arrays-and-matrices-1" id="toc-creating-arrays-and-matrices-1" class="nav-link" data-scroll-target="#creating-arrays-and-matrices-1">Creating arrays and matrices</a></li>
-  <li><a href="#creating-arrays-from-lists" id="toc-creating-arrays-from-lists" class="nav-link" data-scroll-target="#creating-arrays-from-lists">Creating arrays from lists</a></li>
-  <li><a href="#creating-arrays-from-iterables" id="toc-creating-arrays-from-iterables" class="nav-link" data-scroll-target="#creating-arrays-from-iterables">Creating arrays from iterables</a></li>
-  <li><a href="#creating-matrices-from-lists" id="toc-creating-matrices-from-lists" class="nav-link" data-scroll-target="#creating-matrices-from-lists">Creating matrices from lists</a></li>
+  <li><a href="#creación-de-arrays-y-matrices-1" id="toc-creación-de-arrays-y-matrices-1" class="nav-link" data-scroll-target="#creación-de-arrays-y-matrices-1"><span class="header-section-number">2.1</span> Creación de arrays y matrices</a></li>
+  <li><a href="#creación-de-arrays-a-partir-de-listas" id="toc-creación-de-arrays-a-partir-de-listas" class="nav-link" data-scroll-target="#creación-de-arrays-a-partir-de-listas"><span class="header-section-number">2.2</span> Creación de arrays a partir de listas</a></li>
+  <li><a href="#creación-de-arrays-a-partir-iterables" id="toc-creación-de-arrays-a-partir-iterables" class="nav-link" data-scroll-target="#creación-de-arrays-a-partir-iterables"><span class="header-section-number">2.3</span> Creación de arrays a partir iterables</a></li>
+  <li><a href="#creación-de-matrices-a-partir-de-listas" id="toc-creación-de-matrices-a-partir-de-listas" class="nav-link" data-scroll-target="#creación-de-matrices-a-partir-de-listas"><span class="header-section-number">2.4</span> Creación de matrices a partir de listas</a></li>
   </ul></li>
-  <li><a href="#exploring-arrays-and-matrices" id="toc-exploring-arrays-and-matrices" class="nav-link" data-scroll-target="#exploring-arrays-and-matrices">Exploring arrays and matrices</a>
+  <li><a href="#exploración-de-arrays-y-matrices" id="toc-exploración-de-arrays-y-matrices" class="nav-link" data-scroll-target="#exploración-de-arrays-y-matrices"><span class="header-section-number">3</span> Exploración de arrays y matrices</a>
   <ul class="collapse">
-  <li><a href="#properties-of-arrays" id="toc-properties-of-arrays" class="nav-link" data-scroll-target="#properties-of-arrays">Properties of arrays</a></li>
-  <li><a href="#accessing-elements" id="toc-accessing-elements" class="nav-link" data-scroll-target="#accessing-elements">Accessing elements</a></li>
-  <li><a href="#arithmetic-operations" id="toc-arithmetic-operations" class="nav-link" data-scroll-target="#arithmetic-operations">Arithmetic operations</a></li>
+  <li><a href="#propiedades-de-los-arrays" id="toc-propiedades-de-los-arrays" class="nav-link" data-scroll-target="#propiedades-de-los-arrays"><span class="header-section-number">3.1</span> Propiedades de los arrays</a></li>
+  <li><a href="#acceso-a-elementos" id="toc-acceso-a-elementos" class="nav-link" data-scroll-target="#acceso-a-elementos"><span class="header-section-number">3.2</span> Acceso a elementos</a></li>
+  <li><a href="#operaciones-aritméticas" id="toc-operaciones-aritméticas" class="nav-link" data-scroll-target="#operaciones-aritméticas"><span class="header-section-number">3.3</span> Operaciones aritméticas</a></li>
   </ul></li>
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <li><a href="#funciones" id="toc-funciones" class="nav-link" data-scroll-target="#funciones"><span class="header-section-number">4</span> Funciones</a>
   <ul class="collapse">
-  <li><a href="#mathematical-functions" id="toc-mathematical-functions" class="nav-link" data-scroll-target="#mathematical-functions">Mathematical functions</a></li>
-  <li><a href="#vector-operations" id="toc-vector-operations" class="nav-link" data-scroll-target="#vector-operations">Vector operations</a></li>
-  <li><a href="#matrix-operations" id="toc-matrix-operations" class="nav-link" data-scroll-target="#matrix-operations">Matrix operations</a></li>
-  <li><a href="#statistical-operations" id="toc-statistical-operations" class="nav-link" data-scroll-target="#statistical-operations">Statistical operations</a></li>
+  <li><a href="#funciones-matemáticas" id="toc-funciones-matemáticas" class="nav-link" data-scroll-target="#funciones-matemáticas"><span class="header-section-number">4.1</span> Funciones matemáticas</a></li>
+  <li><a href="#operaciones-vectoriales" id="toc-operaciones-vectoriales" class="nav-link" data-scroll-target="#operaciones-vectoriales"><span class="header-section-number">4.2</span> Operaciones vectoriales</a></li>
+  <li><a href="#operaciones-matriciales" id="toc-operaciones-matriciales" class="nav-link" data-scroll-target="#operaciones-matriciales"><span class="header-section-number">4.3</span> Operaciones matriciales</a></li>
+  <li><a href="#operaciones-estadísticas" id="toc-operaciones-estadísticas" class="nav-link" data-scroll-target="#operaciones-estadísticas"><span class="header-section-number">4.4</span> Operaciones estadísticas</a></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión"><span class="header-section-number">5</span> Conclusión</a>
   <ul class="collapse">
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones"><span class="header-section-number">5.1</span> Conclusiones</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="AAP_04_02_numpy._revealjs.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="AAP_04_02_numpy.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Numpy</h1>
-<p class="subtitle lead">Introduction to Python</p>
-</div>
+<h1 class="title">4.2. Numpy</h1>
+<p class="subtitle lead">Tema 4. Implementación y aplicación</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Tema 4</div>
+  </div>
+  </div>
 
 
 
@@ -223,59 +218,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction-to-numpy" class="level1">
-<h1>Introduction to Numpy</h1>
-<section id="what-is-numpy" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-numpy">What is Numpy?</h2>
+<section id="introducción-a-numpy" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introducción a Numpy</h1>
+<section id="qué-es-numpy" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="qué-es-numpy"><span class="header-section-number">1.1</span> ¿Qué es Numpy?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>Numpy is a Python library that provides support for multidimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.</p>
+<p>Numpy es una librería de Python que proporciona soporte para arrays y matrices multidimensionales, junto con una colección de funciones matemáticas para operar con estos arrays.</p>
 <ul>
-<li>It allows performing mathematical and logical operations on arrays in a simple and efficient manner.</li>
-<li>It provides a wide range of mathematical functions to work with arrays and matrices.</li>
+<li>Permite realizar operaciones matemáticas y lógicas sobre arrays de forma simple y eficiente.</li>
+<li>Proporciona una gran cantidad de funciones matemáticas para operar con arrays y matrices.</li>
 </ul>
 <p><a href="https://numpy.org/" class="uri">https://numpy.org/</a></p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../resources/images/numpy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="../../resources/images/numpy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>By default, numpy comes pre-installed in various Python development environments like Anaconda or Jupyter Notebook (Google Colab).</p>
-<p>To install numpy in your local environment, you can do it using pip:</p>
+<section id="instalación" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="instalación"><span class="header-section-number">1.2</span> Instalación</h2>
+<p>Por defecto, numpy ya viene instalado en diversos entornos de desarrollo de Python, como Anaconda o Jupyter Notebook (Google Colab).</p>
+<p>Para instalar numpy en tu entorno local, puedes hacerlo mediante pip:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>or from a Jupyter notebook:</p>
+<p>o desde un cuaderno de Jupyter:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="importing-numpy" class="level2">
-<h2 class="anchored" data-anchor-id="importing-numpy">Importing Numpy</h2>
-<p>Like any library in Python, we must first import it to use it. It is very common to import numpy with the alias <code>np</code> (but it is not mandatory):</p>
-<div id="8c787847" class="cell" data-execution_count="1">
+<section id="importar-numpy" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="importar-numpy"><span class="header-section-number">1.3</span> Importar Numpy</h2>
+<p>Como cualquier librería en Python, primero debemos importarla para poder utilizarla. Es muy común importar numpy con el alias <code>np</code> (pero no es obligatorio):</p>
+<div id="97b08314" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="creating-arrays-and-matrices" class="level1">
-<h1>Creating arrays and matrices</h1>
-<section id="creating-arrays-and-matrices-1" class="level2">
-<h2 class="anchored" data-anchor-id="creating-arrays-and-matrices-1">Creating arrays and matrices</h2>
-<p>We can create numpy arrays and matrices in several ways:</p>
+<section id="creación-de-arrays-y-matrices" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Creación de arrays y matrices</h1>
+<section id="creación-de-arrays-y-matrices-1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="creación-de-arrays-y-matrices-1"><span class="header-section-number">2.1</span> Creación de arrays y matrices</h2>
+<p>Podemos crear arrays y matrices de numpy de varias formas:</p>
 <ul>
-<li>From lists or tuples</li>
-<li>Using numpy-specific functions</li>
-<li>From a range of values</li>
+<li>A partir de listas o tuplas</li>
+<li>Utilizando funciones específicas de numpy</li>
+<li>A partir de un rango de valores</li>
 <li>etc.</li>
 </ul>
 </section>
-<section id="creating-arrays-from-lists" class="level2">
-<h2 class="anchored" data-anchor-id="creating-arrays-from-lists">Creating arrays from lists</h2>
-<p>We can create a numpy array from a Python list:</p>
-<div id="5aab367d" class="cell" data-execution_count="2">
+<section id="creación-de-arrays-a-partir-de-listas" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="creación-de-arrays-a-partir-de-listas"><span class="header-section-number">2.2</span> Creación de arrays a partir de listas</h2>
+<p>Podemos crear un array de numpy a partir de una lista de Python:</p>
+<div id="ad5da55c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array(l)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -284,10 +279,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="creating-arrays-from-iterables" class="level2">
-<h2 class="anchored" data-anchor-id="creating-arrays-from-iterables">Creating arrays from iterables</h2>
-<p>We can create a numpy array from any iterable:</p>
-<div id="ebf451cd" class="cell" data-execution_count="3">
+<section id="creación-de-arrays-a-partir-iterables" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="creación-de-arrays-a-partir-iterables"><span class="header-section-number">2.3</span> Creación de arrays a partir iterables</h2>
+<p>Podemos crear un array de numpy a partir de cualquier iterable:</p>
+<div id="e5c848f9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>it <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array(it)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -296,10 +291,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="creating-matrices-from-lists" class="level2">
-<h2 class="anchored" data-anchor-id="creating-matrices-from-lists">Creating matrices from lists</h2>
-<p>We can create a numpy matrix from a list of lists:</p>
-<div id="05f06a3b" class="cell" data-execution_count="4">
+<section id="creación-de-matrices-a-partir-de-listas" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="creación-de-matrices-a-partir-de-listas"><span class="header-section-number">2.4</span> Creación de matrices a partir de listas</h2>
+<p>Podemos crear una matriz de numpy a partir de una lista de listas:</p>
+<div id="5b33ca29" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> np.array(l)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -311,12 +306,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="exploring-arrays-and-matrices" class="level1">
-<h1>Exploring arrays and matrices</h1>
-<section id="properties-of-arrays" class="level2">
-<h2 class="anchored" data-anchor-id="properties-of-arrays">Properties of arrays</h2>
-<p>Numpy arrays have several properties that allow us to know their size, shape, data type, etc.</p>
-<div id="3ec2d6a4" class="cell" data-execution_count="5">
+<section id="exploración-de-arrays-y-matrices" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Exploración de arrays y matrices</h1>
+<section id="propiedades-de-los-arrays" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="propiedades-de-los-arrays"><span class="header-section-number">3.1</span> Propiedades de los arrays</h2>
+<p>Los arrays de numpy tienen varias propiedades que nos permiten conocer su tamaño, forma, tipo de datos, etc.</p>
+<div id="f272e01f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Array:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Shape:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">.</span>shape<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -339,10 +334,10 @@ Size:
 </div>
 </div>
 </section>
-<section id="accessing-elements" class="level2">
-<h2 class="anchored" data-anchor-id="accessing-elements">Accessing elements</h2>
-<p>We can access numpy array elements in the same way as Python list elements. To access an element of a matrix, we use the <code>[]</code> operator with a tuple containing the indices.</p>
-<div id="c9d1d833" class="cell" data-execution_count="6">
+<section id="acceso-a-elementos" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="acceso-a-elementos"><span class="header-section-number">3.2</span> Acceso a elementos</h2>
+<p>Podemos acceder a los elementos de un array de numpy de la misma forma que accedemos a los elementos de una lista de Python. Para acceder a un elemento de una matriz, utilizamos el operador <code>[]</code> con una tuple con los índices.</p>
+<div id="3e27f67f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">0</span>])</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
@@ -353,10 +348,10 @@ Size:
 </div>
 </div>
 </section>
-<section id="arithmetic-operations" class="level2">
-<h2 class="anchored" data-anchor-id="arithmetic-operations">Arithmetic operations</h2>
-<p>We can perform arithmetic operations to modify all the elements of an array. These operations are carried out element by element.</p>
-<div id="ba218631" class="cell" data-execution_count="7">
+<section id="operaciones-aritméticas" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="operaciones-aritméticas"><span class="header-section-number">3.3</span> Operaciones aritméticas</h2>
+<p>Podemos realizar operaciones aritméticas para modificar todos los elementos de un array. Estas operaciones se realizan elemento a elemento.</p>
+<div id="4f2c3622" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> <span class="dv">1</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>])</span>
@@ -368,11 +363,11 @@ Size:
 </div>
 </section>
 </section>
-<section id="functions" class="level1">
-<h1>Functions</h1>
-<section id="mathematical-functions" class="level2">
-<h2 class="anchored" data-anchor-id="mathematical-functions">Mathematical functions</h2>
-<p>Numpy provides a wide range of mathematical functions to work with arrays and matrices:</p>
+<section id="funciones" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Funciones</h1>
+<section id="funciones-matemáticas" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="funciones-matemáticas"><span class="header-section-number">4.1</span> Funciones matemáticas</h2>
+<p>Numpy proporciona una gran cantidad de funciones matemáticas para operar con arrays y matrices:</p>
 <ul>
 <li><code>np.sin</code>, <code>np.cos</code>, <code>np.tan</code></li>
 <li><code>np.exp</code>, <code>np.log</code>, <code>np.log10</code></li>
@@ -381,15 +376,15 @@ Size:
 <li>etc.</li>
 </ul>
 </section>
-<section id="vector-operations" class="level2">
-<h2 class="anchored" data-anchor-id="vector-operations">Vector operations</h2>
-<p>We can perform vector operations with numpy arrays:</p>
+<section id="operaciones-vectoriales" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="operaciones-vectoriales"><span class="header-section-number">4.2</span> Operaciones vectoriales</h2>
+<p>Podemos realizar operaciones vectoriales con arrays de numpy:</p>
 <ul>
-<li>Norm: <code>np.linalg.norm</code></li>
-<li>Dot product: <code>@</code></li>
-<li>Cross product: <code>np.dot</code></li>
+<li>Norma: <code>np.linalg.norm</code></li>
+<li>Producto escalar: <code>@</code></li>
+<li>Producto vectorial: <code>np.dot</code></li>
 </ul>
-<div id="b0666635" class="cell" data-execution_count="8">
+<div id="0b27d944" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"norm(a):</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>linalg<span class="sc">.</span>norm(a)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -408,15 +403,15 @@ vectorial:
 </div>
 </div>
 </section>
-<section id="matrix-operations" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-operations">Matrix operations</h2>
-<p>We can perform matrix operations with numpy arrays:</p>
+<section id="operaciones-matriciales" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="operaciones-matriciales"><span class="header-section-number">4.3</span> Operaciones matriciales</h2>
+<p>Podemos realizar operaciones matriciales con arrays de numpy:</p>
 <ul>
-<li>Transposed matrix: <code>np.transpose</code></li>
-<li>Inverse matrix: <code>np.linalg.inv</code></li>
-<li>Matrix multiplication: <code>@</code></li>
+<li>Matriz transpuesta: <code>np.transpose</code></li>
+<li>Matriz inversa: <code>np.linalg.inv</code></li>
+<li>Producto matricial: <code>@</code></li>
 </ul>
-<div id="623e7d9e" class="cell" data-execution_count="9">
+<div id="0fdcb9a0" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"transpose(a):</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>transpose(a)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -438,23 +433,23 @@ matrix:
 </div>
 </div>
 </section>
-<section id="statistical-operations" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-operations">Statistical operations</h2>
-<p>We can perform statistical operations with numpy arrays:</p>
+<section id="operaciones-estadísticas" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="operaciones-estadísticas"><span class="header-section-number">4.4</span> Operaciones estadísticas</h2>
+<p>Podemos realizar operaciones estadísticas con arrays de numpy:</p>
 <ul>
-<li>Mean: <code>np.mean</code></li>
-<li>Median: <code>np.median</code></li>
-<li>Variance: <code>np.var</code></li>
-<li>Standard deviation: <code>np.std</code>
+<li>Media: <code>np.mean</code></li>
+<li>Mediana: <code>np.median</code></li>
+<li>Varianza: <code>np.var</code></li>
+<li>Desviación estándar: <code>np.std</code>
 <ul>
-<li><code>ddof=0</code> for population (default <code>ddof=1</code> for sample)</li>
+<li><code>ddfo=0</code> para población (por defecto <code>ddof=1</code> para muestra)</li>
 </ul></li>
-<li>Covariance: <code>np.cov</code></li>
-<li>Correlation: <code>np.corrcoef</code></li>
+<li>Covarianza: <code>np.cov</code></li>
+<li>Correlación: <code>np.corrcoef</code></li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="0b5c1687" class="cell" data-execution_count="10">
+<div id="c4c4497d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"mean:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>mean(a)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"median:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>median(a)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -476,7 +471,7 @@ std:
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="04b62c06" class="cell" data-execution_count="11">
+<div id="5fd8eb22" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>])</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"covariance:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>cov(a, b)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -496,15 +491,15 @@ correlation:
 </div>
 </section>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<section id="conclusions" class="level2">
-<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<section id="conclusión" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Conclusión</h1>
+<section id="conclusiones" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="conclusiones"><span class="header-section-number">5.1</span> Conclusiones</h2>
 <ul>
-<li>Numpy is a Python library that provides support for multidimensional arrays and matrices.</li>
-<li>It allows performing mathematical operations on arrays in a simple and efficient manner.</li>
-<li>It provides a wide range of mathematical functions to work with arrays and matrices.</li>
-<li>It is widely used in data science and machine learning.</li>
+<li>Numpy es una librería de Python que proporciona soporte para arrays y matrices multidimensionales.</li>
+<li>Permite realizar operaciones matemáticas sobre arrays de forma simple y eficiente.</li>
+<li>Proporciona una gran cantidad de funciones matemáticas para operar con arrays y matrices.</li>
+<li>Es una librería muy utilizada en el ámbito de la ciencia de datos y el aprendizaje automático.</li>
 </ul>
 
 
@@ -915,7 +910,7 @@ correlation:
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><img src="../templates/images/cunef.png" class="img-fluid" style="width:50.0%"></p>
+<p><img src="../../templates/images/cunef.png" class="img-fluid" style="width:50.0%"></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
