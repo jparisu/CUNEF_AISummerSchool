@@ -5,11 +5,11 @@ format: html
 toc: false
 
 listing:
-    type: grid
+    type: default
 
     image-placeholder: ../templates/images/placeholder_aac.png
     categories: true
-    filter-ui: true
+    filter-ui: true        # search/filter by any visible field
     image-height: 75px
 
     fields: [image, title, subtitle]

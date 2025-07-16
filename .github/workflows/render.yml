@@ -45,7 +45,7 @@ jobs:
       # Install python packages
       - name: Install python packages
         run: |
-          pip install numpy matplotlib pandas seaborn scikit-learn nbformat nbclient jupyter
+          pip install numpy matplotlib pandas seaborn scikit-learn nbformat nbclient jupyter plotly
 
       # Set up R
       - name: Set up R

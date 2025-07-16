@@ -11,30 +11,8 @@ toc: false
 :::
 ::: {.column width="30%"}
 
-**Coordinador**
-
-- **Javier Paris**: <javier.paris@cunef.edu>
-
-:::
-::: {.column width="30%"}
-
-**Profesores**
-
-- **Ricardo Hidalgo**: <ricardo.hidalgo@cunef.edu>
-- **Óscar Sánchez**: <TODO>
-
 :::
 :::
-
----
-
-El itinerario de **Aprendizaje Automático** para el **Grado en Ciencia de Datos** [G008] y **Doble Grado en Administración y Dirección de Empresas y Ciencia de Datos** [DG04] está dividido en 2 asignaturas:
-
-- **Aprendizaje Automático - Predicción** [G244] (6 ECTS)
-- **Aprendizaje Automático - Clasificación** [G249] (6 ECTS)
-
-Estas asignaturas son secuenciales y comparten gran parte del contenido.
-En esta página encontrarás el temario y recursos de ambas asignaturas.
 
 ---
 
