@@ -1,0 +1,29 @@
+---
+title: 4.3. Test de visualización
+subtitle: Tema 4. Implementación y aplicación
+
+categories: [Tema 4]
+---
+
+
+## Test de visualización dinámica
+
+``` {python}
+#| output: true
+import numpy as np, plotly.graph_objects as go
+x=np.linspace(0,10,100)
+fig=go.Figure()
+fig.add_scatter(y=np.sin(x),x=x)
+fig.add_scatter(y=np.cos(x),x=x)
+fig.show()
+```
+
+## Test de geogebra
+
+$$
+f_1 = (x+1)^2 \\
+f_2 = (x-1)^2 \\
+Fu(x) = [f_1(x), f_2(x)]
+$$
+
+<iframe scrolling="no" title="multiobjetivo_1D" src="https://www.geogebra.org/material/iframe/id/vexrqmvk/width/698/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="698px" height="500px" style="border:0px;"> </iframe>

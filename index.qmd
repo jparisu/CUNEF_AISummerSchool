@@ -1,41 +1,27 @@
 ---
-title: "Artificial Intelligence Summer School - CUNEF Universidad - Code Repository"
+title: "Aprendizaje Automático - Ciencia de Datos"
 toc: false
 ---
 
 ::: columns
-::: {.column width="15%"}
+::: {.column width="40%"}
 
-![](templates/images/logo.jpg){width=100%}
+![](templates/images/cunef.png){width=100%}
 
 :::
-::: {.column width="70%"}
-
-- **DATES:** 30 June 2025 – 18 July 2025
-- **LOCATION:** CUNEF Universidad (PIR 0.5)
-- **TIME:** 09 h – 14 h, Monday → Friday
-- **CREDITS:** 9 ECTS
+::: {.column width="30%"}
 
 :::
 :::
-
-\
-
-![](templates/images/cunef_page_image.png){width=100% align="center"}
 
 ---
 
-## Python tutorial
+## Aprendizaje Automático - Predicción
 
-- [Python Basics](tutorial/python.html)
-- [Numpy](tutorial/numpy.html)
-- [Pandas](tutorial/pandas.html)
-- [Scikit-learn](tutorial/sklearn.html)
-
-
+- [Aprendizaje Automático - Predicción](aap/aap.html)
 
 ---
 
-## Code
+## Aprendizaje Automático - Clasificación
 
-- [SnakeGame](https://colab.research.google.com/github/jparisu/CUNEF_AISummerSchool/blob/main/resources/code/snake.ipynb)
+- [Aprendizaje Automático - Clasificación](aac/aac.html)

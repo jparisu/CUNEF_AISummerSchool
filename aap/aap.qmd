@@ -1,0 +1,17 @@
+---
+title: "Aprendizaje Automático - Predicción"
+format: html
+
+toc: false
+
+listing:
+    type: default
+
+    image-placeholder: ../templates/images/placeholder_aap.png
+    categories: true
+    filter-ui: true        # search/filter by any visible field
+    image-height: 75px
+
+    fields: [image, title, subtitle]
+    contents: material/*.qmd
+---

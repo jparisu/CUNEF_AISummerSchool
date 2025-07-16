@@ -1,34 +1,38 @@
+# UPPER PROJECT CONFIGURATION
 project:
-  type: website
-  output-dir: _build
-  title: "Artificial Intelligence Summer School - CUNEF Universidad"
-  render:
-    - "*.qmd"
-    - "!*.ipynb"
+    type: website
+    output-dir: _build
+
+    title: "Aprendizaje Automático - Ciencia de Datos"
+
+    resources:
+        - resources
+        - templates
+
+    render:
+        - "resources/AA_00_quarto_intro.qmd"
+        - "*.qmd"
+        - "!*.ipynb"
 
 format:
-  html:
-    theme: cosmo
-    toc: true
+    html:
+        theme: zephyr
+        toc: true
 
 
 website:
-  title: "AI Summer School - CUNEF Universidad"
-  favicon: templates/images/cunef.png
-  navbar:
-    left:
-      - text: "Home"
-        href: index.html
-      - text: "Python Basics"
-        href: tutorial/python.html
-      - text: "Numpy"
-        href: tutorial/numpy.html
-      - text: "Pandas"
-        href: tutorial/pandas.html
-      - text: "Scikit-learn"
-        href: tutorial/sklearn.html
+    title: "Aprendizaje Automático - Ciencia de Datos"
+    favicon: templates/images/cunef.png
+    navbar:
+        left:
+            - text: "Aprendizaje Automático"
+              href: index.html
+            - text: "Aprendizaje Automático - Predicción"
+              href: aap/aap.html
+            - text: "Aprendizaje Automático - Clasificación"
+              href: aac/aac.html
+    page-navigation: true
 
-
-  page-footer:
-    left: |
-      ![](/templates/images/cunef.png){width=50%}
+    page-footer:
+        left: |
+            ![](/templates/images/cunef.png){width=50%}

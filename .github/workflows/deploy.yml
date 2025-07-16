@@ -2,6 +2,9 @@ name: Build and Deploy Quarto Presentations
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -15,8 +18,10 @@ jobs:
       contents: write
 
     steps:
+
+      # Download the repository
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       # Install ubuntu dependencies
       - name: Install ubuntu dependencies
@@ -32,27 +37,32 @@ jobs:
       # Python dependencies
       - name: Install python dependencies
         run: |
-          sudo apt-get install -y \
-            python3 \
-            python3-pip
+          sudo apt-get install -y python3 python3-pip
 
       # TODO: add a requirements.txt file
       # Install python packages
       - name: Install python packages
         run: |
-          pip install \
-            numpy \
-            matplotlib \
-            pandas \
-            seaborn \
-            scikit-learn \
-            nbformat \
-            jupyter \
-            jupyter-cache
+          pip install numpy matplotlib pandas seaborn scikit-learn nbformat nbclient jupyter plotly
 
+      # Set up R
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.1.0'
+
+      # Install R packages
+      - name: Install R packages
+        run: |
+          Rscript -e 'install.packages(c("knitr", "rmarkdown", "reticulate", "ggplot2", "Rcpp", "magick", "pdftools"), repos = "http://cran.rstudio.com", lib = Sys.getenv("R_LIBS_USER"))'
+
+      # Install Quarto
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
+      # Publish the Quarto project
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
