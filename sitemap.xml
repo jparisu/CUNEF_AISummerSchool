@@ -1,39 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/tutorial/sklearn.html</loc>
+    <lastmod>2025-11-12T13:51:49.259Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/tutorial/pandas.html</loc>
+    <lastmod>2025-11-12T13:51:49.259Z</lastmod>
+  </url>
+  <url>
     <loc>https://jparisu.github.io/CUNEF_AISummerSchool/index.html</loc>
-    <lastmod>2025-07-16T18:35:35.027Z</lastmod>
+    <lastmod>2025-11-12T13:51:49.249Z</lastmod>
   </url>
   <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/aap/material/AAP_04_01_python._revealjs.html</loc>
-    <lastmod>2025-07-16T18:49:12.459Z</lastmod>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/tutorial/numpy.html</loc>
+    <lastmod>2025-11-12T13:51:49.259Z</lastmod>
   </url>
   <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/aap/material/AAP_04_01_python.html</loc>
-    <lastmod>2025-07-16T18:35:35.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/aac/material/AAC_04_03_visualization._revealjs.html</loc>
-    <lastmod>2025-07-16T18:48:51.877Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/aac/material/AAC_04_03_visualization.html</loc>
-    <lastmod>2025-07-16T18:35:35.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/aac/aac.html</loc>
-    <lastmod>2025-07-16T18:35:35.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/aap/aap.html</loc>
-    <lastmod>2025-07-16T18:35:35.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/aap/material/AAP_04_02_numpy.html</loc>
-    <lastmod>2025-07-16T18:35:35.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/aap/material/AAP_04_02_numpy._revealjs.html</loc>
-    <lastmod>2025-07-16T18:49:25.325Z</lastmod>
+    <loc>https://jparisu.github.io/CUNEF_AISummerSchool/tutorial/python.html</loc>
+    <lastmod>2025-11-12T13:51:49.259Z</lastmod>
   </url>
 </urlset>
